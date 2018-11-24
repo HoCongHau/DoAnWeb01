@@ -1,0 +1,57 @@
+#create-account, #login-account{
+    min-height: 500px;
+    padding: 1px 0!important;
+}
+#create-account .frmCreateAcc, #login-account .frmLogin{
+    padding: 50px 0;
+}
+#login-account .frmLogin{
+    padding: 50px 0;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.747);
+    width: 34%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#login-account .frmLogin a {
+    text-decoration: none;
+    margin: 10px 0;
+}
+#create-account .title-book, #login-account .title-book{
+    background: #339AF0;
+    color: #fff;
+}
+#create-account input, #create-account select, #login-account input{
+    border: none;
+    box-shadow: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    margin-bottom: 30px;
+    width: 80%;
+}
+#login-account input{
+    width: 100%;
+}
+#create-account input::placeholder , #login-account input::placeholder{
+    color: #000;
+}
+#create-account button, #login-account button{
+    margin: auto;
+    width: 150px;
+    background: #339AF0;
+}
+.gotoIndex a{
+    margin: 47px 0;
+}
+
+small.gotoIndex {
+    margin: 14px 0;
+    display: block;
+    text-indent: 20px;
+    text-decoration: none;
+}
+small.gotoIndex a {
+    text-decoration: none;
+}

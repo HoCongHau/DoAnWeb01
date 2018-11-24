@@ -1,0 +1,390 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'SVN-Segoe UI';
+}
+.container-fluid{
+    padding: 0!important;
+    background: rgb(236, 236, 236);
+    margin: 0!important;
+}
+.row{
+    margin: 0!important;
+}
+/*  ------------------------------------------TOP HEADER -------------------------------- */
+#top-header{
+    height: 35px;
+    background: #339AF0;
+}
+#top-header ul{
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+#top-header ul li {
+    list-style: none;
+    display: inline-block;
+    line-height: 35px;
+    padding: 0 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+#top-header ul li:hover{
+    background: rgb(38, 135, 214);
+}
+#top-header ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s;
+    text-transform: capitalize;
+}
+#top-header ul li:a{
+    font-weight: bold;
+}
+
+/*  ------------------------------------------BOTTOM HEADER -------------------------------- */
+#bottom-header{
+    background: #e3ecf3;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#bottom-header .logo{
+    width: 100%;
+}
+#bottom-header .logo img{
+    width: 100%;
+}
+#bottom-header .hotline, #bottom-header .thanhtoan{
+    margin: auto;
+    text-align: center;
+}
+#bottom-header .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bottom-header .search form{
+    width: 100%;
+}
+#bottom-header .search form input{
+    width: 70%;
+    text-indent: 10px;
+}
+#bottom-header .search form button{
+    width: 30%;
+    border-radius: 0;
+    border: none;
+    background: #339AF0;
+}
+/*  ------------------------------------------ MENU -------------------------------- */
+#menu,#menu nav{
+    background: #339AF0;
+}
+#menu .navbar{
+    margin: 0;
+    padding: 0;
+}
+#menu .navbar-nav{
+    /* margin: auto; */
+    height: 50px;
+    margin-left: 50px;
+}
+#menu .navbar-nav li{
+    padding: 10px;
+    transition: 0.4s;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu .navbar-nav li:hover{
+    background: rgb(35, 134, 216);
+}
+#menu .navbar-nav li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#menu button.navbar-toggler{
+    background: #fff;
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+}
+#menu .navbar-toggler-icon{
+    color:#339AF0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  ------------------------------------------ SLIDE -------------------------------- */
+#slidebar img{
+    width: 100%;
+}
+
+/* ---------------------------------------- NEW BOOK ----------------------------*/
+#new-book, #best-seller, #same-book {
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+    box-sizing: border-box;
+    background: #5cb4fd;
+}
+#best-seller{
+    padding-bottom: 30px;
+    clear: both;
+}
+
+.title-book {
+    width: 250px;
+    color: #339af0;
+    padding: 5px 15px;
+    background: #fffffe;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
+}
+
+.list-book {
+    width: 98%;
+    position: relative;
+    margin: auto;
+    clear: both;
+}
+
+.list-book .col-md-3 {
+    max-width: 20% !important;
+}
+
+.list-book .product {
+    padding: 5px;
+    box-sizing: border-box;
+    transition: 0.4s;
+    cursor: pointer;
+    width: 100%;
+}
+
+.list-book .product:hover .wrapper-img-product img{
+    transform: scale(1.1);
+}
+
+.list-book .product .wrapper-img-product {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 253px;
+    overflow: hidden;
+    border: 1px solid white;
+    padding: 10px 0;
+}
+
+.list-book .product .wrapper-img-product img {
+    /* width: 80%; */
+    margin: auto;
+    transition: 0.4s;
+}
+
+.list-book .product .wrapper-content-product {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 9px 5px;
+    height: 137px;
+    background: #fffffe;
+    box-sizing: border-box;
+}
+
+.list-book .product .wrapper-content-product p {
+    margin: 0;
+}
+
+.list-book .product .wrapper-content-product .Title {
+    color: black;
+    font-weight: bold;
+}
+
+.list-book .product .wrapper-content-product .Price {
+    color: #ff0303;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.list-book .product .wrapper-content-product button {
+    background: #339AF0;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+    position: absolute;
+    bottom: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.list-book .product .wrapper-content-product button:hover {
+    background: rgb(35, 134, 216);
+}
+
+
+/* css cho side chay san pham*/
+.item {
+    width: 100%;
+}
+
+.custom-owl-nav span:hover {
+    cursor: pointer;
+}
+
+.owl-carousel .owl-item img{
+    height: 100%;
+    width: auto!important;
+}
+
+/* ---------------------------------------- SIDEBAR ----------------------------------------*/
+#sidebar{
+    min-height: 50px;
+    background: rgb(236, 236, 236);
+    box-sizing: border-box;
+}
+
+.style-sidebar{
+    background: rgb(236, 236, 236);
+    margin-bottom: 20px;
+}
+.style-sidebar .sb-title{
+    text-transform: uppercase;
+    width: 100%;
+    background: #339AF0;
+    color: #fff;
+    height: 40px;
+}
+.style-sidebar .sb-title h5{
+    line-height: 40px;
+    text-indent: 10px;
+}
+.style-sidebar ul{
+    margin: 0;
+    padding: 0;
+    text-indent: 10px;
+}
+.style-sidebar ul li{
+    list-style: none;
+    padding: 10px 0;
+    border-bottom: 1px dotted #339AF0;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.style-sidebar ul li:hover a{
+    text-indent: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+.style-sidebar ul li:hover{
+    background: rgb(35, 134, 216);
+}
+.style-sidebar ul li a{
+    color: rgb(10, 9, 9);
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.4s;
+}
+#sidebar .form-group{
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+#sidebar .form-control{
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+#sidebar .btn-info{
+    background: #339AF0;
+}
+
+
+/* ----------------------------------------- CONTENT -----------------------------------*/
+.wrapper-content-sidebar{
+    padding: 30px 0!important;
+}
+#content{
+    padding: 10px;
+    box-sizing: border-box;
+    min-height: 500px;
+    /* background: orange; */
+}
+#content .product {
+    padding: 5px;
+    box-sizing: border-box;
+    transition: 0.4s;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#content  .product .wrapper-img-product {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 167px;
+    overflow: hidden;
+}
+#content  .product:hover .wrapper-img-product img {
+    transform: scale(1.2);
+}
+#content  .product .wrapper-img-product img {
+    margin: auto;
+    transition: 0.4s;
+    height: 100%;
+}
+
+#content  .product .wrapper-content-product {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 137px;
+    box-sizing: border-box;
+}
+
+#content .product .wrapper-content-product p {
+    margin: 0;
+}
+
+#content  .product .wrapper-content-product .Title {
+    color: black;
+    font-size: 15px;
+}
+
+#content .product .wrapper-content-product .Price {
+    color: #ff0303;
+    font-weight: 700;
+    font-size: 20px;
+    transition: 0.4s;
+}
+#content  .product .wrapper-content-product button {
+    background: #339AF0;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+    position: absolute;
+    bottom: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#content  .product .wrapper-content-product button:hover{
+    background: rgb(22, 118, 197);
+}
+
+/* ------------------------------------------- footer -------------------------------------*/
+#footer{
+    background: #339AF0;
+    text-align: center;
+}
+#footer p{
+    margin: 0;
+    line-height: 41px;
+    color: #fff;
+}

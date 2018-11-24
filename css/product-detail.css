@@ -1,0 +1,53 @@
+.product-detail .img-book{
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.product-detail .img-book img{
+    height: 100%;
+}
+.product-detail .info-book  p{
+    margin: 0;
+}
+.product-detail .info-book .titleBook{
+    font-weight: bold;
+    font-size: 28px;
+}
+.product-detail .info-book .authorBook{
+    font-style: italic;
+}
+.product-detail .info-book .priceBook{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+.product-detail hr{
+    background: #339AF0;
+}
+.product-detail .moreInfo{
+    line-height: 30px;
+}
+.product-detail .description{
+    padding: 25px 25px 150px 25px;
+    box-sizing: border-box;
+    text-align: justify;
+}
+.product-detail .custom-owl-nav span:hover {
+    cursor: pointer;
+}
+#same-book .list-book .product .wrapper-img-product{
+    height: 150px;
+}
+.product-detail button {
+    background: #339AF0;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 20px;
+}
+.product-detail button:hover{
+    background: rgb(22, 118, 197);
+}
+
