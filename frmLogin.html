@@ -95,25 +95,20 @@
 		</div>
 	</div>  slidebar -->
 
-    <div class="container-fluid" id="login-account">
-        <small class="gotoIndex"><a href="index.html"><i class="fas fa-angle-double-left"></i>Trở về trang chủ</a></small>
+    <div id="login-account">
         <h5 class="title-book">đăng nhập</h5>
         <form action="#" target="" method="POST" class="frmLogin">
-            <div class="row text-center">
-                <div class="col-12">
-                    <input type="email" name="email" value="" placeholder="Địa chỉ Email *">
-                </div>
-                <div class="col-12">
-                    <input type="password" name="matkhau" value="" placeholder="Mật khẩu *">
-                </div>
-                <button type="submit" value="dangnhap" class="btn btn-info">Đăng Nhập &nbsp;<i class="fas fa-sign-in-alt"></i></button>
-                <div class="col-12">
-                    <a href="">Quên mật khẩu</a>
-                </div>
-                <div class="col-12">
-                    <a href="create-account.html">Tạo tài khoản</a>
-                </div>
-            </div>
+            <table class="table-frm-create">
+                <tr>
+                    <td class="align-right"><label for="txtUserName">Nhập tên đăng nhập</label></td>
+                    <td><input type="text" name="txtUserName" required></td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtPassword">Nhập mật khẩu</label></td>
+                    <td><input type="password" name="txtPassword" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="Đăng nhập">
         </form>
     </div>
     <div class="container-fluid">

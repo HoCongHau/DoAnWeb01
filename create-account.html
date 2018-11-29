@@ -89,42 +89,95 @@
             </nav>
         </div><!-- menu -->
     </div>
-    <!-- <div id="slidebar">
+    <!--  <div id="slidebar">
 		<div class="container-fluid">
 			<img src="images/banner_web_sach-tieu-thuyet_925x412.jpg" alt="">
 		</div>
 	</div>  slidebar -->
 
-    <div class="container-fluid" id="create-account">
-        <small class="gotoIndex"><a href="index.html"><i class="fas fa-angle-double-left"></i>Trở về trang chủ</a></small>
+    <div id="create-account">
         <h5 class="title-book">tạo tài khoản</h5>
-        <form action="#" target="" method="GET" class="frmCreateAcc">
-            <div class="row text-center">
-                <div class="col-xs-12 col-md-6">
-                    <input type="email" name="email" value="" placeholder="Địa chỉ Email *">
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <input type="text" name="hoten" value="" placeholder="Họ và tên *">
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <input type="password" name="matkhau" value="" placeholder="Mật khẩu *">
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <input type="password" name="nhaplaimatkhau" value="" placeholder="Nhập lại mật khẩu *">
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <select name="gioitinh" id="idGioiTinh">
-                        <option disabled selected>Chọn giới tính</option>
-                        <option value='nam'>Nam</option>
-                        <option value='nu'>Nữ</option>
-                        <option value='khac'>Khác</option>
-                    </select>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                    <input type="date" name="ngaysinh" placeholder="Ngày sinh">
-                </div>
-                <button type="submit" value="dangky" class="btn btn-info">Đăng ký &nbsp;<i class="fab fa-telegram-plane"></i></button>
-            </div>
+        <form action="laythongtindemo.php" target="" method="POST" class="frmCreateAcc">
+            <table class="table-frm-create">
+                <tr>
+                    <td class="align-right">
+                        <!-- Thong tin ca nhan -->
+                        <p class="titleFrm">Thông tin cá nhân</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtHoTen">Họ tên của bạn</label></td>
+                    <td> <input type="text" name="txtHoTen"></td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtNgaySinh">Ngày sinh</label></td>
+                    <td>
+                        <select class="" name="txtNgaySinh">
+                            <option disabled selected>[Ngày]</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                        <select class="" name="txtThangSinh">
+                            <option disabled selected>[Tháng]</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                        <select class="" name="txtNamSinh">
+                            <option disabled selected>[Năm]</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtQueQuan">Bạn sống tại</label></td>
+                    <td>
+                        <select class="" name="txtQueQuan">
+                            <option disabled selected>--Chọn thành phố--</option>
+                            <option>Đồng Nai</option>
+                            <option>Lâm Đồng</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-right">
+                        <!-- Thong tin tai khoan -->
+                        <p class="titleFrm">Thông tin tài khoản</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtUserName">Tên đăng nhập <b>*</b></label></td>
+                    <td>
+                        <input type="text" name="txtUserName" required> 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-right">  <label for="txtPassword">Mật khẩu <b>*</b></label></td>
+                    <td><input type="password" name="txtPassword" required></td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtRePassword">Xác nhận mật khẩu <b>*</b></label></td>
+                    <td><input type="password" name="txtRePassword" required></td>
+                </tr>
+                <tr>
+                    <td class="align-right">
+                        <!-- Ma kiem tra -->
+                        <p class="titleFrm">Mã kiểm tra</p>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label>Mã kiểm tra</label></td>
+                    <td><img src="images/capcha.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="align-right"><label for="txtMaKiemTra">Nhập mã kiểm tra <b>*</b></label></td>
+                    <td><input type="text" name="txtMaKiemTra" required> </td>
+                </tr>
+            </table>  
+            <input type="submit" value="Đăng Ký Tài Khoản" name="dangky">  
         </form>
     </div>
     <div class="container-fluid">

@@ -1,57 +1,58 @@
-#create-account, #login-account{
-    min-height: 500px;
-    padding: 1px 0!important;
-}
-#create-account .frmCreateAcc, #login-account .frmLogin{
-    padding: 50px 0;
-}
-#login-account .frmLogin{
-    padding: 50px 0;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.747);
-    width: 34%;
+#create-account{
+    padding: 30px 0;
+    width: 80%;
+    position: relative;
     margin: auto;
-    border-radius: 5px;
 }
 
-#login-account .frmLogin a {
-    text-decoration: none;
-    margin: 10px 0;
+#create-account .title-book {
+    width: 250px;
+    color: #fffffe;
+    padding: 5px 15px;
+    background: #339af0;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
 }
-#create-account .title-book, #login-account .title-book{
-    background: #339AF0;
-    color: #fff;
-}
-#create-account input, #create-account select, #login-account input{
-    border: none;
-    box-shadow: 0;
-    border-radius: 0;
-    border-bottom: 1px solid #000;
-    background: transparent;
-    margin-bottom: 30px;
-    width: 80%;
-}
-#login-account input{
+#create-account .frmCreateAcc{
+    position: relative;
     width: 100%;
 }
-#create-account input::placeholder , #login-account input::placeholder{
-    color: #000;
+#create-account .titleFrm{
+    color: #339af0;
+    font-weight: bold;
 }
-#create-account button, #login-account button{
+#create-account  .table-frm-create{
     margin: auto;
-    width: 150px;
-    background: #339AF0;
 }
-.gotoIndex a{
-    margin: 47px 0;
+#create-account .table-frm-create td, .table th{
+    border: none;
+    padding: 5px 10px;
 }
-
-small.gotoIndex {
-    margin: 14px 0;
-    display: block;
-    text-indent: 20px;
-    text-decoration: none;
+#create-account .align-right{
+    text-align: right;
 }
-small.gotoIndex a {
-    text-decoration: none;
+#create-account .align-center{
+    text-align: center;
+}
+#create-account .table-frm-create b{
+    color: red;
+}
+#create-account .table-frm-create input{
+    width: 100%;
+}
+#create-account input[type="submit"]{
+    background: #339af0;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 17px auto;
+}
+#create-account input[type="submit"]:hover{
+    background: #2488da;
 }

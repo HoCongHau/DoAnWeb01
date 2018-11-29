@@ -52,7 +52,7 @@ body, html{
     width: 100%;
 }
 #bottom-header .logo img{
-    width: 100%;
+    width: 70%;
 }
 #bottom-header .hotline, #bottom-header .thanhtoan{
     margin: auto;
@@ -67,7 +67,7 @@ body, html{
     width: 100%;
 }
 #bottom-header .search form input{
-    width: 70%;
+    width: 60%;
     text-indent: 10px;
 }
 #bottom-header .search form button{
@@ -110,7 +110,7 @@ body, html{
     background: #fff;
     border: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 10px 15px;
 }
 #menu .navbar-toggler-icon{
     color:#339AF0;
@@ -388,3 +388,50 @@ body, html{
     line-height: 41px;
     color: #fff;
 }
+
+/* --------------------------------- TRANG Ãƒâ€žÃ‚ÂÃƒâ€žÃ¢â‚¬Å¡NG NHÃƒÂ¡Ã‚ÂºÃ‚Â¬P ------------------------------------*/
+#login-account{
+    min-height: 400px;
+    padding: 30px 0;
+}
+#login-account .title-book {
+    width: 250px;
+    color: #fffffe;
+    padding: 5px 15px;
+    background: #339af0;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
+}
+#login-account .frmCreateAcc{
+    position: relative;
+    width: 100%;
+}
+#login-account  .table-frm-create{
+    margin: auto;
+}
+#login-account .table-frm-create td, .table th{
+    border: none;
+    padding: 5px 10px;
+}
+#login-account .align-right{
+    text-align: right;
+}
+#login-account .table-frm-create input{
+    width: 100%;
+}
+#login-account input[type="submit"]{
+    background: #339af0;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 17px auto;
+}
+#login-account input[type="submit"]:hover{
+    background: #2488da;
+}S

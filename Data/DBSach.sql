@@ -64,7 +64,6 @@ CREATE TABLE IF NOT EXISTS `QuanLySach`.`TaiKhoan` (
   `BiXoa` TINYINT(0) NULL,
   `MaLoaiTaiKhoan` INT NOT NULL,
   PRIMARY KEY (`MaTaiKhoan`),
-  INDEX `fk_TaiKhoan_copy1_LoaiTaiKhoan1_idx` (`MaLoaiTaiKhoan` ASC),
   CONSTRAINT `fk_TaiKhoan_copy1_LoaiTaiKhoan1`
     FOREIGN KEY (`MaLoaiTaiKhoan`)
     REFERENCES `QuanLySach`.`LoaiTaiKhoan` (`MaLoaiTaiKhoan`)
@@ -95,8 +94,6 @@ CREATE TABLE IF NOT EXISTS `QuanLySach`.`DonDatHang` (
   `MaTaiKhoan` INT NOT NULL,
   `MaTinhTrang` INT NOT NULL,
   PRIMARY KEY (`MaDonDatHang`),
-  INDEX `fk_DonDatHang_TaiKhoan1_idx` (`MaTaiKhoan` ASC),
-  INDEX `fk_DonDatHang_TinhTrang1_idx` (`MaTinhTrang` ASC),
   CONSTRAINT `fk_DonDatHang_TaiKhoan1`
     FOREIGN KEY (`MaTaiKhoan`)
     REFERENCES `QuanLySach`.`TaiKhoan` (`MaTaiKhoan`)
@@ -127,8 +124,6 @@ CREATE TABLE IF NOT EXISTS `QuanLySach`.`Sach` (
   `MaLoaiSach` INT NOT NULL,
   `MaNhaXuatBan` INT NOT NULL,
   PRIMARY KEY (`MaSach`),
-  INDEX `fk_SanPham_LoaiSanPham1_idx` (`MaLoaiSach` ASC),
-  INDEX `fk_SanPham_HangSanXuat1_idx` (`MaNhaXuatBan` ASC),
   CONSTRAINT `fk_SanPham_LoaiSanPham1`
     FOREIGN KEY (`MaLoaiSach`)
     REFERENCES `QuanLySach`.`LoaiSach` (`MaLoaiSach`)
@@ -152,8 +147,6 @@ CREATE TABLE IF NOT EXISTS `QuanLySach`.`ChiTietDonDatHang` (
   `MaDonDatHang` VARCHAR(9) NOT NULL,
   `MaSach` INT NOT NULL,
   PRIMARY KEY (`MaChiTietDonDatHang`),
-  INDEX `fk_ChiTietDonDatHang_DonDatHang1_idx` (`MaDonDatHang` ASC),
-  INDEX `fk_ChiTietDonDatHang_SanPham1_idx` (`MaSach` ASC),
   CONSTRAINT `fk_ChiTietDonDatHang_DonDatHang1`
     FOREIGN KEY (`MaDonDatHang`)
     REFERENCES `QuanLySach`.`DonDatHang` (`MaDonDatHang`)
@@ -186,8 +179,6 @@ CREATE TABLE IF NOT EXISTS `QuanLySach`.`TacGia_has_Sach` (
   `TacGia_MaTacGia` VARCHAR(20) NOT NULL,
   `Sach_MaSach` INT NOT NULL,
   PRIMARY KEY (`TacGia_MaTacGia`, `Sach_MaSach`),
-  INDEX `fk_TacGia_has_Sach_Sach1_idx` (`Sach_MaSach` ASC),
-  INDEX `fk_TacGia_has_Sach_TacGia1_idx` (`TacGia_MaTacGia` ASC),
   CONSTRAINT `fk_TacGia_has_Sach_TacGia1`
     FOREIGN KEY (`TacGia_MaTacGia`)
     REFERENCES `QuanLySach`.`TacGia` (`MaTacGia`)
