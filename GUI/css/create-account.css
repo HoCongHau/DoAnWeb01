@@ -1,0 +1,58 @@
+#create-account{
+    padding: 30px 0;
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+#create-account .title-book {
+    width: 250px;
+    color: #fffffe;
+    padding: 5px 15px;
+    background: #339af0;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
+}
+#create-account .frmCreateAcc{
+    position: relative;
+    width: 100%;
+}
+#create-account .titleFrm{
+    color: #339af0;
+    font-weight: bold;
+}
+#create-account  .table-frm-create{
+    margin: auto;
+}
+#create-account .table-frm-create td, .table th{
+    border: none;
+    padding: 5px 10px;
+}
+#create-account .align-right{
+    text-align: right;
+}
+#create-account .align-center{
+    text-align: center;
+}
+#create-account .table-frm-create b{
+    color: red;
+}
+#create-account .table-frm-create input{
+    width: 100%;
+}
+#create-account input[type="submit"]{
+    background: #339af0;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 17px auto;
+}
+#create-account input[type="submit"]:hover{
+    background: #2488da;
+}
