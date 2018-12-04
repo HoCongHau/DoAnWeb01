@@ -1,4 +1,5 @@
-<?php include("../modules/mHead.php") ?>
+<a href="index.php?a=1"></a>
+<?php include("../modules/mHead.php"); ?>
 <body>
 	<?php include("../modules/mTopHeader.php");
 	include("../modules/mMainHeader.php");
