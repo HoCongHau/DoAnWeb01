@@ -2,7 +2,7 @@
 		<div id="bottom-header">
 			<div class="row">
 				<div class="col-xs-12 col-md-3 logo">
-					<img src="../images/logo-03.png" alt="">
+					<img src="GUI/images/logo-03.png" alt="">
 				</div> <!-- logo -->
 				<div class="col-xs-12 col-md-3 hotline">
 					<b>Hotline: 0978.888.888 </b> <br>
