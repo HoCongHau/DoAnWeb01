@@ -3,6 +3,8 @@ body, html{
     padding: 0;
     font-family: 'SVN-Segoe UI';
 }
+
+
 .container-fluid{
     padding: 0!important;
     background: rgb(236, 236, 236);
@@ -28,6 +30,7 @@ body, html{
     padding: 0 10px;
     transition: 0.4s;
     cursor: pointer;
+    color: #fff;
 }
 #top-header ul li:hover{
     background: rgb(38, 135, 214);
@@ -41,7 +44,26 @@ body, html{
 #top-header ul li:a{
     font-weight: bold;
 }
-
+.modal-header {
+    background:#339AF0;
+    color: #fff;
+}
+.modal-body input[type="text"], .modal-body input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #339AF0;
+    width: 100%;
+}
+.modal-body input[type="text"]:focus, .modal-body input[type="password"]:focus{
+    border-bottom: 3px solid #339AF0;
+}
+.modal-body .frmLogin .btnDangNhap{
+    background: #339AF0;
+    margin: 19px auto 0;
+    display: flex;
+}
+table.table-frm-create {
+    width: 100%;
+}
 /*  ------------------------------------------BOTTOM HEADER -------------------------------- */
 #bottom-header{
     background: #e3ecf3;
@@ -388,50 +410,3 @@ body, html{
     line-height: 41px;
     color: #fff;
 }
-
-/* --------------------------------- TRANG Ãƒâ€žÃ‚ÂÃƒâ€žÃ¢â‚¬Å¡NG NHÃƒÂ¡Ã‚ÂºÃ‚Â¬P ------------------------------------*/
-#login-account{
-    min-height: 400px;
-    padding: 30px 0;
-}
-#login-account .title-book {
-    width: 250px;
-    color: #fffffe;
-    padding: 5px 15px;
-    background: #339af0;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 0 20px 20px 0;
-}
-#login-account .frmCreateAcc{
-    position: relative;
-    width: 100%;
-}
-#login-account  .table-frm-create{
-    margin: auto;
-}
-#login-account .table-frm-create td, .table th{
-    border: none;
-    padding: 5px 10px;
-}
-#login-account .align-right{
-    text-align: right;
-}
-#login-account .table-frm-create input{
-    width: 100%;
-}
-#login-account input[type="submit"]{
-    background: #339af0;
-    color: #fff;
-    transition: 0.4s;
-    cursor: pointer;
-    border: none;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 17px auto;
-}
-#login-account input[type="submit"]:hover{
-    background: #2488da;
-}S

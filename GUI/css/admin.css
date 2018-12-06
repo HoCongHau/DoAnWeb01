@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-fluid{
+    padding: 0!important;
+}
+.row{
+    margin: 0!important;
+}
+/* -------------------------------------- top header ---------------------------------*/
+div#top-header {
+    width: 100%;
+    height: 40px;
+    background: #03A9F4;
+    line-height: 40px;
+    padding: 0 20px;
+    color: #fff;
+}
+#top-header a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s;
+}
+#top-header a:hover{
+    font-weight: bold;
+}
+/* -------------------------------------- main header ---------------------------------*/
+div#main-header {
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px double #03a9f4;
+}
+#main-header h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #03A9F4;
+    margin: 0;
+    line-height: 70px;
+    padding: 0;
+}
+/* -------------------------------------- khoi noi dung chinh ---------------------------------*/
+#main{
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+}
+#main #side-bar{
+    width: 100%;
+    height: 100%;
+    background: #03A9F4;
+    padding: 0;
+}
+#main #side-bar h4{
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding: 20px 0;
+    background: rgb(2, 127, 185);
+}
+#main #side-bar ul li{
+    list-style: none;
+    padding: 15px 0;
+    text-indent: 10px;
+    background: #03A9F4;
+    transition: 0.4s;
+    cursor: pointer;
+    border-bottom: 1px dotted #fff;
+}
+#main #side-bar ul li:hover, #main #side-bar ul li.active{
+    background: rgb(6, 132, 190);
+    text-indent: 15px;
+}
+#main #side-bar ul{
+    margin: 0;
+}
+#main #side-bar ul li a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+/* --------------------------------------vung content ---------------------------------*/
+#main #content{
+    padding: 10px;
+}
+#main #content .Title{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+#content a{
+    color: #000!important;
+}
+#content .them{
+    color: #03A9F4;
+    border: 1px solid #03A9F4;
+}
+#content .them:hover{
+    background: #03A9F4;
+    color: #fff;
+}
+#content .search{
+    margin-bottom: 15px;
+}
+#content .search form{
+    width: 100%;
+}
+#content .search form input{
+    width: 89%;
+    text-indent: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #03a9f4;
+}
+#content .search form button{
+    width: 11%;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background: #339AF0;
+}
+#content .table i:hover{
+    font-weight: bold;
+    color: #03A9F4;
+    cursor: pointer;
+}
+#content .table .moTa{
+    height: 84px;
+    overflow-y: scroll;
+    display: block;
+}
+#content .logo img{
+    width: 50px;
+}
+#content .hinhAnh img{
+    width: 50px;
+}
+#content .daXoa{
+    background: #777777;
+}
+#content .dangXuLy{
+    background: red;
+}
+#content .dangGiao{
+    background: green;
+}
+#content .daGiao{
+    background: yellow;
+}
+#content .daHuy{
+    background: #777;
+}
+#content .tongTien{
+    font-weight: bold;
+    color: red;
+}
+#content .btnThem{
+    margin: 15px 0;
+}
+/*-------------------------------- them san pham----------------------------------------*/
+form.frmThemSP {
+    width: 100%;
+}
+form.frmThemSP input, form.frmThemSP select, form.frmThemSP textarea{
+    border: none;
+    border-bottom: 1px solid #03A9F4;
+    padding: 20px 0;
+    width: 100%;
+    height: 64px;
+}
+form.frmThemSP input:focus, form.frmThemSP select:focus, form.frmThemSP textarea:focus{
+    outline: none;
+    border-bottom: 3px solid #03A9F4;
+}
+form.frmThemSP textarea{
+    min-height: 400px;
+    border: 1px solid #03A9F4;
+    margin-top: 15px;
+}
+/* ------------------------------------------- footer -------------------------------------*/
+#footer{
+    background: #339AF0;
+    text-align: center;
+}
+#footer p{
+    margin: 0;
+    line-height: 41px;
+    color: #fff;
+}

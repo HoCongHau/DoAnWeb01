@@ -1,16 +1,23 @@
-<div id="login-account">
-    <h5 class="title-book">đăng nhập</h5>
-    <form action="#" target="" method="POST" class="frmLogin">
-        <table class="table-frm-create">
-            <tr>
-                <td class="align-right"><label for="txtUserName">Nhập tên đăng nhập</label></td>
-                <td><input type="text" name="txtUserName" required></td>
-            </tr>
-            <tr>
-                <td class="align-right"><label for="txtPassword">Nhập mật khẩu</label></td>
-                <td><input type="password" name="txtPassword" required></td>
-            </tr>
-        </table>
-        <input type="submit" value="Đăng nhập">
-    </form>
-</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
