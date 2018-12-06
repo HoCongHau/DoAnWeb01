@@ -1,6 +1,4 @@
-<?php include("../modules/mHead.php") ?>
-<body>
-    <?php 
+    <?php
         include("../modules/mTopHeader.php");
         include("../modules/mMainHeader.php");
         include("../modules/mMenu.php");
@@ -148,6 +146,3 @@
     <script>
         new WOW().init();
     </script>
-</body>
-
-</html>

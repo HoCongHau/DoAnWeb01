@@ -6,7 +6,10 @@
  * Time: 8:36 PM
  */
  //include("/GUI/pages/pHead.php"); 
- //include("/GUI/pages/pTopHeader.php"); 
+ //include("/GUI/pages/pTopHeader.php");
+    session_start();//phải run nó mới sử dụng được
+    include_once("./DAO/DB.php");
+//echo 'Current PHP version: ' . phpversion();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,26 +18,36 @@
 </head>
 <body>
     <?php
-
+        include("./GUI/modules/mLogin/mLogin.php");
+    ?>
+    <?php
         $a=1;
         if(isset($_GET['a']))
             $a=$_GET['a'];
         switch($a){
-            case 1: 
-                include_once("./GUI/pages/pIndex.php");
+            case 1:
+                include("./GUI/pages/pIndex.php");
                 break;
             case 2:
-                include_once("./GUI/pages/pLogin.php");
+                include("./GUI/modules/mLogin/exLogin.php");
                 break;
             case 3:
-                include_once("./GUI/pages/pGioHang.php");
+                include("./GUI/pages/pGioHang.php");
                 break;
             case 4:
-                include_once("./GUI/pages/pCreateAccount.php");
+                include("./GUI/pages/pCreateAccount.php");
+                break;
+            case 5:
+                include("./GUI/modules/mLogin/frmLogin.php");
+                break;
+            case 6:
+                include("./GUI/modules/mLogin/exLogout.php");
+                break;
+            case 404:
+                include("./GUI/pages/pError.php");
                 break;
         }
     ?>
-
-
+    <?php include("./GUI/modules/mFooter.php");?>
 </body>
 </html>

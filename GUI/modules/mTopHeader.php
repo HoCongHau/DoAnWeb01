@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-12">
 				<ul>
-					<li><a href="index.php?a=3"><i class="fas fa-shopping-cart"></i>&nbsp;giỏ hàng</a></li>
+				 	<!-- <li><a href="index.php?a=3"><i class="fas fa-shopping-cart"></i>&nbsp;giỏ hàng</a></li> -->					
 					<li data-toggle="modal" data-target="#login"><i class="fas fa-sign-in-alt"></i>&nbsp;Đăng nhập</li>
 					<li><a href="index.php?a=4"><i class="fas fa-key"></i>&nbsp;đăng ký</a></li>
 				</ul>
@@ -22,7 +22,7 @@
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-				<form action="#" target="" method="POST" class="frmLogin">
+				<form action="index.php?a=2" target="" method="post" class="frmLogin">
 					<table class="table-frm-create">
 						<tr>
 							<td class="align-right"><label for="txtUserName">Nhập tên đăng nhập</label></td>
