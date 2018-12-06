@@ -1,12 +1,7 @@
-<?php include("../modules/mHead.php") ?>
-<body>
 <?php 
-    include("../modules/mTopHeader.php");
-	include("../modules/mMainHeader.php");
-    include("../modules/mMenu.php");
-    include("../modules/mLogin.php");
-    include("../modules/mFooter.php");
+    include(__DIR__."./../modules/mTopHeader.php");
+	include(__DIR__."./../modules/mMainHeader.php");
+    include(__DIR__."./../modules/mMenu.php");
+    include(__DIR__."./../modules/mLogin.php");
+    include(__DIR__."./../modules/mFooter.php");
 ?>
-</body>
-
-</html>

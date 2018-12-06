@@ -7,7 +7,7 @@
 				<div class="collapse navbar-collapse" id="collapsibleNavbar">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link" href="GUI/pages/pIndex.php">Trang Chủ</a>
+							<a class="nav-link" href="index.php?a=1">Trang Chủ</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Sản Phẩm</a>

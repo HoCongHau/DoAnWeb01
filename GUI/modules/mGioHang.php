@@ -16,7 +16,7 @@
                     <tbody>
                         <tr>
                             <td class="remove"><i class="fas fa-trash-alt"></i></td>
-                            <td class="imgBook"><img src="../images/8935086838143_2.jpg" alt=""></td>
+                            <td class="imgBook"><img src="Gui/images/8935086838143_2.jpg" alt=""></td>
                             <td class="titleBook">Đắc Nhân Tâm</td>
                             <td class="unit-price">45.000đ</td>
                             <td class="number"><input type="number" name="soluong" value="1" id=""></td>
@@ -24,7 +24,7 @@
                         </tr>
                         <tr>
                             <td class="remove"><i class="fas fa-trash-alt"></i></td>
-                            <td class="imgBook"><img src="../images/8935086838143_2.jpg" alt=""></td>
+                            <td class="imgBook"><img src="GUI/images/8935086838143_2.jpg" alt=""></td>
                             <td class="titleBook">Đắc Nhân Tâm</td>
                             <td class="unit-price">45.000đ</td>
                             <td class="number"><input type="number" name="soluong" value="1" id=""></td>

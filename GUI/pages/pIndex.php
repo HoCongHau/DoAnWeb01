@@ -1,7 +1,5 @@
-<a href="index.php?a=1"></a>
-<?php include(__DIR__."./../modules/mHead.php"); ?>
-<body>
-	<?php include(__DIR__."./../modules/mTopHeader.php");
+<?php 
+	include(__DIR__."./../modules/mTopHeader.php");
 	include(__DIR__."./../modules/mMainHeader.php");
 	include(__DIR__."./../modules/mMenu.php");
 	include(__DIR__."./../modules/mSlidebar.php");
@@ -30,7 +28,4 @@
 			</div>
 		</div> <!-- row -->
 	</div> <!-- container-fluid -->
-	<?php include(__DIR__."./../modules/mFooter.php"); ?>
-</body>
-
-</html>
+<?php include(__DIR__."./../modules/mFooter.php"); ?>

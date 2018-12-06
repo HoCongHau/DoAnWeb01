@@ -11,10 +11,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HIEU_HAU BOOK STORE</title>
+    <?php include_once(__DIR__."./GUI/modules/mHead.php");?>
 </head>
 <body>
     <?php
@@ -25,6 +22,15 @@
         switch($a){
             case 1: 
                 include_once("./GUI/pages/pIndex.php");
+                break;
+            case 2:
+                include_once("./GUI/pages/pLogin.php");
+                break;
+            case 3:
+                include_once("./GUI/pages/pGioHang.php");
+                break;
+            case 4:
+                include_once("./GUI/pages/pCreateAccount.php");
                 break;
         }
     ?>

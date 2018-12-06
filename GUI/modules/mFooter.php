@@ -7,4 +7,4 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
 <script src="GUI/js/myScript.js"></script>
 <script src="GUI/js/wow.js"></script>
-<script> new WOW().init(); </script>
+<script> <?php new WOW().init(); ?></script>
