@@ -23,6 +23,20 @@ body, html{
     padding: 0;
     text-align: right;
 }
+.hienThiTen{
+    font-style: italic;
+    color: yellow;
+}
+a.btnLogout {
+    color: #fff!important;
+    transition: 0.4s;
+    cursor: pointer;
+    padding: 7px 11px;
+}
+
+a.btnLogout:hover {
+    background: #1981d8;
+}
 #top-header ul li {
     list-style: none;
     display: inline-block;

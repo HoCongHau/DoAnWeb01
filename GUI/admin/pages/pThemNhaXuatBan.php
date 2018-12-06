@@ -15,14 +15,14 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-6 tenLoaiSP">
                                     <label for="txtTenNXB">Nhập tên nhà xuất bản</label>
-                                    <input type="text" name="txtTenNXB" require>
+                                    <input type="text" name="txtTenNXB" required>
                                 </div>
                                 <div class="col-xs-12 col-md-6 logoNXB">
                                     <label for="txtLogoNXB">Chọn logo nhà xuất bản</label>
-                                    <input type="file" name="txtLogoNXB" id="" require>
+                                    <input type="file" name="txtLogoNXB" id="" required>
                                 </div>
                                 <div class="col-12 text-right">
-                                    <button type="submit" class="btn btn-outline-info btnThem">Thêm nhà xuất bản</button>
+                                    <button type="submit" class="btn btn-outline-info btnThem" value="btnThem">Thêm nhà xuất bản</button>
                                 </div>
                             </div> <!-- end row -->
                         </form> <!-- end form -->

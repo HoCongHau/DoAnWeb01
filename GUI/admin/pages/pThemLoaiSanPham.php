@@ -14,7 +14,7 @@
                         <form action="#" method="get" class="frmThemSP">
                             <div class="row">
                                 <div class="col-12 tenLoaiSP">
-                                    <input type="text" name="txtTenLoaiSanPham" placeholder="Nhập tên loại sản phẩm..." require>
+                                    <input type="text" name="txtTenLoaiSanPham" placeholder="Nhập tên loại sản phẩm..." required>
                                 </div>
                                 <div class="col-12 text-right">
                                     <button type="submit" class="btn btn-outline-info btnThem">Thêm loại sản phẩm</button>

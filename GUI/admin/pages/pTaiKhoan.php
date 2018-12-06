@@ -34,7 +34,7 @@
                                 <table class="table table-hover text-center">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Sửa</th>
+                                            <th scope="col">Sửa</th>
                                             <th scope="col">Xóa</th>
                                             <th scope="col">Mã TK</th>
                                             <th scope="col">Tên TK</th>

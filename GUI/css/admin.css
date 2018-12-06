@@ -89,6 +89,13 @@ div#main-header {
     font-weight: bold;
     text-transform: capitalize;
 }
+#content .them a{
+    color: #03A9F4!important;
+    text-decoration: none;
+}
+#content .them:hover a{
+    color: #fff!important;
+}
 #content a{
     color: #000!important;
 }
@@ -155,6 +162,22 @@ div#main-header {
 }
 #content .btnThem{
     margin: 15px 0;
+}
+table.table-frm-create {
+    margin: auto;
+}
+table.table-frm-create b{color: red;}
+p.titleFrm{
+    color: #03A9F4;
+    font-weight: bold;
+}
+input[type="submit"] {
+    margin: 15px auto;
+    display: flex;
+}
+input[type="text"],input[type="password"], select{
+    border: none;
+    border-bottom: 1px solid #03A9F4;
 }
 /*-------------------------------- them san pham----------------------------------------*/
 form.frmThemSP {
