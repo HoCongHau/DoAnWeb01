@@ -21,6 +21,7 @@
         include("./GUI/modules/mLogin/mLogin.php");
     ?>
     <?php
+
         $a=1;
         if(isset($_GET['a']))
             $a=$_GET['a'];
@@ -32,21 +33,23 @@
                 include("./GUI/modules/mLogin/exLogin.php");
                 break;
             case 3:
-                include("./GUI/pages/pGioHang.php");
+                if(isset($_SESSION['uid'])!=null)
+                    include("./GUI/pages/pGioHang.php");
+                else
+                    echo "Bạn phải đăng nhập";
                 break;
             case 4:
                 include("./GUI/pages/pCreateAccount.php");
                 break;
             case 5:
-                include("./GUI/modules/mLogin/frmLogin.php");
-                break;
-            case 6:
                 include("./GUI/modules/mLogin/exLogout.php");
                 break;
             case 404:
                 include("./GUI/pages/pError.php");
                 break;
         }
+
+
     ?>
     <?php include("./GUI/modules/mFooter.php");?>
 </body>

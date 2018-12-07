@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Hieu Hau BookStore</title>
-        <link rel="stylesheet" href="../../css/admin.css">
-        <link rel="stylesheet" href="../../css/all.min.css" >
-        <link rel="stylesheet" href="../../css/fontawesome.min.css" >
-        <link rel="stylesheet" href="../../css/bootstrap.min.css" >
-        <script src="../../js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="GUI/css/admin.css">
+        <link rel="stylesheet" href="GUI/css/all.min.css" >
+        <link rel="stylesheet" href="GUI/css/fontawesome.min.css" >
+        <link rel="stylesheet" href="GUI/css/bootstrap.min.css" >
+        <script src="GUI/js/bootstrap.min.js"></script>
     </head>
