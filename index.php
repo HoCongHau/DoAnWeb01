@@ -19,6 +19,14 @@
 <body>
     <?php
         include("./GUI/modules/mLogin/mLogin.php");
+        include("./BUS/LoaiSachBUS.php");
+        include("./DAO/LoaiSachDAO.php");
+        include("./BUS/NhaXuatBanBUS.php");
+        include("./DAO/NhaXuatBanDAO.php");
+        include("./DAO/SachDAO.php");
+        include("./BUS/SachBUS.php");
+        include("./DAO/TacGiaDAO.php");
+        include("./BUS/TacGiaBUS.php");
     ?>
     <?php
 

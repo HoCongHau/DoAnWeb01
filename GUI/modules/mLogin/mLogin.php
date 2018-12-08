@@ -19,7 +19,7 @@ else{
         echo "<div id='top-header' class='text-right'>
                 <p> Hello admin, <a href='index.php?a=5'>Đăng xuất</a></p>
                 <p><a href='admin.php?a=1'>Trang Quản Trị</a></p>
-               </div>";
+            </div>";
     }
         //echo "Hieu Dep Trai";
     //echo $_SESSION['uid'];
