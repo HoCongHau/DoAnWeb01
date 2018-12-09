@@ -33,6 +33,7 @@
                                             <th scope="col">Số Lượng tồn</th>
                                             <th scope="col">Mã sách</th>
                                             <th scope="col">Tên sách</th>
+                                            <th scope="col">Xuất Xứ</th>
                                             <th scope="col">Hình ảnh</th>
                                             <th scope="col">Giá sách</th>
                                             <th scope="col">Ngày nhập</th>
@@ -69,6 +70,7 @@
                                                 echo "<td class='soLuongTon'>$sachDTO->SoLuongTon</td>";
                                                 echo "<td class='maSach'>$sachDTO->MaSach</td>";
                                                 echo "<td class='tenSach'>$sachDTO->TenSach</td>";
+                                                echo "<td calss='xuatXu'>$sachDTO->XuatXu</td>";
                                                 echo "<td class='hinhAnh'><img src='./../../../../DoAnWeb01/GUI/images/$sachDTO->HinhURL' alt=''></td>";
                                                 echo "<td class='giaSach'>$sachDTO->GiaSach</td>";
                                                 echo "<td class='ngNhap'>$sachDTO->NgayNhap</td>";

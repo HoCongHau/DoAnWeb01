@@ -9,7 +9,7 @@ include_once(__DIR__."/DB.php");
 class SachDAO extends DB{
     // get all sach (cho admin)
     public function GetAll(){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach";
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
@@ -22,6 +22,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];
@@ -34,7 +35,7 @@ class SachDAO extends DB{
 
     // get all ma chua bi xoa sach (cho user)
     public function GetAllAvailable(){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, XuatXu, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where BiXoa=0";
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
@@ -47,6 +48,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];
@@ -59,7 +61,7 @@ class SachDAO extends DB{
 
     // lay 10 san pham ban chay nhat
     public function GetSachBestSeller(){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where BiXoa=0 
         ORDER by SoLuongBan DESC 
         LIMIT 10";
@@ -74,6 +76,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];
@@ -86,7 +89,7 @@ class SachDAO extends DB{
 
     // lay 10 san pham moi nhat
     public function GetSachNew(){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu,SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where BiXoa=0 
         ORDER by NgayNhap DESC 
         LIMIT 10";
@@ -101,6 +104,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];
@@ -120,7 +124,7 @@ class SachDAO extends DB{
     }
 
     public function GetAllowLimit($start, $limit){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where BiXoa=0
         LIMIT $start, $limit";
         $result=$this->ExecuteQuery($sql);
@@ -134,6 +138,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];
@@ -146,7 +151,7 @@ class SachDAO extends DB{
 
     //get by id
     public function GetByID($id){
-        $sql = "Select TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where MaSach='$id'";
         $result=$this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
@@ -157,6 +162,7 @@ class SachDAO extends DB{
         $sach->NgayNhap = $row["NgayNhap"];
         $sach->SoLuongTon = $row["SoLuongTon"];
         $sach->SoLuongBan = $row["SoLuongBan"];
+        $sach->XuatXu=$row["XuatXu"];
         $sach->SoLuocXem = $row["SoLuocXem"];
         $sach->MoTa = $row["MoTa"];
         $sach->BiXoa=$row["BiXoa"];
@@ -167,7 +173,7 @@ class SachDAO extends DB{
     }
     //get by maLoai
     public function GetByMaLoai($maL){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where MaLoaiSach='$maL'";
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
@@ -180,6 +186,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];
@@ -192,7 +199,7 @@ class SachDAO extends DB{
 
     //get by manhaxuatban
     public function GetByNXB($maNXB){
-        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where MaNhaXuatBan = '$maNXB'";
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
@@ -205,6 +212,7 @@ class SachDAO extends DB{
             $sach->NgayNhap = $row["NgayNhap"];
             $sach->SoLuongTon = $row["SoLuongTon"];
             $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
             $sach->SoLuocXem = $row["SoLuocXem"];
             $sach->MoTa = $row["MoTa"];
             $sach->BiXoa=$row["BiXoa"];

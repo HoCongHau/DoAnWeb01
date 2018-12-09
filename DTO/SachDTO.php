@@ -14,6 +14,7 @@ class SachDTO{
     var $NgayNhap;
     var $SoLuongTon;
     var $SoLuongBan;
+    var $XuatXu;
     var $SoLuocXem;
     var $MoTa;
     var $BiXoa;
@@ -29,6 +30,7 @@ class SachDTO{
         $this->NgayNhap="";
         $this->SoLuongTon=0;
         $this->SoLuongBan =0;
+        $this->XuatXu="";
         $this->SoLuocXem=0;
         $this->MoTa="";
         $this->BiXoa=0;

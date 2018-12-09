@@ -72,7 +72,7 @@
                             echo "<hr>";
                             echo "<p class='moreInfo'><i class='fas fa-eye'></i>&nbsp;Số lượt xem : $sach->SoLuocXem</p>";
                             echo "<p class='moreInfo'><i class='fas fa-file-export'></i>&nbsp;Số lượng bán : $sach->SoLuongBan</p>";
-                            echo "<p class='moreInfo'><i class='fas fa-globe-asia'></i>&nbsp;Xuât xứ : (csdl trống)</p>";
+                            echo "<p class='moreInfo'><i class='fas fa-globe-asia'></i>&nbsp;Xuât xứ : $sach->XuatXu</p>";
                             echo "<p class='moreInfo'><i class='fas fa-print'></i>&nbsp;Nhà xuất bản : $sach->MaNhaXuatBan (xử lý)</p>";
                             echo "<hr>";
                             echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ&nbsp;<i class='fas fa-cart-plus'></i></button>";
