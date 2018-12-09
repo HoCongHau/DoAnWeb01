@@ -61,6 +61,12 @@
             case 7:
                 include("./GUI/modules/mDangKy/exDangKy.php");
                 break;
+            case 8:
+                include ("./GUI/pages/pProductDetail.php");
+                break;
+            case 9:
+                include ("./GUI/pages/pGioHang.php");
+                break;
             case 404:
                 include("./GUI/pages/pError.php");
                 break;

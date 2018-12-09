@@ -165,4 +165,28 @@ class SachDAO extends DB{
 
         return $sach;
     }
+    //get by maLoai
+    public function GetByMaLoai($maL){
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        from sach where MaLoaiSach='$maL'";
+        $result=$this->ExecuteQuery($sql);
+        $lstSach = array();
+        while($row = mysqli_fetch_array($result)){
+            $sach =  new SachDAO();
+            $sach->MaSach = $row["MaSach"];
+            $sach->TenSach = $row["TenSach"];
+            $sach->HinhURL = $row["HinhURL"];
+            $sach->GiaSach = $row["GiaSach"];
+            $sach->NgayNhap = $row["NgayNhap"];
+            $sach->SoLuongTon = $row["SoLuongTon"];
+            $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->SoLuocXem = $row["SoLuocXem"];
+            $sach->MoTa = $row["MoTa"];
+            $sach->BiXoa=$row["BiXoa"];
+            $sach->MaLoaiSach = $row["MaLoaiSach"];
+            $sach->MaNhaXuatBan = $row["MaNhaXuatBan"];
+            $lstSach[] = $sach;
+        }
+        return $lstSach;
+    }
 }

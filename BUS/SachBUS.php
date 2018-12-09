@@ -38,4 +38,13 @@ class SachBUS{
     public function GetAllowLimit($start, $limit){
         return $this->sachDAO->GetAllowLimit($start,$limit);
     }
+
+    //GetByID
+    public function GetByID($id){
+        return $this->sachDAO->GetByID($id);
+    }
+    //getBymaloai sach
+    public function GetByMaLoai($maL){
+        return $this->sachDAO->GetByMaLoai($maL);
+    }
 }
