@@ -108,6 +108,7 @@ table.table-frm-create {
 }
 #bottom-header .logo{
     width: 100%;
+    text-align: center;
 }
 #bottom-header .logo img{
     width: 70%;
@@ -334,6 +335,17 @@ table.table-frm-create {
     border-bottom: 1px dotted #339AF0;
     transition: 0.4s;
     cursor: pointer;
+}
+
+.style-sidebar ul a {
+    color: #000;
+}
+
+.style-sidebar ul a:hover {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-indent: 15px;
 }
 .style-sidebar ul li:hover a{
     text-indent: 20px;

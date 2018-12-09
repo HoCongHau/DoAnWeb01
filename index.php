@@ -67,6 +67,12 @@
             case 9:
                 include ("./GUI/pages/pGioHang.php");
                 break;
+            case 10:
+                include ("./GUI/pages/pProductByTyped.php");
+                break;
+            case 11:
+                include ("./GUI/pages/pProductByNXB.php");
+                break;
             case 404:
                 include("./GUI/pages/pError.php");
                 break;

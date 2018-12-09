@@ -12,7 +12,7 @@
                         <p class="Title"> -- Quản lý sản phẩm -- </p>
                         <div class="row">
                             <div class="col xs-12 col-md-7">
-                                <button type="button" class="btn btn-outline-info them"><a href="../pages/pThemSanPham.php">Thêm sản phẩm</a></button>
+                                <button type="button" class="btn btn-outline-info them"><a href="admin.php?a=7">Thêm sản phẩm</a></button>
                             </div>
                             <div class="col-xs-12 col-md-5 text-right search">
                                 <form action="#" target="" method="GET">

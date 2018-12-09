@@ -7,7 +7,7 @@
             $loaiSachBUS = new LoaiSachBUS();
             $lstLoaiSach= $loaiSachBUS->GetAllAvailable();
             foreach($lstLoaiSach as $loaiSachDTO){
-                echo "<li><a href='#'><i class='fas fa-angle-right'></i>&nbsp;$loaiSachDTO->TenLoaiSach</a></li>";
+                echo "<a href='index.php?a=10&&loaisach=$loaiSachDTO->MaLoaiSach'><li><i class='fas fa-angle-right'></i>&nbsp;$loaiSachDTO->TenLoaiSach</li></a>";
             }
         ?>
     </ul>

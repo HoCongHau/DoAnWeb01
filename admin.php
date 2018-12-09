@@ -52,6 +52,12 @@ if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
             case 6:
                 include ("./GUI/admin/pages/pDonHang.php");
                 break;
+            case 7:
+                include ("./GUI/admin/pages/pThemSanPham.php");
+                break;
+            case 8:
+                include ("./GUI/admin/modules/exThemSanPham.php");
+                break;
         }
 
     }

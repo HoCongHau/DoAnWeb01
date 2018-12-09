@@ -7,7 +7,7 @@
             $nhaXuatBanBUS = new NhaXuatBanBUS();
             $lstNhaXuatBan= $nhaXuatBanBUS->GetAllAvailable();
             foreach($lstNhaXuatBan as $nhaXuatBanDTO){
-                echo "<li><a href='#'><i class='fas fa-angle-right'></i>&nbsp;$nhaXuatBanDTO->TenNhaXuatBan</a></li>";
+                echo "<a href='index.php?a=11&&nxb=$nhaXuatBanDTO->MaNhaXuatBan'><li><i class='fas fa-angle-right'></i>&nbsp;$nhaXuatBanDTO->TenNhaXuatBan</li></a>";
             }
         ?>
     </ul>

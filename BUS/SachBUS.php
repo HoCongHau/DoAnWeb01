@@ -47,4 +47,9 @@ class SachBUS{
     public function GetByMaLoai($maL){
         return $this->sachDAO->GetByMaLoai($maL);
     }
+
+    //GetByNXB sach
+    public function GetByNXB($maNXB){
+        return $this->sachDAO->GetByNXB($maNXB);
+    }
 }
