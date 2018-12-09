@@ -22,7 +22,7 @@
         $pw=$_POST['txtPassWord'];
 
         $sql = "INSERT INTO TAIKHOAN(TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan) 
-        VALUES ('$us', '$pw','$diaChi','$ten','$NgaySinh','$dienThoai', '$email', 0, 222)";
+        VALUES ('$us', '$pw','$ten','$NgaySinh','$diaChi','$dienThoai', '$email', 0, 222)";
 
         $result=$data->ExecuteQuery($sql);
         if($result == false){

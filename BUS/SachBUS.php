@@ -30,4 +30,12 @@ class SachBUS{
     public function GetSachNew(){
         return $this->sachDAO->GetSachNew();
     }
+
+    public function DemSoSach(){
+        return $this->sachDAO->DemSoSach();
+    }
+
+    public function GetAllowLimit($start, $limit){
+        return $this->sachDAO->GetAllowLimit($start,$limit);
+    }
 }

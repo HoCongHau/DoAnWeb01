@@ -30,7 +30,9 @@
 							echo "<img src='../../../DoAnWeb01/GUI/images/$sachDTO->HinhURL' alt=''>";
 							echo "</div>";
 							echo "<div class='wrapper-content-product'>";
-							echo "<p class='Title'>$sachDTO->TenSach</p>";
+							echo "<p class='Title'>";
+							echo _substr($sachDTO->TenSach, 50);
+							echo "</p>";
 							echo " <p class='Price'>$sachDTO->GiaSach đ</p>";
 							echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
 							echo "</div>";

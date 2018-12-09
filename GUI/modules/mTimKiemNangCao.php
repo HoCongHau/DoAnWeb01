@@ -27,10 +27,10 @@
             <select name="tacgia" class="form-control">
                     <option disabled selected>chọn tác giả</option>
                     <?php
-                        $tacGiaBUS =  new TacGiaBUS();
-                        $lstTacGia = $tacGiaBUS->GetAllAvailable();
-                        foreach($lstTacGia as $tacGiaDTO){
-                            echo "option value='$tacGiaDTO->MaTacGia'>$tacGiaDTO->TenTacGia</option>";
+                        $tacgiaBUS = new TacGiaBUS();
+                        $lstTacGia= $tacgiaBUS->GetAllAvailable();
+                        foreach($lstTacGia as $tacgiaDTO){
+                            echo "<option value='$tacgiaDTO->MaTacGia'>$tacgiaDTO->TenTacGia</option>";
                         }
                     ?>
                 </select>

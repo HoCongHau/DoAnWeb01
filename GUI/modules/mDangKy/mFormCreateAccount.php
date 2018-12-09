@@ -18,18 +18,27 @@
                 <td>
                     <select class="" name="txtNgaySinh">
                         <option disabled selected>[Ngày]</option>
-                        <option>1</option>
-                        <option>2</option>
+                        <?php
+                            for($i=1;$i<=31;$i++){
+                                echo "<option value='$i'>$i</option>";
+                            }
+                        ?>
                     </select>
                     <select class="" name="txtThangSinh">
                         <option disabled selected>[Tháng]</option>
-                        <option>1</option>
-                        <option>2</option>
+                        <?php
+                            for($i=1;$i<=12;$i++){
+                                echo "<option value='$i'>$i</option>";
+                            }
+                        ?>
                     </select>
                     <select class="" name="txtNamSinh">
                         <option disabled selected>[Năm]</option>
-                        <option>1</option>
-                        <option>2</option>
+                        <?php
+                            for($i=2018;$i>=1930;$i--){
+                                echo "<option value='$i'>$i</option>";
+                            }
+                        ?>
                     </select>
                 </td>
             </tr>
@@ -38,8 +47,13 @@
                 <td>
                     <select class="" name="txtQueQuan">
                         <option disabled selected>--Chọn thành phố--</option>
-                        <option>Đồng Nai</option>
-                        <option>Lâm Đồng</option>
+                        <?php
+                            $tinhThanhBUS = new TinhThanhBUS();
+                            $lstTinhThanh= $tinhThanhBUS->GetAll();
+                            foreach($lstTinhThanh as $tinhThanhDTO){
+                                echo "<option value='$tinhThanhDTO->TenTinh'>$tinhThanhDTO->TenTinh</option>";
+                            }
+                        ?>
                     </select>
                 </td>
             </tr>

@@ -29,6 +29,10 @@
         include("./BUS/SachBUS.php");
         include("./DAO/TacGiaDAO.php");
         include("./BUS/TacGiaBUS.php");
+        include("./DAO/TinhThanhDAO.php");
+        include("./BUS/TinhThanhBUS.php");
+        // load ham cat chuoi
+        include(__DIR__."/GUI/modules/fCatChuoi.php");
     ?>
     <?php
 

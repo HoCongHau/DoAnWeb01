@@ -13,6 +13,28 @@ body, html{
 .row{
     margin: 0!important;
 }
+
+.row.phanTrang {
+    text-align: center;
+}
+
+.row.phanTrang a, .row.phanTrang span {
+    text-decoration: none;
+    padding: 5px 12px;
+    background: #141515;
+    color: #fff;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+.row.phanTrang a:hover {
+    cursor: pointer;
+    background: #339af0;
+}
+
+.row.phanTrang span {
+    background: #339af0;
+}
 /*  ------------------------------------------TOP HEADER -------------------------------- */
 #top-header{
     height: 35px;

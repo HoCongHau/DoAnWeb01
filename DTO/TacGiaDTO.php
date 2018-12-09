@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Ho Cong Hau
- * Date: 8-12-2018
- * Time: 8:15 PM
+ * Date: 9-12-2018
+ * Time: 2:15 PM
  */
 
 class TacGiaDTO{
@@ -11,6 +11,7 @@ class TacGiaDTO{
     var $TenTacGia;
     var $NgaySinh;
     var $TieuSu;
+    var $BiXoa;
 
     public function __construct()
     {
@@ -18,5 +19,6 @@ class TacGiaDTO{
         $this->TenTacGia="";
         $this->NgaySinh="";
         $this->TieuSu="";
+        $this->BiXoa=0;
     }
 }

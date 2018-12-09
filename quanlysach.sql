@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:4000
--- Generation Time: Dec 09, 2018 at 02:51 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2018 at 10:27 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -300,7 +300,88 @@ CREATE TABLE `taikhoan` (
 INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDangNhap`, `MatKhau`, `TenHienThi`, `NgaySinh`, `DiaChi`, `DienThoai`, `Email`, `BiXoa`, `MaLoaiTaiKhoan`) VALUES
 (2, 'admin', 'admin', 'Admin', '0000-00-00', 'Việt Nam', '01234444555', 'book@gmail.com', 0, 111),
 (3, 'HieuDepTrai', '123', 'Hiếu Đẹp Trai', '0000-00-00', 'Trần Hưng Đạo', '0345970278', 'hieudona8@gmail.com', 0, 222),
-(8, 'HieuDona', '123', 'Lâm Đồng', '0000-00-00', '1-1-1', '0345970278', 'hieudona8@gmail.com', 0, 222);
+(8, 'HieuDona', '123', 'Lâm Đồng', '0000-00-00', '1-1-1', '0345970278', 'hieudona8@gmail.com', 0, 222),
+(11, 'josephhau', 'hau123', 'Hồ Công Hậu', '1998-07-13', 'Đồng Nai', '0962858091', 'hauphubinh013027@gmail.com', 0, 222);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tinhthanh`
+--
+
+CREATE TABLE `tinhthanh` (
+  `MaTinh` int(11) NOT NULL,
+  `TenTinh` varchar(64) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tinhthanh`
+--
+
+INSERT INTO `tinhthanh` (`MaTinh`, `TenTinh`) VALUES
+(1, 'An Giang'),
+(2, 'Bà Rịa - Vũng Tàu'),
+(3, 'Bắc Giang'),
+(4, 'Bắc Kạn'),
+(5, 'Bạc Liêu'),
+(6, 'Bắc Ninh'),
+(7, 'Bến Tre'),
+(8, 'Bình Định'),
+(9, 'Bình Dương'),
+(10, 'Bình Phước'),
+(11, 'Bình Thuận'),
+(12, 'Cà Mau'),
+(13, 'Cao Bằng'),
+(14, 'Đắk Lắk'),
+(15, 'Đắk Nông'),
+(16, 'Điện Biên'),
+(17, 'Đồng Nai'),
+(18, 'Đồng Tháp'),
+(19, 'Gia Lai'),
+(20, 'Hà Giang'),
+(21, 'Hà Nam'),
+(22, 'Hà Tĩnh'),
+(23, 'Hải Dương'),
+(24, 'Hậu Giang'),
+(25, 'Hòa Bình'),
+(26, 'Hưng Yên'),
+(27, 'Khánh Hòa'),
+(28, 'Kiên Giang'),
+(29, 'Kon Tum'),
+(30, 'Lai Châu'),
+(31, 'Lâm Đồng'),
+(32, 'Lạng Sơn'),
+(33, 'Lào Cai'),
+(34, 'Long An'),
+(35, 'Nam Định'),
+(36, 'Nghệ An'),
+(37, 'Ninh Bình'),
+(38, 'Ninh Thuận'),
+(39, 'Phú Thọ'),
+(40, 'Quảng Bình'),
+(41, 'Quảng Nam'),
+(42, 'Quảng Ngãi'),
+(43, 'Quảng Ninh'),
+(44, 'Quảng Trị'),
+(45, 'Sóc Trăng'),
+(46, 'Sơn La'),
+(47, 'Tây Ninh'),
+(48, 'Thái Bình'),
+(49, 'Thái Nguyên'),
+(50, 'Thanh Hóa'),
+(51, 'Thừa Thiên Huế'),
+(52, 'Tiền Giang'),
+(53, 'Trà Vinh'),
+(54, 'Tuyên Quang'),
+(55, 'Vĩnh Long'),
+(56, 'Vĩnh Phúc'),
+(57, 'Yên Bái'),
+(58, 'Phú Yên'),
+(59, 'Cần Thơ'),
+(60, 'Đà Nẵng'),
+(61, 'Hải Phòng'),
+(62, 'Hà Nội'),
+(63, 'TP HCM');
 
 -- --------------------------------------------------------
 
@@ -380,6 +461,12 @@ ALTER TABLE `taikhoan`
   ADD KEY `fk_TaiKhoan_copy1_LoaiTaiKhoan1` (`MaLoaiTaiKhoan`);
 
 --
+-- Indexes for table `tinhthanh`
+--
+ALTER TABLE `tinhthanh`
+  ADD PRIMARY KEY (`MaTinh`);
+
+--
 -- Indexes for table `tinhtrang`
 --
 ALTER TABLE `tinhtrang`
@@ -417,7 +504,13 @@ ALTER TABLE `sach`
 -- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `MaTaiKhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `MaTaiKhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tinhthanh`
+--
+ALTER TABLE `tinhthanh`
+  MODIFY `MaTinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `tinhtrang`
