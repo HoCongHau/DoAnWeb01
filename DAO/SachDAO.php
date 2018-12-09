@@ -144,5 +144,25 @@ class SachDAO extends DB{
         return $lstSach;
     }
 
+    //get by id
+    public function GetByID($id){
+        $sql = "Select TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        from sach where MaSach='$id'";
+        $result=$this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        $sach =  new SachDAO();
+        $sach->TenSach = $row["TenSach"];
+        $sach->HinhURL = $row["HinhURL"];
+        $sach->GiaSach = $row["GiaSach"];
+        $sach->NgayNhap = $row["NgayNhap"];
+        $sach->SoLuongTon = $row["SoLuongTon"];
+        $sach->SoLuongBan = $row["SoLuongBan"];
+        $sach->SoLuocXem = $row["SoLuocXem"];
+        $sach->MoTa = $row["MoTa"];
+        $sach->BiXoa=$row["BiXoa"];
+        $sach->MaLoaiSach = $row["MaLoaiSach"];
+        $sach->MaNhaXuatBan = $row["MaNhaXuatBan"];
 
+        return $sach;
+    }
 }

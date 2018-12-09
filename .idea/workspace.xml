@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca605014-410f-49f2-acac-1a0a2041697d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAO/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/DB.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DAO/SachDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/DAO/SachDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/modules/mSidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/modules/mSidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pDonHang.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pDonHang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pLoaiSanPham.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pLoaiSanPham.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pNhaXuatBan.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pNhaXuatBan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pTaiKhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pTaiKhoan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pThemLoaiSanPham.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pThemLoaiSanPham.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pThemNhaXuatBan.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pThemNhaXuatBan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pThemSanPham.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pThemSanPham.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/admin/pages/pThemTaiKhoanQTV.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/admin/pages/pThemTaiKhoanQTV.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/modules/mFormCreateAccount.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/modules/mTopHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/modules/mTopHeader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/pages/pCreateAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/pages/pCreateAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/pages/pProductDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/pages/pProductDetail.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,11 +199,12 @@
       <workItem from="1544132715083" duration="18322000" />
       <workItem from="1544278333785" duration="38334000" />
       <workItem from="1544320263322" duration="403000" />
+      <workItem from="1544359349302" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79923000" />
+    <option name="totallyTimeSpent" value="79952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -555,9 +540,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../THUC_HANH/MYDEMO/GUI/pIndex.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../THUC_HANH/MYDEMO/GUI/pIndex.php" />
     <entry file="file://$PROJECT_DIR$/GUI/admin/pages/pTaiKhoan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
