@@ -5,7 +5,7 @@
 				<ul>
 				 	<!-- <li><a href="index.php?a=3"><i class="fas fa-shopping-cart"></i>&nbsp;giỏ hàng</a></li> -->					
 					<li data-toggle="modal" data-target="#login"><i class="fas fa-sign-in-alt"></i>&nbsp;Đăng nhập</li>
-					<li><a href="index.php?a=4"><i class="fas fa-key"></i>&nbsp;đăng ký</a></li>
+					<li><a href="index.php?a=6"><i class="fas fa-key"></i>&nbsp;đăng ký</a></li>
 				</ul>
 			</div>
 		</div>

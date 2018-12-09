@@ -16,8 +16,23 @@ include_once("./DAO/DB.php");
 <body>
 
 <?php
+    include "./DTO/TaiKhoanDTO.php";
+    include "./DAO/TaiKhoanDAO.php";
+    include "./BUS/TaiKhoanBUS.php";
+    include "./DTO/SachDTO.php";
+    include "./DAO/SachDAO.php";
+    include "./BUS/SachBUS.php";
+    include "./DTO/LoaiSachDTO.php";
+    include "./DAO/LoaiSachDAO.php";
+    include "./BUS/LoaiSachBUS.php";
+    include "./DTO/NhaXuatBanDTO.php";
+    include "./DAO/NhaXuatBanDAO.php";
+    include "./BUS/NhaXuatBanBUS.php";
+    include "./DTO/DonHangDTO.php";
+    include "./DAO/DonHangDAO.php";
+    include "./BUS/DonHangBUS.php";
 
-    if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
+if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
         $a=1;
         if(isset($_GET['a']))
             $a=$_GET['a'];
@@ -26,7 +41,16 @@ include_once("./DAO/DB.php");
                 include("./GUI/admin/pages/pAdmin.php");
                 break;
             case 3:
-                include "./GUI/admin/pages/pLoaiSanPham.php";
+                include("./GUI/admin/pages/pLoaiSanPham.php");
+                break;
+            case 4:
+                include ("./GUI/admin/pages/pNhaXuatBan.php");
+                break;
+            case 5:
+                include ("./GUI/admin/pages/pTaiKhoan.php");
+                break;
+            case 6:
+                include ("./GUI/admin/pages/pDonHang.php");
                 break;
         }
 

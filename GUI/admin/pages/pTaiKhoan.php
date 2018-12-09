@@ -1,12 +1,11 @@
-<?php include("../modules/mHead.php"); ?>
-<body>
+<?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include("../modules/mHeader.php");?>
+            <?php include(__DIR__."./../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include("../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../modules/mSidebar.php");?>
 
                     <!-- vung content -->
                     <div id="content" class="col-xs-12 col-md-9">
@@ -40,6 +39,7 @@
                                             <th scope="col">Tên TK</th>
                                             <th scope="col">Mật Khẩu</th>
                                             <th scope="col">Tên Hiển Thị</th>
+                                            <th scope="col">Ngày sinh</th>
                                             <th scope="col">Địa Chỉ</th>
                                             <th scope="col">Điện thoại</th>
                                             <th scope="col">Email</th>
@@ -47,8 +47,9 @@
                                             <th scope="col">Bị Xóa</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
-                                        <tr>
+                                       <!-- <tr>
                                             <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
                                             <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
                                             <td class="maTK">1</td>
@@ -60,20 +61,34 @@
                                             <td class="email">hieuhauboolstore@gmail.com</td>
                                             <td class="loaiTK">Admin</td>
                                             <td class="biXoa"><i class="fas fa-times"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maTK">2</td>
-                                            <td class="tenTK">Hồ Công Hậu</td>
-                                            <td class="matKhau">e99a18c428cb38d5f260853678922e03</td>
-                                            <td class="tenHT">josephhau</td>
-                                            <td class="diaChi">Lý Thường Kiệt, phường 15, quận 11, TPHCM</td>
-                                            <td class="dienThoai">0513159921</td>
-                                            <td class="email">hauphubinh013027@gmail.com</td>
-                                            <td class="loaiTK">User</td>
-                                            <td class="biXoa"><i class="fas fa-times"></i></td>
-                                        </tr>
+                                        </tr> -->
+                                       <?php
+                                            $taiKhoanBUS=new TaiKhoanBUS();
+                                            $lstTaiKhoan=$taiKhoanBUS->GetAll();
+                                            foreach ($lstTaiKhoan as $taiKhoanDTO) {
+
+
+                                                echo "<tr>";
+                                                echo "<td class='edit'><a href=''><i class='fas fa-edit'></i></a> </td>";
+                                                echo "<td class='remove'><a href='' onclick=confirm('Xóa_Tài_Khoản?') ><i class='fas fa-trash-alt'></i></a></td>";
+                                                echo "<td class='maTK'>$taiKhoanDTO->MaTaiKhoan</td>";
+                                                echo "<td class='tenTK'>$taiKhoanDTO->TenDangNhap</td>";
+                                                echo "<td class='matKhau'>$taiKhoanDTO->MatKhau</td>";
+                                                echo "<td class='tenHT'>$taiKhoanDTO->TenHienThi</td>";
+                                                echo "<td class='ngaySinh'>$taiKhoanDTO->NgaySinh</td>";
+                                                echo "<td class='diaChi'>$taiKhoanDTO->DiaChi</td>";
+                                                echo "<td class='dienThoai'>$taiKhoanDTO->DienThoai</td>";
+                                                echo "<td class='email'>$taiKhoanDTO->Email</td>";
+                                                $tenLoai;
+                                                if($taiKhoanDTO->MaLoaiTaiKhoan==222)
+                                                    $tenLoai="User";
+                                                else
+                                                    $tenLoai="Admin";
+                                                echo "<td class='loaiTK'>$tenLoai</td>";
+                                                echo "<td class='biXoa'><i class='fas fa-times'></i></td>";
+                                                echo "</tr>";
+                                            }
+                                       ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -83,10 +98,3 @@
             </div> <!-- end main -->
         </div>
     </div>
-    <div class="container-fluid">
-        <div id="footer">
-            <p>Copyright &copy; 2018. Thiết kế và duy trì bởi Hiếu Hậu Bookstrore</p>
-        </div>
-    </div> <!-- container-fluid -->
-</body>
-</html>

@@ -1,12 +1,11 @@
-<?php include("../modules/mHead.php"); ?>
-<body>
+<?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include("../modules/mHeader.php");?>
+            <?php include(__DIR__."./../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include("../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../modules/mSidebar.php");?>
 
                     <!-- vung content -->
                     <div id="content" class="col-xs-12 col-md-9">
@@ -26,10 +25,3 @@
             </div> <!-- end main -->
         </div>
     </div>
-    <div class="container-fluid">
-        <div id="footer">
-            <p>Copyright &copy; 2018. Thiết kế và duy trì bởi Hiếu Hậu Bookstrore</p>
-        </div>
-    </div> <!-- container-fluid -->
-</body>
-</html>

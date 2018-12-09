@@ -1,12 +1,11 @@
-<?php include("../modules/mHead.php"); ?>
-<body>
+<?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include("../modules/mHeader.php");?>
+            <?php include(__DIR__."./../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include("../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../modules/mSidebar.php");?>
 
                     <!-- vung content -->
                     <div id="content" class="col-xs-12 col-md-9">
@@ -43,7 +42,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <!--
+                                        <tr class="daXoa">
                                             <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
                                             <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
                                             <td class="maNXB">001</td>
@@ -51,14 +51,21 @@
                                             <td class="logo"><img src="../../images/kimdong.png" alt=""></td>
                                             <td class="biXoa"><i class="fas fa-times"></i></td>
                                         </tr>
-                                        <tr  class="daXoa">
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maNXB">002</td>
-                                            <td class="tenNXB">Phương Nam</td>
-                                            <td class="logo"><img src="../../images/phuongnam.jpg" alt=""></td>
-                                            <td class="biXoa"><i class="fas fa-check"></i></td>
-                                        </tr>
+                                        -->
+                                        <?php
+                                            $nhaXB= new NhaXuatBanBUS();
+                                            $lstNXB=$nhaXB->GetAll();
+                                            foreach ($lstNXB as $item) {
+                                                echo "<tr>";
+                                                echo "<td class='edit'><a href=''><i class='fas fa-edit'></i></a> </td>";
+                                                echo "<td class='remove'><a href=''><i class='fas fa-trash-alt'></i></a></td>";
+                                                echo "<td class='maNXB'>$item->MaNhaXuatBan</td>";
+                                                echo "<td class='tenNXB'>$item->TenNhaXuatBan</td>";
+                                                echo "<td class='logo'><img src='./../../../../DoAnWeb01/GUI/images/$item->LogoURL' alt=''></td>";
+                                                echo "<td class='biXoa'><i class='fas fa-check'></i></td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -68,10 +75,3 @@
             </div> <!-- end main -->
         </div>
     </div>
-    <div class="container-fluid">
-        <div id="footer">
-            <p>Copyright &copy; 2018. Thiết kế và duy trì bởi Hiếu Hậu Bookstrore</p>
-        </div>
-    </div> <!-- container-fluid -->
-</body>
-</html>

@@ -30,6 +30,7 @@
                                         <tr>
                                             <th scope="col">Sửa</th>
                                             <th scope="col">Xóa</th>
+                                            <th scope="col">Số Lượng tồn</th>
                                             <th scope="col">Mã sách</th>
                                             <th scope="col">Tên sách</th>
                                             <th scope="col">Hình ảnh</th>
@@ -42,9 +43,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!--
                                         <tr>
                                             <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
                                             <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
+                                            <td class="soLuong">100</td>
                                             <td class="maSach">001</td>
                                             <td class="tenSach">Đắc Nhân Tâm</td>
                                             <td class="hinhAnh"><img src="../../images/8935086838143_2.jpg" alt=""></td>
@@ -55,32 +58,27 @@
                                             <td class="maNXB">5</td>
                                             <td class="biXoa"><i class="fas fa-times"></i></td>
                                         </tr>
-                                        <tr>
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maSach">001</td>
-                                            <td class="tenSach">Đắc Nhân Tâm</td>
-                                            <td class="hinhAnh"><img src="../../images/8935086838143_2.jpg" alt=""></td>
-                                            <td class="giaSach">45.000đ</td>
-                                            <td class="ngNhap">25/12/2017</td>
-                                            <td class="moTa">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum esse pariatur ullam ipsam quasi quam sapiente aperiam veniam temporibus, quos exercitationem eos soluta repudiandae. Illo suscipit sint aspernatur incidunt aliquid.</td>
-                                            <td class="maLoaiSach">1</td>
-                                            <td class="maNXB">5</td>
-                                            <td class="biXoa"><i class="fas fa-times"></i></td>
-                                        </tr>
-                                        <tr class="daXoa">
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maSach">001</td>
-                                            <td class="tenSach">Đắc Nhân Tâm</td>
-                                            <td class="hinhAnh"><img src="../../images/8935086838143_2.jpg" alt=""></td>
-                                            <td class="giaSach">45.000đ</td>
-                                            <td class="ngNhap">25/12/2017</td>
-                                            <td class="moTa">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum esse pariatur ullam ipsam quasi quam sapiente aperiam veniam temporibus, quos exercitationem eos soluta repudiandae. Illo suscipit sint aspernatur incidunt aliquid.</td>
-                                            <td class="maLoaiSach">1</td>
-                                            <td class="maNXB">5</td>
-                                            <td class="biXoa"><i class="fas fa-check"></i></td>
-                                        </tr>
+                                        -->
+                                        <?php
+                                            $sachBUS=new SachBUS();
+                                            $lstSach=$sachBUS->GetAll();
+                                            foreach ($lstSach as $sachDTO){
+                                                echo "<tr>";
+                                                echo "<td class='edit'><a href=''><i class='fas fa-edit'></i></a> </td>";
+                                                echo "<td class='remove'><a href=''><i class='fas fa-trash-alt'></i></a></td>";
+                                                echo "<td class='soLuongTon'>$sachDTO->SoLuongTon</td>";
+                                                echo "<td class='maSach'>$sachDTO->MaSach</td>";
+                                                echo "<td class='tenSach'>$sachDTO->TenSach</td>";
+                                                echo "<td class='hinhAnh'><img src='./../../../../DoAnWeb01/GUI/images/$sachDTO->HinhURL' alt=''></td>";
+                                                echo "<td class='giaSach'>$sachDTO->GiaSach</td>";
+                                                echo "<td class='ngNhap'>$sachDTO->NgayNhap</td>";
+                                                echo "<td class='moTa'>$sachDTO->MoTa</td>";
+                                                echo "<td class='maLoaiSach'>$sachDTO->MaLoaiSach</td>";
+                                                echo "<td class='maNXB'>$sachDTO->MaNhaXuatBan</td>";
+                                                echo "<td class='biXoa'><i class='fas fa-times'></i></td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

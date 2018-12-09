@@ -18,7 +18,9 @@
 </head>
 <body>
     <?php
+        //include mLogin
         include("./GUI/modules/mLogin/mLogin.php");
+        //các lớp tương ứng
         include("./BUS/LoaiSachBUS.php");
         include("./DAO/LoaiSachDAO.php");
         include("./BUS/NhaXuatBanBUS.php");
@@ -46,11 +48,14 @@
                 else
                     echo "Bạn phải đăng nhập";
                 break;
-            case 4:
-                include("./GUI/pages/pCreateAccount.php");
-                break;
             case 5:
                 include("./GUI/modules/mLogin/exLogout.php");
+                break;
+            case 6:
+                include("./GUI/pages/pCreateAccount.php");
+                break;
+            case 7:
+                include("./GUI/modules/mDangKy/exDangKy.php");
                 break;
             case 404:
                 include("./GUI/pages/pError.php");

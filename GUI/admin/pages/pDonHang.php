@@ -1,12 +1,11 @@
-<?php include("../modules/mHead.php"); ?>
-<body>
+<?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include("../modules/mHeader.php");?>
+            <?php include(__DIR__."./../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include("../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../modules/mSidebar.php");?>
 
                     <!-- vung content -->
                     <div id="content" class="col-xs-12 col-md-9">
@@ -32,13 +31,14 @@
                                         <th scope="col">Sửa</th>
                                             <th scope="col">Xóa</th>
                                             <th scope="col">Mã ĐH</th>
-                                            <th scope="col">Tên TK</th>
+                                            <th scope="col">Ma TK</th>
                                             <th scope="col">Ngày Lập</th>
                                             <th scope="col">Tổng tiền</th>
                                             <th scope="col">Tình Trạng</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!--
                                         <tr>
                                             <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
                                             <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
@@ -138,15 +138,23 @@
                                             <td class="tongTien">190.000đ</td>
                                             <td class="tinhTrang daGiao">đã giao</td>
                                         </tr>
-                                        <tr>
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maTK">2</td>
-                                            <td class="tenTK">Hồ Trung Hiếu</td>
-                                            <td class="ngayLap">23/5/2018</td>
-                                            <td class="tongTien">150.000đ</td>
-                                            <td class="tinhTrang daHuy">đã hủy</td>
-                                        </tr>
+                                        -->
+                                        <?php
+                                            $donHangBUS=new DonHangBUS();
+                                            $lstDonHang=$donHangBUS->GetAll();
+                                            foreach ($lstDonHang as $donHang){
+                                                echo "<tr>";
+                                                echo "<td class='edit'><a href=''><i class='fas fa-edit'></i></a> </td>";
+                                                echo "<td class='remove'><a href=''><i class='fas fa-trash-alt'></i></a></td>";
+                                                echo "<td class='maDH'>$donHang->MaDonDatHang</td>";
+                                                echo "<td class='maTaiKhoan'>$donHang->MaTaiKhoan</td>";
+                                                echo "<td class='ngayLap'>$donHang->NgayLap</td>";
+                                                echo "<td class='tongTien'>$donHang->TongThanhTien</td>";
+                                                echo "<td class='tinhTrang daHuy'>$donHang->MaTinhTrang</td>";
+                                                echo "</tr>";
+                                            }
+
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -156,10 +164,3 @@
             </div> <!-- end main -->
         </div>
     </div>
-    <div class="container-fluid">
-        <div id="footer">
-            <p>Copyright &copy; 2018. Thiết kế và duy trì bởi Hiếu Hậu Bookstrore</p>
-        </div>
-    </div> <!-- container-fluid -->
-</body>
-</html>

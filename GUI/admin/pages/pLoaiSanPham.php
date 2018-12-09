@@ -42,6 +42,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!--
                                         <tr  class="daXoa">
                                             <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
                                             <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
@@ -49,13 +50,23 @@
                                             <td class="tenLoaiSP">Khoa Học - Kỹ Thuật</td>
                                             <td class="biXoa"><i class="fas fa-check"></i></td>
                                         </tr>
-                                        <tr>
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maLoaiSP">001</td>
-                                            <td class="tenLoaiSP">Khoa Học - Kỹ Thuật</td>
-                                            <td class="biXoa"><i class="fas fa-times"></i></td>
-                                        </tr>
+                                        -->
+                                        <?php
+                                            $loaiS=new LoaiSachBUS();
+                                            $lstLoaiSach=$loaiS->GetAll();
+
+                                            foreach ($lstLoaiSach as $loaiDTO)
+                                            {
+                                                echo "<tr>";
+                                                echo "<td class='edit'><a href=''><i class='fas fa-edit'></i></a> </td>";
+                                                echo "<td class='remove'><a href=''><i class='fas fa-trash-alt'></i></a></td>";
+                                                echo "<td class='maLoaiSP'>$loaiDTO->MaLoaiSach</td>";
+                                                echo "<td class='tenLoaiSP'>$loaiDTO->TenLoaiSach</td>";
+                                                echo "<td class='biXoa'><i class='fas fa-times'></i></td>";
+                                                echo "</tr>";
+                                            }
+
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

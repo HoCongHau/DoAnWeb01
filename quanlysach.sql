@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 08, 2018 at 02:51 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Host: 127.0.0.1:4000
+-- Generation Time: Dec 09, 2018 at 02:51 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -285,6 +285,7 @@ CREATE TABLE `taikhoan` (
   `TenDangNhap` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `MatKhau` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `TenHienThi` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NgaySinh` date NOT NULL,
   `DiaChi` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
   `DienThoai` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Email` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -296,9 +297,10 @@ CREATE TABLE `taikhoan` (
 -- Dumping data for table `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDangNhap`, `MatKhau`, `TenHienThi`, `DiaChi`, `DienThoai`, `Email`, `BiXoa`, `MaLoaiTaiKhoan`) VALUES
-(2, 'admin', 'admin', 'Admin', 'Việt Nam', '01234444555', 'book@gmail.com', 0, 111),
-(3, 'HieuDepTrai', '123', 'Hiếu Đẹp Trai', 'Trần Hưng Đạo', '0345970278', 'hieudona8@gmail.com', 0, 222);
+INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDangNhap`, `MatKhau`, `TenHienThi`, `NgaySinh`, `DiaChi`, `DienThoai`, `Email`, `BiXoa`, `MaLoaiTaiKhoan`) VALUES
+(2, 'admin', 'admin', 'Admin', '0000-00-00', 'Việt Nam', '01234444555', 'book@gmail.com', 0, 111),
+(3, 'HieuDepTrai', '123', 'Hiếu Đẹp Trai', '0000-00-00', 'Trần Hưng Đạo', '0345970278', 'hieudona8@gmail.com', 0, 222),
+(8, 'HieuDona', '123', 'Lâm Đồng', '0000-00-00', '1-1-1', '0345970278', 'hieudona8@gmail.com', 0, 222);
 
 -- --------------------------------------------------------
 
@@ -415,7 +417,7 @@ ALTER TABLE `sach`
 -- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `MaTaiKhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaTaiKhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tinhtrang`

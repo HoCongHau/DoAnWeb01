@@ -1,6 +1,6 @@
 <div id="create-account">
     <h5 class="title-book">tạo tài khoản</h5>
-    <form action="laythongtindemo.php" target="" method="POST" class="frmCreateAcc">
+    <form action="index.php?a=7" target="" method="POST" class="frmCreateAcc">
         <table class="table-frm-create">
             <tr>
                 <td class="align-right">
@@ -44,6 +44,15 @@
                 </td>
             </tr>
             <tr>
+                <td class="align-right"><label for="txtDienThoai">Điện Thoại <b>*</b></label></td>
+                <td> <input type="text" name="txtDienThoai" required></td>
+            </tr>
+            <tr>
+                <td class="align-right"><label for="txtEmail">Email <b>*</b></label></td>
+                <td> <input type="text" name="txtEmail" required></td>
+            </tr>
+
+            <tr>
                 <td class="align-right">
                     <!-- Thong tin tai khoan -->
                     <p class="titleFrm">Thông tin tài khoản</p>
@@ -57,12 +66,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="align-right">  <label for="txtPassword">Mật khẩu <b>*</b></label></td>
-                <td><input type="password" name="txtPassword" required></td>
+                <td class="align-right">  <label for="txtPassWord">Mật khẩu <b>*</b></label></td>
+                <td><input type="password" name="txtPassWord" required></td>
             </tr>
             <tr>
-                <td class="align-right"><label for="txtRePassword">Xác nhận mật khẩu <b>*</b></label></td>
-                <td><input type="password" name="txtRePassword" required></td>
+                <td class="align-right"><label for="txtRePassWord">Xác nhận mật khẩu <b>*</b></label></td>
+                <td><input type="password" name="txtRePassWord" required></td>
             </tr>
             <tr>
                 <td class="align-right">
@@ -73,7 +82,7 @@
             </tr>
             <tr>
                 <td class="align-right"><label>Mã kiểm tra</label></td>
-                <td><img src="../images/capcha.png" alt=""></td>
+                <td><img src="../../images/capcha.png" alt=""></td>
             </tr>
             <tr>
                 <td class="align-right"><label for="txtMaKiemTra">Nhập mã kiểm tra <b>*</b></label></td>
