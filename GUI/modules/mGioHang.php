@@ -14,6 +14,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!--
                         <tr>
                             <td class="remove"><i class="fas fa-trash-alt"></i></td>
                             <td class="imgBook"><img src="Gui/images/8935086838143_2.jpg" alt=""></td>
@@ -22,17 +23,33 @@
                             <td class="number"><input type="number" name="soluong" value="1" id=""></td>
                             <td class="result">45.000đ</td>
                         </tr>
-                        <tr>
-                            <td class="remove"><i class="fas fa-trash-alt"></i></td>
-                            <td class="imgBook"><img src="GUI/images/8935086838143_2.jpg" alt=""></td>
-                            <td class="titleBook">Đắc Nhân Tâm</td>
-                            <td class="unit-price">45.000đ</td>
-                            <td class="number"><input type="number" name="soluong" value="1" id=""></td>
-                            <td class="result">45.000đ</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h3 class="text-right tongtien">Tổng tiền : 250.000đ</h3>
+                        -->
+                        <?php
+                            $tongTienPT=0;
+                            if(!empty($_SESSION["cart"])) {
+                                $result=$_SESSION["cart"];
+                                foreach ($result as $row){
+                                    $img=$row['image'];
+                                    $price=$row['price'];
+                                    $name=$row['name'];
+                                    $soLuong=$row['sl'];
+                                    $tongTien=(int)$price*(int)$soLuong;
+                                    $tongTienPT+=$tongTien;
+                                    echo "<tr>";
+                                    echo "<td class='remove'><i class='fas fa-trash-alt'></i></td>";
+                                    echo "<td class='imgBook'><img src='GUI/images/$img' alt=''></td>";
+                                    echo "<td class='titleBook'>$name</td>";
+                                    echo "<td class='unit-price'>$price đ</td>";
+                                    echo "<td class='number'><input type='number' name='soluong' value='$soLuong' id=''></td>";
+                                    echo "<td class='result'>$tongTien đ</td>";
+                                    echo "</tr>";
+                                }
+                            }
+                       //bắt đầu xử lý #
+                    echo"</tbody>";
+                echo"</table>";
+                echo "<h3 class='text-right tongtien'>Tổng tiền : $tongTienPT</h3>";
+                        ?>
             </div>
         </div>
         <div class="row btnEventCart text-right">

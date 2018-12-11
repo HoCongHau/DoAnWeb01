@@ -39,4 +39,13 @@ class NhaXuatBanDAO extends DB{
         }
         return $lstNXB;
     }
+
+    //lay tên nhà xuất bản
+    public function GetName($id)
+    {
+        $sql="SELECT TenNhaXuatBan FROM NHAXUATBAN WHERE MaNhaXuatBan='$id'";
+        $result=$this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        return $row['TenNhaXuatBan'];
+    }
 }

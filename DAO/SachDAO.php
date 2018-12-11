@@ -151,11 +151,12 @@ class SachDAO extends DB{
 
     //get by id
     public function GetByID($id){
-        $sql = "Select TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        $sql = "Select MaSach ,TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where MaSach='$id'";
         $result=$this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         $sach =  new SachDAO();
+        $sach->MaSach = $row["MaSach"];
         $sach->TenSach = $row["TenSach"];
         $sach->HinhURL = $row["HinhURL"];
         $sach->GiaSach = $row["GiaSach"];

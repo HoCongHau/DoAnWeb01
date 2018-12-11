@@ -60,6 +60,21 @@
                             $id = $_GET['id'];
                             $sachBUS = new SachBUS();
                             $sach = $sachBUS->GetByID($id);
+                            $nhaXBBUS=new NhaXuatBanBUS();
+                            $ma=$sach->MaNhaXuatBan;
+                            $tenNXB=$nhaXBBUS->GetName($ma);
+
+                            //lấy tên tac gia:
+
+                            $tacGiaBUS=new TacGiaBUS();
+                            $tenTG=$tacGiaBUS->GetNameForm($id);
+                            $te="null";
+                            if(!empty($tenTG))
+                            {
+                                $tacGDTO=$TenTG[0];
+                                $te=$tacGDTO->TenGacGia;
+                            }
+
 
                             echo "<div class='row'>";
                             echo "<div class='col-xs-12 col-md-5 img-book'>";
@@ -67,15 +82,20 @@
                             echo "</div>";
                             echo "<div class='col-xs-12 col-md-7 info-book'>";
                             echo "<p class='titleBook'>$sach->TenSach</p>";
-                            echo "<p class='authorBook'>Tác giả : $sach->MaLoaiSach (xử lý)</p>";
+                            echo "<p class='authorBook'>Tác giả : $te</p>";
                             echo "<p class='priceBook'>Giá bán : $sach->GiaSach đ</p>";
                             echo "<hr>";
                             echo "<p class='moreInfo'><i class='fas fa-eye'></i>&nbsp;Số lượt xem : $sach->SoLuocXem</p>";
                             echo "<p class='moreInfo'><i class='fas fa-file-export'></i>&nbsp;Số lượng bán : $sach->SoLuongBan</p>";
                             echo "<p class='moreInfo'><i class='fas fa-globe-asia'></i>&nbsp;Xuât xứ : $sach->XuatXu</p>";
-                            echo "<p class='moreInfo'><i class='fas fa-print'></i>&nbsp;Nhà xuất bản : $sach->MaNhaXuatBan (xử lý)</p>";
+                            echo "<p class='moreInfo'><i class='fas fa-print'></i>&nbsp;Nhà xuất bản : $tenNXB</p>";
                             echo "<hr>";
-                            echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ&nbsp;<i class='fas fa-cart-plus'></i></button>";
+
+                            echo "<form action='index.php?a=12&id=$sach->MaSach' target='' method='post'>";
+                            echo "<button type='submit' value='Submit' class='btn btn-info' >Thêm vào giỏ&nbsp;<i class='fas fa-cart-plus'></i></button>";
+                            //echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
+                            echo "</form>";
+
                             echo "</div>";
                             echo "</div>";
 
@@ -98,7 +118,7 @@
                             foreach ($lstSach as $sachDTO) {
                                 echo "<div class='item''>";
                                 echo "<div class='product''>";
-                                echo "<form action='#' target='' method='GET'>";
+                                echo "<form action='index.php?a=12&id=$sachDTO->MaSach' target='' method='post'>";
                                 echo "<div class='wrapper-img-product'>";
                                 //
                                 echo "<a class='product-img' href='index.php?a=8&id=$sachDTO->MaSach'>";
@@ -106,7 +126,8 @@
                                 echo "</a>";
                                 echo "</div>";
                                 echo "<div class='wrapper-content-product'>";
-                                echo "<p class='Title'>$sachDTO->MaNhaXuatBan (Nhà xuất bản)</p>";
+                                echo _substr($sachDTO->TenSach, 40);
+                                //echo "<p class='Title'>$sachDTO->TenSach</p>";
                                 echo "<p class='Price'>$sachDTO->GiaSach đ</p>";
                                 echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
                                 echo "</div>";

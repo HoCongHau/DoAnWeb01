@@ -25,7 +25,7 @@
 						foreach($lstSach as $sachDTO){
 							echo "<div class='item'>";
 							echo " <div class='product'>";
-							echo "<form action='#' target='' method='GET'>";
+							echo "<form action='index.php?a=12&id=$sachDTO->MaSach' target='' method='post'>";
 							echo " <div class='wrapper-img-product'>";
                             echo "<a class='product-img' href='index.php?a=8&id=$sachDTO->MaSach'>";
                             echo "<img src='../../../DoAnWeb01/GUI/images/$sachDTO->HinhURL' alt=''>";

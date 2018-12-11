@@ -41,4 +41,40 @@ class TacGiaDAO extends DB{
         }
         return $lstTacGia;
     }
+
+    public function GetByID($id){
+        $sql = "Select MaTacGia, TenTacGia, NgaySinh, TieuSu, BiXoa from tacgia where MaTacGia='$id'";
+        $result = $this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+            $tacGia = new TacGiaDAO();
+            $tacGia->MaTacGia = $row["MaTacGia"];
+            $tacGia->TenTacGia = $row["TenTacGia"];
+            $tacGia->NgaySinh = $row["NgaySinh"];
+            $tacGia->TieuSu = $row["TieuSu"];
+            $tacGia->BiXoa=$row["BiXoa"];
+
+
+        return $tacGia;
+    }
+
+
+    public function GetNameForm($idS){
+        $sql = "SELECT MaTacGia,TenTacGia,NgaySinh,
+              TieuSu,BiXoa FROM tacgia tg, tacgia_has_sach tgh 
+            WHERE tg.MaTacGia=tgh.TacGia_MaTacGia
+              AND tgh.Sach_MaSach='$idS'";
+
+        $result=$this->ExecuteQuery($sql);
+        $lstTacGia = array();
+        while($row = mysqli_fetch_array($result)){
+            $tacGia = new TacGiaDAO();
+            $tacGia->MaTacGia = $row["MaTacGia"];
+            $tacGia->TenTacGia = $row["TenTacGia"];
+            $tacGia->NgaySinh = $row["NgaySinh"];
+            $tacGia->TieuSu = $row["TieuSu"];
+            $tacGia->BiXoa=$row["BiXoa"];
+            $lstTacGia[]=$tacGia;
+        }
+        return $lstTacGia;
+    }
 }

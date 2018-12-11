@@ -8,6 +8,8 @@
  //include("/GUI/pages/pHead.php"); 
  //include("/GUI/pages/pTopHeader.php");
     session_start();//phải run nó mới sử dụng được
+    //khởi tạo session cart
+    //$_SESSION["cart"]="";
     include_once("./DAO/DB.php");
 //echo 'Current PHP version: ' . phpversion();
 ?>
@@ -33,9 +35,12 @@
         include("./BUS/TinhThanhBUS.php");
         // load ham cat chuoi
         include(__DIR__."/GUI/modules/fCatChuoi.php");
+        //cart
+        //$_SESSION["cart"]="";
+        //include (__DIR__."/GUI/modules/mGioHang/exAddCard.php");
     ?>
     <?php
-
+        //$_SESSION["cart"]="";
         $a=1;
         if(isset($_GET['a']))
             $a=$_GET['a'];
@@ -72,6 +77,9 @@
                 break;
             case 11:
                 include ("./GUI/pages/pProductByNXB.php");
+                break;
+            case 12://cart
+                include ("./GUI/modules/mGioHang/exAddCard.php");
                 break;
             case 404:
                 include("./GUI/pages/pError.php");

@@ -22,4 +22,12 @@ class TacGiaBUS{
     public function GetAllAvailable(){
         return $this->tacGiaDAO->GetAllAvailable();
     }
+
+    public function GetByID($id){
+        return $this->tacGiaDAO->GetByID($id);
+    }
+    public function GetNameForm($idS)
+    {
+        return $this->tacGiaDAO->GetNameForm($idS);
+    }
 }
