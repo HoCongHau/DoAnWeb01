@@ -47,17 +47,17 @@ div#main-header {
 }
 #main #side-bar{
     width: 100%;
-    height: 100%;
     background: #03A9F4;
     padding: 0;
 }
 #main #side-bar h4{
     color: #fff;
     text-align: center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-weight: bold;
     padding: 20px 0;
     background: rgb(2, 127, 185);
+    font-size: 18px;
 }
 #main #side-bar ul li{
     list-style: none;
@@ -79,6 +79,25 @@ div#main-header {
     color: #fff;
     text-decoration: none;
     text-transform: capitalize;
+}
+thead tr {
+    background: #027fb9;
+    color: #fff;
+}
+.ghiChu{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span.blockGhiChu {
+    width: 50px;
+    height: 27px;
+    background: #607d8b;
+    display: inline-block;
+}
+tr i.fa-ban:hover {
+    color: red!important;
 }
 /* --------------------------------------vung content ---------------------------------*/
 #main #content{
@@ -141,6 +160,14 @@ div#main-header {
 #content .hinhAnh img{
     width: 50px;
 }
+
+.frmThemSP .hinhAnh {
+    text-align: center;
+}
+
+.frmThemSP img.hinhSach {
+    width: 25%!important;
+}
 #content .daXoa{
     background: #777777;
 }
@@ -199,6 +226,33 @@ form.frmThemSP textarea{
     border: 1px solid #03A9F4;
     margin-top: 15px;
 }
+.logoNXB {
+    text-align: center;
+}
+.logoNXB img.hinhNXB, img.hinhSach{
+    width: 200px;
+}
+.row.phanTrang {
+    text-align: center;
+}
+
+#content .row.phanTrang a, .row.phanTrang span {
+    text-decoration: none;
+    padding: 5px 12px;
+    background: #141515;
+    color: #fff!important;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+#content .row.phanTrang a:hover {
+    cursor: pointer;
+    background: #339af0;
+}
+
+.row.phanTrang span {
+    background: #339af0;
+}
 /* ------------------------------------------- footer -------------------------------------*/
 #footer{
     background: #339AF0;
@@ -208,4 +262,17 @@ form.frmThemSP textarea{
     margin: 0;
     line-height: 41px;
     color: #fff;
+}
+/* css them tu class tao trong admin.js*/
+tr.trangThaiXoa1{
+    background: #607D8B;
+    color: #8e9fa7;
+}
+
+tr.trangThaiXoa1 img {
+    filter: grayscale(100%);
+}
+
+tr.trangThaiXoa1 i {
+    color: #8e9fa7;
 }

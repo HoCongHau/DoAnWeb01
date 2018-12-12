@@ -23,6 +23,9 @@ class NhaXuatBanBUS{
         return $this->nhaXuatBanDAO->GetAllAvailable();
     }
 
+    public function GetByID($id){
+        return $this->nhaXuatBanDAO->GetByID($id);
+    }
     //lay tên nhà xuất bản
     public function GetName($id){
         return $this->nhaXuatBanDAO->GetName($id);

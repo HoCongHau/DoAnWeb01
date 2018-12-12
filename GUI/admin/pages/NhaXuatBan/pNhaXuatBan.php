@@ -1,18 +1,18 @@
 <?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include(__DIR__."./../modules/mHeader.php");?>
+            <?php include(__DIR__."./../../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include(__DIR__."./../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../../modules/mSidebar.php");?>
 
                     <!-- vung content -->
-                    <div id="content" class="col-xs-12 col-md-9">
+                    <div id="content" class="col-xs-12 col-md-10">
                         <p class="Title"> -- Quản lý nhà xuất bản -- </p>
                         <div class="row">
                             <div class="col xs-12 col-md-7">
-                                <button type="button" class="btn btn-outline-info them"><a href="../pages/pThemNhaXuatBan.php">Thêm nhà xuất bản</a> </button>
+                                <button type="button" class="btn btn-outline-info them"><a href="admin.php?a=11">Thêm nhà xuất bản</a> </button>
                             </div>
                             <div class="col-xs-12 col-md-5 text-right search">
                                 <form action="#" target="" method="GET">
@@ -24,45 +24,39 @@
                             </div>
                         </div> <!-- end row -->
                         <div class="row">
-                            <div class="col-xs-12 col-md-">
-
+                            <div class="col-12 text-right ghiChu">
+                                <span><b>Ghi Chú: </b></span> &nbsp;
+                                <span class="blockGhiChu"></span>&nbsp;
+                                <span>đang đánh dấu xóa</span>
                             </div>
                         </div> <!-- end row -->
                         <div class="row">
                             <div class="table-responsive">
-                                <table class="table table-hover text-center">
+                                <table class="table text-center">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Sửa</th>
-                                            <th scope="col">Xóa</th>
-                                            <th scope="col">Mã Nhà Xuất Bản</th>
+                                            <th scope="col">Mã NXB</th>
                                             <th scope="col">Tên Nhà Xuất Bản</th>
                                             <th scope="col">Logo Thương Hiệu</th>
-                                            <th scope="col">Bị Xóa</th>
+                                            <th scope="col">Sửa</th>
+                                            <th scope="col">Tạm Xóa/Gỡ Xóa</th>
+                                            <th scope="col">Xóa hoàn toàn</th>
+                                            <!-- <th scope="col">Bị Xóa</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!--
-                                        <tr class="daXoa">
-                                            <td class="edit"><a href=""><i class="fas fa-edit"></i></a> </td>
-                                            <td class="remove"><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                                            <td class="maNXB">001</td>
-                                            <td class="tenNXB">Kim Đồng</td>
-                                            <td class="logo"><img src="../../images/kimdong.png" alt=""></td>
-                                            <td class="biXoa"><i class="fas fa-times"></i></td>
-                                        </tr>
-                                        -->
                                         <?php
                                             $nhaXB= new NhaXuatBanBUS();
                                             $lstNXB=$nhaXB->GetAll();
                                             foreach ($lstNXB as $item) {
-                                                echo "<tr>";
-                                                echo "<td class='edit'><a href=''><i class='fas fa-edit'></i></a> </td>";
-                                                echo "<td class='remove'><a href=''><i class='fas fa-trash-alt'></i></a></td>";
+                                                echo "<tr class='trangThaiXoa$item->BiXoa'>";
                                                 echo "<td class='maNXB'>$item->MaNhaXuatBan</td>";
                                                 echo "<td class='tenNXB'>$item->TenNhaXuatBan</td>";
                                                 echo "<td class='logo'><img src='./../../../../DoAnWeb01/GUI/images/$item->LogoURL' alt=''></td>";
-                                                echo "<td class='biXoa'><i class='fas fa-check'></i></td>";
+                                                echo "<td class='edit'><a href='admin.php?a=13&&id=$item->MaNhaXuatBan'><i class='fas fa-edit'></i></a> </td>";
+                                                echo "<td class='remove'><a href='admin.php?a=106&&id=$item->MaNhaXuatBan&&status=$item->BiXoa'><i class='fas fa-eraser'></i></a></td>";
+                                                echo "<td class='remove'><a href='admin.php?a=107&&id=$item->MaNhaXuatBan'><i class='fas fa-trash-alt'></i></a></td>";
+                                                /* echo "<td class='biXoa'><i class='fas fa-check'></i></td>"; */
                                                 echo "</tr>";
                                             }
                                         ?>

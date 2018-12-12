@@ -59,6 +59,32 @@ class SachDAO extends DB{
         return $lstSach;
     }
 
+    // get all theo ngay nhap giam dan
+    public function GetAllDescDate(){
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, XuatXu, SoLuongBan, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        from sach Order by NgayNhap DESC";
+        $result=$this->ExecuteQuery($sql);
+        $lstSach = array();
+        while($row = mysqli_fetch_array($result)){
+            $sach =  new SachDAO();
+            $sach->MaSach = $row["MaSach"];
+            $sach->TenSach = $row["TenSach"];
+            $sach->HinhURL = $row["HinhURL"];
+            $sach->GiaSach = $row["GiaSach"];
+            $sach->NgayNhap = $row["NgayNhap"];
+            $sach->SoLuongTon = $row["SoLuongTon"];
+            $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
+            $sach->SoLuocXem = $row["SoLuocXem"];
+            $sach->MoTa = $row["MoTa"];
+            $sach->BiXoa=$row["BiXoa"];
+            $sach->MaLoaiSach = $row["MaLoaiSach"];
+            $sach->MaNhaXuatBan = $row["MaNhaXuatBan"];
+            $lstSach[] = $sach;
+        }
+        return $lstSach;
+    }
+
     // lay 10 san pham ban chay nhat
     public function GetSachBestSeller(){
         $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
@@ -123,6 +149,42 @@ class SachDAO extends DB{
         return $row["Total"];
     }
 
+    public function DemTatCaSach(){
+        $sql = "Select count(MaSach) as Total from sach";
+        $result=$this->ExecuteQuery($sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row["Total"];
+    }
+
+    // lấy danh sách tất cả sản phẩm theo giới hạn
+    public function GetAllAllowLimit($start, $limit){
+        $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
+        from sach
+        LIMIT $start, $limit";
+        $result=$this->ExecuteQuery($sql);
+        $lstSach = array();
+        while($row = mysqli_fetch_array($result)){
+            $sach =  new SachDAO();
+            $sach->MaSach = $row["MaSach"];
+            $sach->TenSach = $row["TenSach"];
+            $sach->HinhURL = $row["HinhURL"];
+            $sach->GiaSach = $row["GiaSach"];
+            $sach->NgayNhap = $row["NgayNhap"];
+            $sach->SoLuongTon = $row["SoLuongTon"];
+            $sach->SoLuongBan = $row["SoLuongBan"];
+            $sach->XuatXu=$row["XuatXu"];
+            $sach->SoLuocXem = $row["SoLuocXem"];
+            $sach->MoTa = $row["MoTa"];
+            $sach->BiXoa=$row["BiXoa"];
+            $sach->MaLoaiSach = $row["MaLoaiSach"];
+            $sach->MaNhaXuatBan = $row["MaNhaXuatBan"];
+            $lstSach[] = $sach;
+        }
+        return $lstSach;
+    }
+
+
+    // lấy danh sách sản phẩm theo giới hạn mà không bị đánh dấu xóa
     public function GetAllowLimit($start, $limit){
         $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
         from sach where BiXoa=0

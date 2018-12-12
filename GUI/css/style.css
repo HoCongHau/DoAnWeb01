@@ -117,6 +117,11 @@ table.table-frm-create {
     margin: auto;
     text-align: center;
 }
+
+i.iconMainHeader {
+    font-size: 43px;
+    color: #339af0;
+}
 #bottom-header .search{
     display: flex;
     justify-content: center;

@@ -17,6 +17,11 @@ class TaiKhoanBUS{
         return $this->taiKhoanDAO->GetAll();
     }
 
+    public function GetById($id){
+        return $this->taiKhoanDAO->GetById($id);
+    }
+
+
     public function DeleteByID($id){
         return $this->taiKhoanDAO->DeleteByID($id);
     }

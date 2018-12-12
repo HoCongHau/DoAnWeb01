@@ -23,6 +23,10 @@ class SachBUS{
         return $this->sachDAO->GetAllAvailable();
     }
 
+    public function GetAllDescDate(){
+        return $this->sachDAO->GetAllDescDate();
+    }
+
     public function GetSachBestSeller(){
         return $this->sachDAO->GetSachBestSeller();
     }
@@ -35,8 +39,16 @@ class SachBUS{
         return $this->sachDAO->DemSoSach();
     }
 
+    public function DemTatCaSach(){
+        return $this->sachDAO->DemTatCaSach();
+    }
+
     public function GetAllowLimit($start, $limit){
         return $this->sachDAO->GetAllowLimit($start,$limit);
+    }
+
+    public function GetAllAllowLimit($start, $limit){
+        return $this->sachDAO->GetAllAllowLimit($start,$limit);
     }
 
     //GetByID

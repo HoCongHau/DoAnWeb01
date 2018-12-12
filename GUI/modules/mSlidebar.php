@@ -1,5 +1,5 @@
 <div id="slidebar">
 		<div class="container-fluid">
-			<img src="GUI/images/banner_web_sach-tieu-thuyet_925x412.jpg" alt="">
+			<img src="GUI/images/bn2.png" alt="">
 		</div>
 </div> <!--  slidebar -->

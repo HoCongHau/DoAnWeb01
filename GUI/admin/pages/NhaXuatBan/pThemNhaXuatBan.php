@@ -1,16 +1,16 @@
 <?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include(__DIR__."./../modules/mHeader.php");?>
+            <?php include(__DIR__."./../../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include(__DIR__."./../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../../modules/mSidebar.php");?>
 
                     <!-- vung content -->
-                    <div id="content" class="col-xs-12 col-md-9">
+                    <div id="content" class="col-xs-12 col-md-10">
                         <p class="Title"> -- Thêm nhà xuất bản -- </p>
-                        <form action="#" method="get" class="frmThemSP">
+                        <form action="admin.php?a=108" method="POST" class="frmThemSP">
                             <div class="row">
                                 <div class="col-xs-12 col-md-6 tenLoaiSP">
                                     <label for="txtTenNXB">Nhập tên nhà xuất bản</label>

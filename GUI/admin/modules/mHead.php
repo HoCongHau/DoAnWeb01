@@ -10,4 +10,5 @@
         <link rel="stylesheet" href="GUI/css/fontawesome.min.css" >
         <link rel="stylesheet" href="GUI/css/bootstrap.min.css" >
         <script src="GUI/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>

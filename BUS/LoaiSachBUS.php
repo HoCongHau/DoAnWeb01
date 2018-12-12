@@ -22,4 +22,8 @@ class LoaiSachBUS{
     public function GetAllAvailable(){
         return $this->loaiSachDAO->GetAllAvailable();
     }
+
+    public function GetWithName($maLoaiSach){
+        return $this->loaiSachDAO->GetWithName($maLoaiSach);
+    }
 }

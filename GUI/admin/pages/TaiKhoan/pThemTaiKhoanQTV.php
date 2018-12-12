@@ -1,17 +1,17 @@
 <?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include(__DIR__."./../modules/mHeader.php");?>
+            <?php include(__DIR__."./../../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include(__DIR__."./../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../../modules/mSidebar.php");?>
 
                     <!-- vung content -->
-                    <div id="content" class="col-xs-12 col-md-9">
+                    <div id="content" class="col-xs-12 col-md-10">
                         <p class="Title"> -- Thêm quản trị viên -- </p>
                         <div id="create-account">
-                        <form action="#" target="" method="GET" class="frmCreateAcc">
+                        <form action="admin.php?a=110" target="" method="POST" class="frmCreateAcc">
                             <table class="table-frm-create">
                                 <tr>
                                     <td class="align-right">
@@ -48,14 +48,27 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                <tr>
                                     <td class="align-right"><label for="txtQueQuan">Bạn sống tại</label></td>
                                     <td>
                                         <select class="" name="txtQueQuan">
                                             <option disabled selected>--Chọn thành phố--</option>
-                                            <option>Đồng Nai</option>
-                                            <option>Lâm Đồng</option>
+                                            <?php
+                                                $tinhThanhBUS = new TinhThanhBUS();
+                                                $lstTinhThanh= $tinhThanhBUS->GetAll();
+                                                foreach($lstTinhThanh as $tinhThanhDTO){
+                                                    echo "<option value='$tinhThanhDTO->TenTinh'>$tinhThanhDTO->TenTinh</option>";
+                                                }
+                                            ?>
                                         </select>
                                     </td>
+                                </tr>
+                                <td class="align-right"><label for="txtDienThoai">Điện thoại của bạn</label></td>
+                                    <td> <input type="text" name="txtDienThoai" required></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-right"><label for="txtEmail">Email</label></td>
+                                    <td> <input type="text" name="txtEmail" required></td>
                                 </tr>
                                 <tr>
                                     <td class="align-right">

@@ -16,17 +16,8 @@
         $maNXB = $_POST['txtNXB'];
         $moTa = $_POST['txtMoTa'];
 
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
         $ngaynhap = date('Y-m-d H:i:s');
-
-        /* echo $tenSach;
-        echo $hinhURL;
-        echo $giaBan;
-        echo $soLuongTon;
-        echo $xuatXu;
-        echo $maLoaiSach;
-        echo $maNXB;
-        echo $moTa;
-        echo $ngaynhap;  */
 
         $sql = "INSERT INTO sach(TenSach,HinhURL,GiaSach,NgayNhap,SoLuongTon,XuatXu,MaLoaiSach,MaNhaXuatBan,MoTa,SoLuongBan,SoLuocXem) 
                         VALUES ('$tenSach', '$hinhURL','$giaBan','$ngaynhap','$soLuongTon','$xuatXu', '$maLoaiSach', '$maNXB', '$moTa',0,0)";
@@ -34,10 +25,10 @@
         $result = $data->ExecuteQuery($sql);
         if($result == false){
             //do some thing
-            echo "Thêm không thành công";
+            echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
         }
         else{
-            echo "Bạn đã thêm sách thành công<br>";
-        }  
+            echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
+        } 
     }
 ?>

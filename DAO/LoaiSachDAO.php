@@ -37,4 +37,14 @@ class LoaiSachDAO extends DB{
         }
         return $lstLoaiSach;
     }
+
+    // get ten loai khi truyen vao id
+    public function GetWithName($maLoaiSanPham){
+        $sql = "Select TenLoaiSach from loaisach where MaLoaiSach = $maLoaiSanPham";
+        $result = $this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        $loaiSach = new LoaiSachDAO();
+        $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
+        return $loaiSach;
+    } 
 }

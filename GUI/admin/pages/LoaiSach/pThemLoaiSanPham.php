@@ -1,16 +1,16 @@
 <?php //include("../modules/mHead.php"); ?>
     <div class="container-fluid">
         <div class="row">
-            <?php include(__DIR__."./../modules/mHeader.php");?>
+            <?php include(__DIR__."./../../modules/mHeader.php");?>
             <div id="main">
                 <div class="row">
                     <!-- vung side-bar -->
-                    <?php include(__DIR__."./../modules/mSidebar.php");?>
+                    <?php include(__DIR__."./../../modules/mSidebar.php");?>
 
                     <!-- vung content -->
-                    <div id="content" class="col-xs-12 col-md-9">
+                    <div id="content" class="col-xs-12 col-md-10">
                         <p class="Title"> -- Thêm loại sản phẩm -- </p>
-                        <form action="#" method="get" class="frmThemSP">
+                        <form action="admin.php?a=102" method="POST" class="frmThemSP">
                             <div class="row">
                                 <div class="col-12 tenLoaiSP">
                                     <input type="text" name="txtTenLoaiSanPham" placeholder="Nhập tên loại sản phẩm..." required>

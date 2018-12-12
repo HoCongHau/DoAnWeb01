@@ -1,4 +1,4 @@
-<div id="side-bar" class="col-xs-12 col-md-3">
+<div id="side-bar" class="col-xs-12 col-md-2">
     <h4>Danh sách quản lý</h4>
     <ul>
         <li><a href="admin.php?a=1"><i class="fas fa-angle-right"></i>&nbsp;Quản lý sản phẩm</a></li>

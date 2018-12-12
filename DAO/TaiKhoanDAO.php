@@ -9,7 +9,7 @@ class TaiKhoanDAO extends DB
 {
     //get all account
     public function GetAll(){
-        $sql="SELECT MaTaiKhoan,TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan FROM TAIKHOAN";
+        $sql="SELECT MaTaiKhoan,TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan FROM TAIKHOAN Order by MaLoaiTaiKhoan";
         $result = $this->ExecuteQuery($sql);
         $lstTaiKhoan=array();
         while ($row=mysqli_fetch_array($result)){
@@ -27,6 +27,25 @@ class TaiKhoanDAO extends DB
             $lstTaiKhoan[]=$taiKhoan;
         }
         return $lstTaiKhoan;
+    }
+
+    //get by id
+    public function GetById($id){
+        $sql="SELECT MaTaiKhoan,TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan FROM TAIKHOAN where MaTaiKhoan = $id";
+        $result = $this->ExecuteQuery($sql);
+        $row=mysqli_fetch_array($result);
+        $taiKhoan=new TaiKhoanDTO();
+        $taiKhoan->MaTaiKhoan=$row['MaTaiKhoan'];
+        $taiKhoan->TenDangNhap=$row['TenDangNhap'];
+        $taiKhoan->MatKhau=$row['MatKhau'];
+        $taiKhoan->TenHienThi=$row['TenHienThi'];
+        $taiKhoan->NgaySinh=$row['NgaySinh'];
+        $taiKhoan->DiaChi=$row['DiaChi'];
+        $taiKhoan->DienThoai=$row['DienThoai'];
+        $taiKhoan->Email=$row['Email'];
+        $taiKhoan->BiXoa=$row['BiXoa'];
+        $taiKhoan->MaLoaiTaiKhoan=$row['MaLoaiTaiKhoan'];
+        return $taiKhoan;
     }
 
 

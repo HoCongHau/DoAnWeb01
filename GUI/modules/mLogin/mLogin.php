@@ -17,7 +17,9 @@ else{
         //lúc này admin ở trang người dùng
         //include(__DIR__."./../../../GUI/admin/modules/mHeader.php");
         echo "<div id='top-header' class='text-right'>
-                <p> Hello admin, <a href='index.php?a=5'>Đăng xuất</a></p>
+                <p> Hello ,";
+                echo $_SESSION['TenHienThi'];
+                echo "<a href='index.php?a=5'>Đăng xuất</a></p>
                 <p><a href='admin.php?a=1'>Trang Quản Trị</a></p>
             </div>";
     }

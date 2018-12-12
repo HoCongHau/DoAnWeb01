@@ -48,4 +48,15 @@ class NhaXuatBanDAO extends DB{
         $row = mysqli_fetch_array($result);
         return $row['TenNhaXuatBan'];
     }
+
+    // get by id
+    public function GetByID($id){
+        $sql = "Select TenNhaXuatBan ,LogoURL from nhaxuatban where MaNhaXuatBan='$id'";
+        $result=$this->ExecuteQuery($sql);
+        $row = mysqli_fetch_array($result);
+        $nxb =  new NhaXuatBanDAO();
+        $nxb->TenNhaXuatBan = $row["TenNhaXuatBan"];
+        $nxb->LogoURL = $row["LogoURL"];
+        return $nxb;
+    }
 }
