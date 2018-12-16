@@ -26,4 +26,8 @@ class LoaiSachBUS{
     public function GetWithName($maLoaiSach){
         return $this->loaiSachDAO->GetWithName($maLoaiSach);
     }
+
+    public function GetAllByKeyWord($key){
+        return $this->loaiSachDAO->GetAllByKeyWord($key);
+    }
 }

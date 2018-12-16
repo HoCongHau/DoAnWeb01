@@ -68,4 +68,27 @@ class TaiKhoanDAO extends DB
         $this->ExecuteQuery($sql);
     }
 
+    //get all account by key word
+    public function GetAllByKeyWord($key){
+        $sql="Select MaTaiKhoan,TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan 
+                FROM TAIKHOAN where TenDangNhap LIKE N'%$key%' Order by MaLoaiTaiKhoan";
+        $result = $this->ExecuteQuery($sql);
+        $lstTaiKhoan=array();
+        while ($row=mysqli_fetch_array($result)){
+            $taiKhoan=new TaiKhoanDTO();
+            $taiKhoan->MaTaiKhoan=$row['MaTaiKhoan'];
+            $taiKhoan->TenDangNhap=$row['TenDangNhap'];
+            $taiKhoan->MatKhau=$row['MatKhau'];
+            $taiKhoan->TenHienThi=$row['TenHienThi'];
+            $taiKhoan->NgaySinh=$row['NgaySinh'];
+            $taiKhoan->DiaChi=$row['DiaChi'];
+            $taiKhoan->DienThoai=$row['DienThoai'];
+            $taiKhoan->Email=$row['Email'];
+            $taiKhoan->BiXoa=$row['BiXoa'];
+            $taiKhoan->MaLoaiTaiKhoan=$row['MaLoaiTaiKhoan'];
+            $lstTaiKhoan[]=$taiKhoan;
+        }
+        return $lstTaiKhoan;
+    }
+
 }

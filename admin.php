@@ -35,6 +35,7 @@ include_once("./DAO/DB.php");
     include("./BUS/TinhThanhBUS.php");
     include("./GUI/modules/fCatChuoi.php");
     include("./GUI/admin/modules/uploadFile.php");
+    include("./GUI/modules/fBoDauTiengViet.php");
 
 if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
         $a=1;

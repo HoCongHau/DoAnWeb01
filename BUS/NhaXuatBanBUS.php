@@ -30,4 +30,8 @@ class NhaXuatBanBUS{
     public function GetName($id){
         return $this->nhaXuatBanDAO->GetName($id);
     }
+
+    public function GetAllByKeyWord($key){
+        return $this->nhaXuatBanDAO->GetAllByKeyWord($key);
+    }
 }

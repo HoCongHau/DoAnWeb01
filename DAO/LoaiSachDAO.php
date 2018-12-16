@@ -47,4 +47,19 @@ class LoaiSachDAO extends DB{
         $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
         return $loaiSach;
     } 
+
+    // get all loai sach theo key word search
+    public function GetAllByKeyWord($key){
+        $sql = "Select MaLoaiSach, TenLoaiSach, BiXoa from loaisach where TenLoaiSach LIKE '%$key%' ";
+        $result = $this->ExecuteQuery($sql);
+        $lstLoaiSach = array();
+        while($row = mysqli_fetch_array($result)){
+            $loaiSach = new LoaiSachDAO();
+            $loaiSach->MaLoaiSach = $row["MaLoaiSach"];
+            $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
+            $loaiSach->BiXoa=$row["BiXoa"];
+            $lstLoaiSach[]=$loaiSach;
+        }
+        return $lstLoaiSach;
+    }
 }

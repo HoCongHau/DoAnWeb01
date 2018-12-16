@@ -38,6 +38,9 @@
         //cart
         //$_SESSION["cart"]="";
         //include (__DIR__."/GUI/modules/mGioHang/exAddCard.php");
+        
+        // ham chuyen doi chu tieng viet co dau ve chu khong dau
+        include(__DIR__."/GUI/modules/fBoDauTiengViet.php");
     ?>
     <?php
         //$_SESSION["cart"]="";

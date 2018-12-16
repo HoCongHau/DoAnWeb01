@@ -15,9 +15,9 @@
                                 <button type="button" class="btn btn-outline-info them"><a href="admin.php?a=11">Thêm nhà xuất bản</a> </button>
                             </div>
                             <div class="col-xs-12 col-md-5 text-right search">
-                                <form action="#" target="" method="GET">
+                                <form action="admin.php?a=4" target="" method="POST">
                                     <div class="input-group">
-                                        <input type="text" name="search" value="" placeholder="Nhập từ khóa cần tìm ..">
+                                        <input type="text" name="search" value="" placeholder="Nhập tên cần tìm ..">
                                         <button type="submit" value="Submit" class="btn btn-info"><i class="fas fa-search"></i></button>
                                     </div>
                                 </form>
@@ -46,19 +46,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $nhaXB= new NhaXuatBanBUS();
-                                            $lstNXB=$nhaXB->GetAll();
-                                            foreach ($lstNXB as $item) {
-                                                echo "<tr class='trangThaiXoa$item->BiXoa'>";
-                                                echo "<td class='maNXB'>$item->MaNhaXuatBan</td>";
-                                                echo "<td class='tenNXB'>$item->TenNhaXuatBan</td>";
-                                                echo "<td class='logo'><img src='./../../../../DoAnWeb01/GUI/images/$item->LogoURL' alt=''></td>";
-                                                echo "<td class='edit'><a href='admin.php?a=13&&id=$item->MaNhaXuatBan'><i class='fas fa-edit'></i></a> </td>";
-                                                echo "<td class='remove'><a href='admin.php?a=106&&id=$item->MaNhaXuatBan&&status=$item->BiXoa'><i class='fas fa-eraser'></i></a></td>";
-                                                echo "<td class='remove'><a href='admin.php?a=107&&id=$item->MaNhaXuatBan'><i class='fas fa-trash-alt'></i></a></td>";
-                                                /* echo "<td class='biXoa'><i class='fas fa-check'></i></td>"; */
-                                                echo "</tr>";
-                                            }
+                                            include(__DIR__."./../../modules/NhaXuatBan/mNhaXuatBan.php");
                                         ?>
                                     </tbody>
                                 </table>

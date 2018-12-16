@@ -64,4 +64,17 @@ class SachBUS{
     public function GetByNXB($maNXB){
         return $this->sachDAO->GetByNXB($maNXB);
     }
+
+    // GetAllBook By KeyWord
+    public function GetBookByKeyWord($book){
+        return $this->sachDAO->GetBookByKeyWord($book);
+    }
+    // GetAllBook By KeyWord Cho Admin
+    public function GetBookByKeyWordForAdmin($book){
+        return $this->sachDAO->GetBookByKeyWordForAdmin($book);
+    }
+
+    public function GetBySearchAdvange($loaisach, $nxb, $giamin, $giamax){
+        return $this->sachDAO->GetBySearchAdvange($loaisach, $nxb, $giamin, $giamax);
+    }
 }

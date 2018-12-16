@@ -15,9 +15,9 @@
                                 <button type="button" class="btn btn-outline-info them"><a href="admin.php?a=12">Thêm tài khoản quản trị viên</a></button>
                             </div>
                             <div class="col-xs-12 col-md-5 text-right search">
-                                <form action="#" target="" method="GET">
+                                <form action="admin.php?a=5" target="" method="POST">
                                     <div class="input-group">
-                                        <input type="text" name="search" value="" placeholder="Nhập từ khóa cần tìm ..">
+                                        <input type="text" name="search" value="" placeholder="Nhập tên cần tìm ..">
                                         <button type="submit" value="Submit" class="btn btn-info"><i class="fas fa-search"></i></button>
                                     </div>
                                 </form>
@@ -50,30 +50,7 @@
 
                                     <tbody>
                                     <?php
-                                            $taiKhoanBUS=new TaiKhoanBUS();
-                                            $lstTaiKhoan=$taiKhoanBUS->GetAll();
-                                            foreach ($lstTaiKhoan as $taiKhoanDTO) {
-
-
-                                                echo "<tr  class='trangThaiXoa$taiKhoanDTO->BiXoa'>";
-                                                
-                                                echo "<td class='maTK'>$taiKhoanDTO->MaTaiKhoan</td>";
-                                                echo "<td class='tenTK'>$taiKhoanDTO->TenDangNhap</td>";
-                                                echo "<td class='matKhau'>$taiKhoanDTO->MatKhau</td>";
-                                                echo "<td class='tenHT'>$taiKhoanDTO->TenHienThi</td>";
-                                                echo "<td class='ngaySinh'>$taiKhoanDTO->NgaySinh</td>";
-                                                echo "<td class='diaChi'>$taiKhoanDTO->DiaChi</td>";
-                                                $tenLoai;
-                                                if($taiKhoanDTO->MaLoaiTaiKhoan==222)
-                                                    $tenLoai="User";
-                                                else
-                                                    $tenLoai="Admin";
-                                                echo "<td class='loaiTK'>$tenLoai</td>";
-                                                echo "<td class='edit'><a href='admin.php?a=15&&id=$taiKhoanDTO->MaTaiKhoan'><i class='fas fa-edit'></i></a> </td>";
-                                                echo "<td class='remove'><a href='admin.php?a=115&&id=$taiKhoanDTO->MaTaiKhoan&&status=$taiKhoanDTO->BiXoa'><i class='fas fa-eraser'></i></a></td>";
-                                                echo "<td class='remove'><a href='admin.php?a=116&&id=$taiKhoanDTO->MaTaiKhoan'><i class='fas fa-trash-alt'></i></a></td>";
-                                                echo "</tr>";
-                                            }
+                                        include(__DIR__."./../../modules/TaiKhoan/mTaiKhoan.php");
                                     ?>
                                     </tbody>
                                 </table>

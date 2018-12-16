@@ -15,10 +15,10 @@
 					khi nhận hàng
 				</div> <!-- thanhtoan -->
 				<div class="col-xs-12 col-md-4 search">
-					<form action="#" target="" method="GET">
+					<form action="index.php" target="" method="GET">
 						<div class="input-group">
-							<input type="text" name="search" value="" placeholder="Nhập từ khóa cần tìm ..">
-							<button type="submit" value="Submit" class="btn btn-info">Tìm kiếm</button>
+							<input type="text" name="search" value="" placeholder="Nhập tên sách cần tìm ..">
+							<button type="submit" class="btn btn-info"><i class="fas fa-search"></i></button>
 						</div>
 					</form>
 				</div> <!-- search -->

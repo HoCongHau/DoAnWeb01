@@ -59,4 +59,21 @@ class NhaXuatBanDAO extends DB{
         $nxb->LogoURL = $row["LogoURL"];
         return $nxb;
     }
+
+    // get all chi danh cho admin theo keyword
+    public function GetAllByKeyWord($key){
+        $sql = "Select MaNhaXuatBan, TenNhaXuatBan, LogoURL, BiXoa from nhaxuatban where TenNhaXuatBan LIKE N'%$key%'";
+        $result = $this->ExecuteQuery($sql);
+        $lstNXB = array();
+        while($row = mysqli_fetch_array($result)){
+            $nhaxuatban = new NhaXuatBanDAO();
+            $nhaxuatban->MaNhaXuatBan = $row["MaNhaXuatBan"];
+            $nhaxuatban->TenNhaXuatBan = $row["TenNhaXuatBan"];
+            $nhaxuatban->LogoURL = $row["LogoURL"];
+            $nhaxuatban->BiXoa=$row["BiXoa"];
+            $lstNXB[]=$nhaxuatban;
+        }
+        return $lstNXB;
+    }
+
 }

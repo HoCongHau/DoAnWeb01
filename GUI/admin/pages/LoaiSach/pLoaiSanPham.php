@@ -16,9 +16,9 @@
                                 <button type="button" class="btn btn-outline-info them"><a href="admin.php?a=9">Thêm loại sản phẩm</a></button>
                             </div>
                             <div class="col-xs-12 col-md-5 text-right search">
-                                <form action="#" target="" method="GET">
+                                <form action="admin.php?a=3" target="" method="POST">
                                     <div class="input-group">
-                                        <input type="text" name="search" value="" placeholder="Nhập từ khóa cần tìm ..">
+                                        <input type="text" name="search" value="" placeholder="Nhập tên cần tìm ..">
                                         <button type="submit" value="Submit" class="btn btn-info"><i class="fas fa-search"></i></button>
                                     </div>
                                 </form>
@@ -46,21 +46,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $loaiS=new LoaiSachBUS();
-                                            $lstLoaiSach=$loaiS->GetAll();
-
-                                            foreach ($lstLoaiSach as $loaiDTO)
-                                            {
-                                                echo "<tr class='trangThaiXoa$loaiDTO->BiXoa'>";
-                                                echo "<td class='maLoaiSP'>$loaiDTO->MaLoaiSach</td>";
-                                                echo "<td class='tenLoaiSP'>$loaiDTO->TenLoaiSach</td>";
-                                                echo "<td class='edit'><a href='admin.php?a=10&&id=$loaiDTO->MaLoaiSach'><i class='fas fa-edit'></i></a> </td>";
-                                                echo "<td class='remove'><a href='admin.php?a=103&&id=$loaiDTO->MaLoaiSach&&status=$loaiDTO->BiXoa'><i class='fas fa-eraser'></i></a></td>";
-                                                echo "<td class='remove'><a href='admin.php?a=104&&id=$loaiDTO->MaLoaiSach'><i class='fas fa-trash-alt'></i></a></td>";
-                                               /*  echo "<td class='biXoa'>$loaiDTO->BiXoa</td>"; */
-                                                echo "</tr>";
-                                            }
-
+                                            include(__DIR__."./../../modules/LoaiSach/mLoaiSach.php");
                                         ?>
                                     </tbody>
                                 </table>

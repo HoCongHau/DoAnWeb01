@@ -29,4 +29,8 @@ class TaiKhoanBUS{
     public function Update($taiKhoan){
         return $this->Update($taiKhoan);
     }
+
+    public function GetAllByKeyWord($key){
+        return $this->taiKhoanDAO->GetAllByKeyWord($key);
+    }
 }
