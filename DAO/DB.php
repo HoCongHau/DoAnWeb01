@@ -7,7 +7,7 @@
  */
 class DB
 {
-    var $db_host='localhost';
+    var $db_host='localhost:4000';
     var $db_username='root';
     var $db_password='';
     var $db_dbName='quanlysach';
