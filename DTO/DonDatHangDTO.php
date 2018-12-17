@@ -5,7 +5,7 @@
  * Date: 09-12-2018
  * Time: 8:09 AM
  */
-class DonHangDTO{
+class DonDatHangDTO{
     var $MaDonDatHang;
     var $NgayLap;
     var $TongThanhTien;

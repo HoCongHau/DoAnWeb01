@@ -140,7 +140,7 @@
                                         </tr>
                                         -->
                                         <?php
-                                            $donHangBUS=new DonHangBUS();
+                                            $donHangBUS=new DonDatHangBUS();
                                             $lstDonHang=$donHangBUS->GetAll();
                                             foreach ($lstDonHang as $donHang){
                                                 echo "<tr>";

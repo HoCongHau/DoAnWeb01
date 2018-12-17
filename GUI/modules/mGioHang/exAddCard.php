@@ -16,6 +16,7 @@
             //kiểm tra lần thứ 2 mua hàng đã có phần tử mảng chưa
             if(array_key_exists($id,$cart)){
                 $cart[$id]=array(   //mảng 2 chiều
+                    "key"=>$id,
                     "image"=>$sachDTO->HinhURL,
                     "name"=>$sachDTO->TenSach,
                     "price"=>$sachDTO->GiaSach,
@@ -26,6 +27,7 @@
             else{
                 //nếu như sản phẩm khác
                 $cart[$id]=array(   //mảng 2 chiều
+                    "key"=>$id,
                     "image"=>$sachDTO->HinhURL,
                     "name"=>$sachDTO->TenSach,
                     "price"=>$sachDTO->GiaSach,
@@ -36,6 +38,7 @@
         else{
             //lần đầu mua hàng chưa có giỏ hàng
             $cart[$id]=array(   //mảng 2 chiều
+                "key"=>$id,
                 "image"=>$sachDTO->HinhURL,
                 "name"=>$sachDTO->TenSach,
                 "price"=>$sachDTO->GiaSach,
@@ -51,10 +54,28 @@
     }
     else{
         //quay lại trang chủ
+        echo "<script type='text/javascript'>location='index.php';</script>";
     }
 //echo "<script type='text/javascript'>location='index.php';</script>";
-
+//quay lại trang hiện tại sau khi add sp
 echo "<script> window.history.back();</script>";
     //mua xong quay ve trang chu
     //header("location:index.php=1");
     //print teest
+?>
+
+<?php
+
+if(isset($_POST['submit'])){
+
+    foreach($_POST['sl'] as $key => $val) {
+        if($val==0) {
+            unset($_SESSION['cart'][$key]);
+        }else{
+            $_SESSION['cart'][$key]['quantity']=$val;
+        }
+    }
+
+}
+
+?>

@@ -33,12 +33,19 @@
         include("./BUS/TacGiaBUS.php");
         include("./DAO/TinhThanhDAO.php");
         include("./BUS/TinhThanhBUS.php");
+        //đơn hàng
+        include("./DAO/DonDatHangDAO.php");
+        include("./BUS/DonDatHangBUS.php");
+        include("./DAO/ChiTietDonDatHangDAO.php");
+        include("./BUS/ChiTietDonDatHangBUS.php");
+        include("./DTO/DonDatHangDTO.php");
+        include("./DTO/ChiTietDonDatHangDTO.php");
         // load ham cat chuoi
         include(__DIR__."/GUI/modules/fCatChuoi.php");
         //cart
         //$_SESSION["cart"]="";
         //include (__DIR__."/GUI/modules/mGioHang/exAddCard.php");
-        
+
         // ham chuyen doi chu tieng viet co dau ve chu khong dau
         include(__DIR__."/GUI/modules/fBoDauTiengViet.php");
     ?>
@@ -83,6 +90,12 @@
                 break;
             case 12://cart
                 include ("./GUI/modules/mGioHang/exAddCard.php");
+                break;
+            case 13://xoa san pham
+                include("./GUI/modules/mGioHang/delete.php");
+                break;
+            case 14://update sp
+                include("./GUI/modules/mGioHang/UpdateCart.php");
                 break;
             case 404:
                 include("./GUI/pages/pError.php");
