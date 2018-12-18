@@ -27,10 +27,26 @@ class TaiKhoanBUS{
     }
 
     public function Update($taiKhoan){
-        return $this->Update($taiKhoan);
+        return $this->taiKhoanDAO->Update($taiKhoan);
     }
 
     public function GetAllByKeyWord($key){
         return $this->taiKhoanDAO->GetAllByKeyWord($key);
     }
+
+    // đánh dấu xoá tài khoản
+    public function SetDelete($id){
+        return $this->taiKhoanDAO->SetDelete($id);
+    }
+
+    // huỷ đánh dấu xoá tài khoản
+    public function UnSetDelete($id){
+        return $this->taiKhoanDAO->UnSetDelete($id);
+    }
+
+    // thêm tài khoản admin
+    public function InsertAdmin($taiKhoan){
+        return $this->taiKhoanDAO->InsertAdmin($taiKhoan);
+    }
+
 }

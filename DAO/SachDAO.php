@@ -159,7 +159,7 @@ class SachDAO extends DB{
     // lấy danh sách tất cả sản phẩm theo giới hạn
     public function GetAllAllowLimit($start, $limit){
         $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
-        from sach
+        from sach ORDER By NgayNhap DESC
         LIMIT $start, $limit";
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
@@ -187,8 +187,8 @@ class SachDAO extends DB{
     // lấy danh sách sản phẩm theo giới hạn mà không bị đánh dấu xóa
     public function GetAllowLimit($start, $limit){
         $sql = "Select MaSach, TenSach, HinhURL, GiaSach, NgayNhap, SoLuongTon, SoLuongBan, XuatXu, SoLuocXem, MoTa, BiXoa, MaLoaiSach, MaNhaXuatBan 
-        from sach where BiXoa=0
-        LIMIT $start, $limit";
+        from sach where BiXoa=0 
+        LIMIT $start, $limit ";
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
@@ -362,5 +362,37 @@ class SachDAO extends DB{
             $lstSach[] = $sach;
         }
         return $lstSach;
+    }
+
+    // xoá sách
+    public function DeleteById($id){
+        $sql = "DELETE  from Sach where MaSach= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // cập nhật sách
+    public function EditById($tenSach, $tenHinh, $giaSach, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa, $maSach){
+        $sql = "UPDATE sach SET TenSach= '$tenSach', HinhURL = '$tenHinh', GiaSach = '$giaSach', SoLuongTon = '$soLuongTon', 
+        XuatXu = '$xuatXu', MaLoaiSach = '$maLoaiSach', MaNhaXuatBan = '$maNXB', MoTa = '$moTa' WHERE MaSach='$maSach'"; 
+        return $this->ExecuteQuery($sql);
+    }
+
+    // đánh dấu xoá
+    public function SetDelete($id){
+        $sql = "UPDATE Sach set BiXoa = 1 where MaSach= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // huỷ đánh dấu xoá
+    public function UnSetDelete($id){
+        $sql = "UPDATE Sach set BiXoa = 0 where MaSach= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // thêm sách
+    public function Insert($tenSach, $hinhURL, $giaBan, $ngaynhap, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa){
+        $sql = "INSERT INTO sach(TenSach,HinhURL,GiaSach,NgayNhap,SoLuongTon,XuatXu,MaLoaiSach,MaNhaXuatBan,MoTa,SoLuongBan,SoLuocXem) 
+                VALUES ('$tenSach', '$hinhURL','$giaBan','$ngaynhap','$soLuongTon','$xuatXu', '$maLoaiSach', '$maNXB', '$moTa',0,0)";
+        return $this->ExecuteQuery($sql);
     }
 }

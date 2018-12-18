@@ -30,4 +30,25 @@ class LoaiSachBUS{
     public function GetAllByKeyWord($key){
         return $this->loaiSachDAO->GetAllByKeyWord($key);
     }
+
+    public function DeleteLoaiSachById($id){
+        return $this->loaiSachDAO->DeleteLoaiSachById($id);
+    }
+
+    public function EditById($id, $ten){
+        return $this->loaiSachDAO->EditById($id, $ten);
+    }
+
+    // đánh dấu xoá loại sản phẩm
+    public function SetDelete($id){
+        return $this->loaiSachDAO->SetDelete($id);
+    }
+    // huỷ đánh dấu xoá loại sản phẩm
+    public function UnSetDelete($id){
+        return $this->loaiSachDAO->UnSetDelete($id);
+    }
+
+    public function Insert($tenLoaiSanPham){
+        return $this->loaiSachDAO->Insert($tenLoaiSanPham);
+    }
 }

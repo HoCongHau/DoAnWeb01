@@ -5,7 +5,6 @@
  * Date: 10-12-2018
  * Time: 12:07 AM
  */
-    $data=new DB();
     if(isset($_POST['txtTenSach'])){
         $tenSach = $_POST['txtTenSach'];
         $hinhURL = $_POST['txtHinhAnh'];
@@ -19,16 +18,13 @@
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $ngaynhap = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO sach(TenSach,HinhURL,GiaSach,NgayNhap,SoLuongTon,XuatXu,MaLoaiSach,MaNhaXuatBan,MoTa,SoLuongBan,SoLuocXem) 
-                        VALUES ('$tenSach', '$hinhURL','$giaBan','$ngaynhap','$soLuongTon','$xuatXu', '$maLoaiSach', '$maNXB', '$moTa',0,0)";
-
-        $result = $data->ExecuteQuery($sql);
-        if($result == false){
-            //do some thing
+        $sachBUS = new SachBUS();
+        if($sachBUS->Insert($tenSach, $hinhURL, $giaBan, $ngaynhap, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa)){
             echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
         }
         else{
-            echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
-        } 
+            echo "<a href='admin.php?a=1'>Quay lại</a> <br/>";
+            echo "Thêm sách không thành công";
+        }   
     }
 ?>

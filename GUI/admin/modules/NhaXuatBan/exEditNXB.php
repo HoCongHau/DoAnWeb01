@@ -14,24 +14,19 @@
     echo $_FILES['photo']['tmp_name'];
 } */
 /* echo dirname(__FILE__.'./'); */
-$data=new DB();
 if(__uploadFile('photo')){
         if (isset($_POST['txtTenNXB']) && isset($_GET['id'])) {
         $tenNXB = $_POST['txtTenNXB'];
         $maNXB = $_GET['id'];
         $tenHinh = __uploadFile('photo');
 
-        $sql = "UPDATE nhaxuatban SET TenNhaXuatBan= '$tenNXB' , LogoURL= '$tenHinh' WHERE MaNhaXuatBan='$maNXB'"; 
-
-        $result = $data->ExecuteQuery($sql);
-
-        if($result == false){
-            //do some thing
-            echo "Khong thanh công";
-            /*  echo "<script type='text/javascript'>location='admin.php?a=3';</script>"; */
+        $nhaXuatBanBUS = new NhaXuatBanBUS();
+        if($nhaXuatBanBUS->EditById($maNXB, $tenNXB, $tenHinh)){
+            echo "<script type='text/javascript'>location='admin.php?a=4';</script>";
         }
         else{
-            echo "<script type='text/javascript'>location='admin.php?a=4';</script>";
+            echo "<a href='admin.php?a=4'>Quay lại</a> <br/>";
+            echo "Cập nhật không thành công";
         }    
     }
 }

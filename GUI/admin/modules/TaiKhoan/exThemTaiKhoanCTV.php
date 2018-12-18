@@ -6,10 +6,23 @@
  * Time: 3:57 PM
  */
     //$data=new DB();
-    $data=new DB();
 
     if(isset($_POST['txtHoTen'])){
-        $ten=$_POST['txtHoTen'];
+        $taiKhoan = new TaiKhoanDTO();
+
+        $taiKhoan->TenHienThi =$_POST['txtHoTen'];
+
+        $ngay=$_POST['txtNgaySinh'];
+        $thang=$_POST['txtThangSinh'];
+        $nam=$_POST['txtNamSinh'];
+        $taiKhoan->NgaySinh=$nam.'-'.$thang.'-'.$ngay;
+
+        $taiKhoan->DiaChi=$_POST['txtQueQuan'];
+        $taiKhoan->DienThoai=$_POST['txtDienThoai'];
+        $taiKhoan->Email = $_POST['txtEmail'];
+        $taiKhoan->TenDangNhap=$_POST['txtUserName'];
+        $taiKhoan->MatKhau = $_POST['txtPassword'];
+       /*  $ten=$_POST['txtHoTen'];
         $ngay=$_POST['txtNgaySinh'];
         $thang=$_POST['txtThangSinh'];
         $nam=$_POST['txtNamSinh'];
@@ -19,18 +32,15 @@
         $dienThoai=$_POST['txtDienThoai'];
         $email=$_POST['txtEmail'];
         $us=$_POST['txtUserName'];
-        $pw=$_POST['txtPassword'];
+        $pw=$_POST['txtPassword']; */
 
-        $sql = "INSERT INTO TAIKHOAN(TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan) 
-        VALUES ('$us', '$pw','$ten','$NgaySinh','$diaChi','$dienThoai', '$email', 0, 111)";
-
-        $result=$data->ExecuteQuery($sql);
-        if($result == false){
-            //do some thing
-            echo "Sai Đăng Ký";
-        }
-        else{
+        $taiKhoanBUS = new TaiKhoanBUS();
+        if($taiKhoanBUS->InsertAdmin($taiKhoan)){
             echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
         }
+        else{
+            echo "<a href='admin.php?a=5'>Quay lại</a> <br/>";
+            echo "Thêm không thành công";
+        }  
 
     }

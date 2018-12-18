@@ -1,7 +1,7 @@
 <?php
     $sachBUS = new SachBUS();
     //$_SESSION["cart"];
-    include(__DIR__."/mTinhToanChoPhanTrang.php");
+    include(__DIR__."./../mTinhToanChoPhanTrang.php");
     if (isset($_GET['search'])){
         $namebook = $_GET['search'];
         $lstSach = $sachBUS->GetBookByKeyWord($namebook);
@@ -18,7 +18,9 @@
             echo "<p class='Title'>";
             echo _substr($sachDTO->TenSach, 50);
             echo "</p>";
-            echo " <p class='Price'>$sachDTO->GiaSach đ</p>";
+            echo " <p class='Price'>";
+            echo number_format($sachDTO->GiaSach,0,"",".");
+            echo " đ</p>";
             echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
             //echo "<input type='submit' value='Thêm vào giỏ'>";
             echo "</div>";
@@ -63,7 +65,9 @@
             echo "<p class='Title'>";
             echo _substr($sachDTO->TenSach, 50);
             echo "</p>";
-            echo " <p class='Price'>$sachDTO->GiaSach đ</p>";
+            echo " <p class='Price'>";
+            echo number_format($sachDTO->GiaSach,0,"",".");
+            echo " đ</p>";
             echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
             //echo "<input type='submit' value='Thêm vào giỏ'>";
             echo "</div>";
@@ -88,7 +92,9 @@
             echo "<p class='Title'>";
             echo _substr($sachDTO->TenSach, 50);
             echo "</p>";
-            echo " <p class='Price'>$sachDTO->GiaSach đ</p>";
+            echo " <p class='Price'>";
+            echo number_format($sachDTO->GiaSach,0,"",".");
+            echo " đ</p>";
             echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
             //echo "<input type='submit' value='Thêm vào giỏ'>";
             echo "</div>";
@@ -96,7 +102,7 @@
             echo "</div> <!-- product -->";
             echo "</div>";
         }
-        include(__DIR__."/mNavigation.php");
+        include(__DIR__."./../mNavigation.php");
     }
     
 ?>

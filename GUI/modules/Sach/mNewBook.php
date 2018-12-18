@@ -35,7 +35,9 @@
 							echo "<p class='Title'>";
 							echo _substr($sachDTO->TenSach, 50);
 							echo "</p>";
-							echo " <p class='Price'>$sachDTO->GiaSach đ</p>";
+							echo " <p class='Price'>";
+							echo number_format($sachDTO->GiaSach,0,"",".");
+							echo " đ</p>";
 							echo "<button type='submit' value='Submit' class='btn btn-info'>Thêm vào giỏ</button>";
 							echo "</div>";
 							echo "</form>";

@@ -5,33 +5,28 @@
  * Date: 10-12-2018
  * Time: 11:09 PM
  */
-    $data=new DB();
+    $loaiSachBUS = new LoaiSachBUS();
     if(isset($_GET['id'])){
         $maLoaiSach = $_GET['id'];
         $trangThai = $_GET['status'];
         if($trangThai==0){
-            $sql = "UPDATE loaisach set BiXoa = 1 where MaLoaiSach= $maLoaiSach";
-
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+            if($loaiSachBUS->SetDelete($maLoaiSach)){
                 echo "<script type='text/javascript'>location='admin.php?a=3';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=3';</script>";
-            }  
+                echo "<a href='admin.php?a=3'>Quay lại</a> <br/>";
+                echo "Đánh dấu xoá không thành công";
+            }
+            
         }
         else if ($trangThai==1){
-            $sql = "UPDATE loaisach set BiXoa = 0 where MaLoaiSach= $maLoaiSach";
-
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+            if($loaiSachBUS->UnSetDelete($maLoaiSach)){
                 echo "<script type='text/javascript'>location='admin.php?a=3';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=3';</script>";
-            }  
+                echo "<a href='admin.php?a=3'>Quay lại</a> <br/>";
+                echo "Huỷ đánh dấu xoá không thành công";
+            }
         }
     }
 ?>

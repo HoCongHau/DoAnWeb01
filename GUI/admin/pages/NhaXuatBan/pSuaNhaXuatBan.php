@@ -25,7 +25,7 @@
                                 <div class="col-xs-12 col-md-6 logoNXB">
                                     <label for="fileUpload">Chọn logo nhà xuất bản</label> <br>
                                     <img id="blah" class="hinhNXB" src="../../../../../DoAnWeb01/GUI/images/<?php echo $lstNXB->LogoURL;?>" alt="your image" />
-                                    <input type='file' onchange="readURL(this);" name="photo" id=""/>                   
+                                    <input type='file' onchange="readURL(this);" name="photo" id="" required/>                   
                                 </div>
                                 <div class="col-12 text-right">
                                     <button type="submit" class="btn btn-outline-info btnThem" name="submit" value="btnThem">Cập nhật NXB</button>

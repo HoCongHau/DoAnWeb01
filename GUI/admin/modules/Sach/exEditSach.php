@@ -14,7 +14,6 @@
     echo $_FILES['photo']['tmp_name'];
 } */
 /* echo dirname(__FILE__.'./'); */
-$data=new DB();
 if(__uploadFile('photo')){
         if (isset($_POST['txtTenSach']) && isset($_GET['id'])) {
         $tenSach = $_POST['txtTenSach'];
@@ -27,37 +26,14 @@ if(__uploadFile('photo')){
         $moTa = $_POST['txtMoTa'];
         $tenHinh = __uploadFile('photo');
 
-/*         echo $tenSach;
-        echo "<br/>";
-        echo $maSach;
-        echo "<br/>";
-        echo $giaSach;
-        echo "<br/>";
-        echo $soLuongTon;
-        echo "<br/>";
-        echo $xuatXu;
-        echo "<br/>";
-        echo $maLoaiSach;
-        echo "<br/>";
-        echo $maNXB;
-        echo "<br/>";
-        echo $moTa;
-        echo "<br/>";
-        echo $tenHinh; */
-
-        $sql = "UPDATE sach SET TenSach= '$tenSach', HinhURL = '$tenHinh', GiaSach = '$giaSach', SoLuongTon = '$soLuongTon', 
-        XuatXu = '$xuatXu', MaLoaiSach = '$maLoaiSach', MaNhaXuatBan = '$maNXB', MoTa = '$moTa' WHERE MaSach='$maSach'"; 
-
-        $result = $data->ExecuteQuery($sql);
-
-        if($result == false){
-            //do some thing
-            echo "Khong thanh công";
-            /*  echo "<script type='text/javascript'>location='admin.php?a=3';</script>"; */
+        $sachBUS = new SachBUS();
+        if($sachBUS->EditById($tenSach,$tenHinh,$giaSach,$soLuongTon,$xuatXu,$maLoaiSach,$maNXB,$moTa,$maSach)){
+            echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
         }
         else{
-            echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
-        }      
+            echo "<a href='admin.php?a=1'>Quay lại</a> <br/>";
+            echo "Cập nhật không thành công";
+        }    
     }
 } 
 ?>

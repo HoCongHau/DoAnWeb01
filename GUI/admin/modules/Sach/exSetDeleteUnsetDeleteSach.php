@@ -5,32 +5,27 @@
  * Date: 11-12-2018
  * Time: 12:01 PM
  */
-    $data=new DB();;
     if(isset($_GET['id'])){
         $maSach = $_GET['id'];
         $trangThai = $_GET['status'];
-        if($trangThai==0){
-            $sql = "UPDATE Sach set BiXoa = 1 where MaSach= $maSach";
 
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+        $sachBUS = new SachBUS();
+        if($trangThai==0){
+            if($sachBUS->SetDelete($maSach)){
                 echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
+                echo "<a href='admin.php?a=1'>Quay lại</a> <br/>";
+                echo "Đánh dấu xoá không thành công";
             }  
         }
         else if ($trangThai==1){
-            $sql = "UPDATE Sach set BiXoa = 0 where MaSach= $maSach";
-
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+            if($sachBUS->UnSetDelete($maSach)){
                 echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
+                echo "<a href='admin.php?a=1'>Quay lại</a> <br/>";
+                echo "Huỷ đánh dấu xoá không thành công";
             }  
         } 
     }

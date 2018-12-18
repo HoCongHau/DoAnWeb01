@@ -77,4 +77,29 @@ class SachBUS{
     public function GetBySearchAdvange($loaisach, $nxb, $giamin, $giamax){
         return $this->sachDAO->GetBySearchAdvange($loaisach, $nxb, $giamin, $giamax);
     }
+
+    // xoá sách
+    public function DeleteById($id){
+        return $this->sachDAO->DeleteById($id);
+    }
+
+    // cập nhật sách
+    public function EditById($tenSach, $tenHinh, $giaSach, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa, $maSach){
+        return $this->sachDAO->EditById($tenSach, $tenHinh, $giaSach, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa, $maSach);
+    }
+
+    // đánh dấu xoá
+    public function SetDelete($id){
+        return $this->sachDAO->SetDelete($id);
+    }
+
+    // huỷ đánh dấu xoá
+    public function UnSetDelete($id){
+        return $this->sachDAO->UnSetDelete($id);
+    }
+
+    // thêm sách
+    public function Insert($tenSach, $hinhURL, $giaBan, $ngaynhap, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa){
+        return $this->sachDAO->Insert($tenSach, $hinhURL, $giaBan, $ngaynhap, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa);
+    }
 }

@@ -5,17 +5,17 @@
  * Date: 11-12-2018
  * Time: 9:23 AM
  */
-    $data=new DB();
     if(isset($_GET['id'])){
         $maTK = $_GET['id'];
-        $sql = "DELETE  from TaiKhoan where MaTaiKhoan= $maTK";
+        
+        $taiKhoanBUS = new TaiKhoanBUS();
 
-        $result = $data->ExecuteQuery($sql);
-        if($result == false){
+        if($taiKhoanBUS->DeleteByID($maTK)){
             echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
         }
         else{
-            echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
+            echo "<a href='admin.php?a=5'>Quay lại</a> <br/>";
+            echo "Xoá không thành công";
         }  
     }
 ?>

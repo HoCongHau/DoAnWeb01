@@ -32,16 +32,22 @@
                                     echo "<td class='remove'><a href='index.php?a=13&id=$id'><i class='fas fa-trash-alt'></i></a></td>";
                                     echo "<td class='imgBook'><img src='GUI/images/$img' alt=''></td>";
                                     echo "<td class='titleBook'>$name</td>";
-                                    echo "<td class='unit-price'>$price đ</td>";
+                                    echo "<td class='unit-price'>";
+                                    echo number_format($price,0,"",".");
+                                    echo "đ</td>";
                                     echo "<td class='number'><input type='number' name='qty[$id]' value='$soLuong' id=''></td>";
-                                    echo "<td class='result'>$tongTien đ</td>";
+                                    echo "<td class='result'>";
+                                    echo number_format($tongTien,0,"",".");
+                                    echo "đ</td>";
                                     echo "</tr>";
                                 }
                             }
                         //bắt đầu xử lý #
                     echo"</tbody>";
                 echo"</table>";
-                echo "<h3 class='text-right tongtien'>Tổng tiền : $tongTienPT</h3>";
+                echo "<h3 class='text-right tongtien'>Tổng tiền : ";
+                echo number_format($tongTienPT,0,"",".");
+                echo "đ</h3>";
                 $_SESSION["TongTien"]=$tongTienPT;
                 //echo "<pre>";
                 //print_r($_SESSION["cart"]);

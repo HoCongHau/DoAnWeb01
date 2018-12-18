@@ -76,4 +76,33 @@ class NhaXuatBanDAO extends DB{
         return $lstNXB;
     }
 
+    // xoá nhà xuất bản
+    public function DeleteById($id){
+        $sql = "DELETE  from NhaXuatBan where MaNhaXuatBan= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // chỉnh sửa nhà xuất bản
+    public function EditById($id, $tenNXB, $tenHinh){
+        $sql = "UPDATE nhaxuatban SET TenNhaXuatBan= '$tenNXB' , LogoURL= '$tenHinh' WHERE MaNhaXuatBan='$id'"; 
+        return $this->ExecuteQuery($sql);
+    }
+
+    // đánh dấu xoá nhà xuất bản
+    public function SetDelete($id){
+        $sql = "UPDATE NhaXuatBan set BiXoa = 1 where MaNhaXuatBan= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // huỷ đánh dấu xoá nhà xuất bản
+    public function UnSetDelete($id){
+        $sql = "UPDATE NhaXuatBan set BiXoa = 0 where MaNhaXuatBan= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    //  thêm nhà xuất bản
+    public function Insert($tenNXB, $hinhURL){
+        $sql = "INSERT INTO NhaXuatBan(TenNhaXuatBan, LogoURL) VALUES ('$tenNXB', '$hinhURL')";
+        return $this->ExecuteQuery($sql);
+    }
 }

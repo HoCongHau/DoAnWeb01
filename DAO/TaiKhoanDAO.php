@@ -52,20 +52,14 @@ class TaiKhoanDAO extends DB
     //xóa tài khoan
     public function  DeleteByID($id){
         $sql="DELETE FROM TAIKHOAN WHERE MaTaiKhoan = '$id'";
-        $result=$this->ExecuteQuery($sql);
-        if($result==false){
-            echo "Không thể xóa";
-        }
-        else{
-            echo "Đã Xóa";
-        }
+        return $result=$this->ExecuteQuery($sql);
     }
 
     //sửa tài khoản
     public function Update($taiKhoan)
     {
-        $sql="UPDATE TAIKHOAN SET TenDangNhap=$taiKhoan->TenDangNhap,MatKhau=$taiKhoan->MatKhau,TenHienThi=$taiKhoan->TenHienThi,NgaySinh=$taiKhoan->NgaySinh,DiaChi=$taiKhoan->DiaChi,DienThoai=$taiKhoan->DienThoai,Email=$taiKhoan->Email,BiXoa=$taiKhoan->BiXoa,MaLoaiTaiKhoan=$taiKhoan->MaLoaiTaiKhoan WHERE MaTaiKhoan=$taiKhoan->MaTaiKhoan";
-        $this->ExecuteQuery($sql);
+        $sql="UPDATE TAIKHOAN SET TenDangNhap='$taiKhoan->TenDangNhap',MatKhau='$taiKhoan->MatKhau',TenHienThi='$taiKhoan->TenHienThi',NgaySinh='$taiKhoan->NgaySinh',DiaChi='$taiKhoan->DiaChi',DienThoai='$taiKhoan->DienThoai',Email='$taiKhoan->Email' WHERE MaTaiKhoan='$taiKhoan->MaTaiKhoan'";
+        return $this->ExecuteQuery($sql);
     }
 
     //get all account by key word
@@ -89,6 +83,25 @@ class TaiKhoanDAO extends DB
             $lstTaiKhoan[]=$taiKhoan;
         }
         return $lstTaiKhoan;
+    }
+
+    // đánh dấu xoá tài khoản
+    public function SetDelete($id){
+        $sql = "UPDATE TaiKhoan set BiXoa = 1 where MaTaiKhoan= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // huỷ đánh dấu xoá tài khoản
+    public function UnSetDelete($id){
+        $sql = "UPDATE TaiKhoan set BiXoa = 0 where MaTaiKhoan= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // thêm tài khoản
+    public function InsertAdmin($taiKhoan){
+        $sql = "INSERT INTO TAIKHOAN(TenDangNhap,MatKhau,TenHienThi,NgaySinh,DiaChi,DienThoai,Email,BiXoa,MaLoaiTaiKhoan) 
+        VALUES('$taiKhoan->TenDangNhap', '$taiKhoan->MatKhau','$taiKhoan->TenHienThi','$taiKhoan->NgaySinh','$taiKhoan->DiaChi','$taiKhoan->DienThoai', '$taiKhoan->Email', 0, 111)";
+        return $this->ExecuteQuery($sql);
     }
 
 }

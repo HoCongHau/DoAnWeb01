@@ -5,18 +5,16 @@
  * Date: 11-12-2018
  * Time: 9:23 AM
  */
-    $data=new DB();
     if(isset($_GET['id'])){
         $maSach = $_GET['id'];
         
-        $sql = "DELETE  from Sach where MaSach= $maSach";
-
-        $result = $data->ExecuteQuery($sql);
-        if($result == false){
+        $sachBUS = new SachBUS();
+        if($sachBUS->DeleteById($maSach)){
             echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
         }
         else{
-            echo "<script type='text/javascript'>location='admin.php?a=1';</script>";
+            echo "<a href='admin.php?a=1'>Quay lại</a> <br/>";
+            echo "Xoá không thành công";
         }   
     }
 ?>

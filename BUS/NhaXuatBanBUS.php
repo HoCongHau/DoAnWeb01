@@ -34,4 +34,28 @@ class NhaXuatBanBUS{
     public function GetAllByKeyWord($key){
         return $this->nhaXuatBanDAO->GetAllByKeyWord($key);
     }
+
+    // xoá nhà xuất bản
+    public function DeleteById($id){
+        return $this->nhaXuatBanDAO->DeleteById($id);
+    }
+
+    public function EditById($id, $tenNXB, $tenHinh){
+        return $this->nhaXuatBanDAO->EditById($id, $tenNXB, $tenHinh);
+    }
+
+    // đánh dấu xoá nhà xuất bản
+    public function SetDelete($id){
+        return $this->nhaXuatBanDAO->SetDelete($id);
+    }
+
+    // huỷ đánh dấu xoá nhà xuất bản
+    public function UnSetDelete($id){
+        return $this->nhaXuatBanDAO->UnSetDelete($id);
+    }
+
+    //  thêm nhà xuất bản
+    public function Insert($tenNXB, $hinhURL){
+        return $this->nhaXuatBanDAO->Insert($tenNXB, $hinhURL);
+    }
 }

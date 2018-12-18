@@ -14,9 +14,8 @@
     echo $_FILES['photo']['tmp_name'];
 } */
 /* echo dirname(__FILE__.'./'); */
-$data=new DB();
 if (isset($_POST['txtUserName']) && isset($_GET['id'])) {
-    $maTK = $_GET['id'];
+    /* $maTK = $_GET['id'];
     $username = $_POST['txtUserName'];
     $pass = $_POST['txtPassword'];
     $tenHienThi = $_POST['txtHoTen'];
@@ -31,36 +30,34 @@ if (isset($_POST['txtUserName']) && isset($_GET['id'])) {
 
     $diaChi=$_POST['txtQueQuan'];
     $dienThoai=$_POST['txtDienThoai'];
-    $email=$_POST['txtEmail'];
+    $email=$_POST['txtEmail']; */
     
-    /* echo $maTK;
-    echo "<br/>";
-    echo $username;
-    echo "<br/>";
-    echo $pass;
-    echo "<br/>";
-    echo $tenHienThi;
-    echo "<br/>";
-    echo $ngaySinh;
-    echo "<br/>";
-    echo $diaChi;
-    echo "<br/>";
-    echo $dienThoai;
-    echo "<br/>";
-    echo $email; */
+    $taiKhoan = new TaiKhoanDTO();
+    $taiKhoan->MaTaiKhoan = $_GET['id'];
+    $taiKhoan->TenDangNhap = $_POST['txtUserName'];
+    $taiKhoan->MatKhau = $_POST['txtPassword'];
+    $taiKhoan->TenHienThi = $_POST['txtHoTen'];
 
-    $sql = "UPDATE taikhoan SET TenDangNhap='$username',MatKhau='$pass',TenHienThi='$tenHienThi',
-    NgaySinh='$ngaySinh',DiaChi='$diaChi',DienThoai='$dienThoai',Email='$email' WHERE MaTaiKhoan = '$maTK'"; 
+    $ngay=$_POST['txtNgaySinh'];
+    $thang=$_POST['txtThangSinh'];
+    $nam=$_POST['txtNamSinh'];
+    $taiKhoan->NgaySinh = $nam.'-'.$thang.'-'.$ngay;
+    if(strlen($taiKhoan->NgaySinh)>10){
+        $taiKhoan->NgaySinh = substr($taiKhoan->NgaySinh,0,10);
+    }
 
-    $result = $data->ExecuteQuery($sql);
+    $taiKhoan->DiaChi = $_POST['txtQueQuan'];
+    $taiKhoan->DienThoai = $_POST['txtDienThoai'];
+    $taiKhoan->Email =$_POST['txtEmail'];
 
-    if($result == false){
-        //do some thing
-        echo "Khong thanh công";
-        /*  echo "<script type='text/javascript'>location='admin.php?a=5';</script>"; */
+    $taiKhoanBUS = new TaiKhoanBUS();
+
+    if($taiKhoanBUS->Update($taiKhoan)){
+        echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
     }
     else{
-        echo "<script type='text/javascript'>location='admin.php?a=5';</script>";     
-    }
+        echo "<a href='admin.php?a=5'>Quay lại</a> <br/>";
+        echo "Cập nhật không thành công";
+    }  
 }
 ?>

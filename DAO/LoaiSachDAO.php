@@ -62,4 +62,34 @@ class LoaiSachDAO extends DB{
         }
         return $lstLoaiSach;
     }
+
+    // xoá loai sach theo id
+    public function DeleteLoaiSachById($id){
+        $sql = "DELETE  from loaisach where MaLoaiSach= $id";
+        return  $this->ExecuteQuery($sql);
+    }
+
+    // sửa loại sách
+    public function EditById($id, $ten){
+        $sql = "UPDATE loaisach SET TenLoaiSach='$ten' WHERE MaLoaiSach = '$id' ";
+        return  $this->ExecuteQuery($sql);
+    }
+
+    // đánh dấu xoá loại sản phẩm
+    public function SetDelete($id){
+        $sql = "UPDATE loaisach set BiXoa = 1 where MaLoaiSach= $id";
+        return  $this->ExecuteQuery($sql);
+    }
+    // huỷ đánh dấu xoá loại sản phẩm
+    public function UnSetDelete($id){
+        $sql = "UPDATE loaisach set BiXoa = 0 where MaLoaiSach= $id";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // thêm loại sản phẩm
+    public function Insert($tenLoaiSanPham){
+        $sql = "INSERT INTO LoaiSach(TenLoaiSach) 
+        VALUES ('$tenLoaiSanPham')";
+        return $this->ExecuteQuery($sql);
+    }
 }

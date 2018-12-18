@@ -5,32 +5,28 @@
  * Date: 11-12-2018
  * Time: 12:01 PM
  */
-    $data=new DB();
+    
     if(isset($_GET['id'])){
         $maNXB = $_GET['id'];
         $trangThai = $_GET['status'];
-        if($trangThai==0){
-            $sql = "UPDATE NhaXuatBan set BiXoa = 1 where MaNhaXuatBan= $maNXB";
 
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+        $nhaXuatBanBUS = new NhaXuatBanBUS();
+        if($trangThai==0){
+            if($nhaXuatBanBUS->SetDelete($maNXB)){
                 echo "<script type='text/javascript'>location='admin.php?a=4';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=4';</script>";
+                echo "<a href='admin.php?a=4'>Quay lại</a> <br/>";
+                echo "Đánh dấu xoá không thành công";
             }  
         }
         else if ($trangThai==1){
-            $sql = "UPDATE NhaXuatBan set BiXoa = 0 where MaNhaXuatBan= $maNXB";
-
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+            if($nhaXuatBanBUS->UnSetDelete($maNXB)){
                 echo "<script type='text/javascript'>location='admin.php?a=4';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=4';</script>";
+                echo "<a href='admin.php?a=4'>Quay lại</a> <br/>";
+                echo "Huỷ đánh dấu xoá không thành công";
             }  
         }
     }

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-12">
 				<ul>
-				 	<!-- <li><a href="index.php?a=3"><i class="fas fa-shopping-cart"></i>&nbsp;giỏ hàng</a></li> -->					
+					<!-- <li><a href="index.php?a=3"><i class="fas fa-shopping-cart"></i>&nbsp;giỏ hàng</a></li> -->					
 					<li data-toggle="modal" data-target="#login"><i class="fas fa-sign-in-alt"></i>&nbsp;Đăng nhập</li>
 					<li><a href="index.php?a=6"><i class="fas fa-key"></i>&nbsp;đăng ký</a></li>
 				</ul>
@@ -11,7 +11,7 @@
 		</div>
 	</div> <!-- top-header -->
 </div> <!--  container-fluid-fluid -->
-<div class="modal" id="login">
+<div class="modal fade" id="login">
 	<div class="modal-dialog">
 		<div class="modal-content">  
 			<!-- Modal Header -->

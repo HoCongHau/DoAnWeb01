@@ -5,32 +5,27 @@
  * Date: 11-12-2018
  * Time: 12:01 PM
  */
-    $data=new DB();
     if(isset($_GET['id'])){
         $maTK = $_GET['id'];
         $trangThai = $_GET['status'];
-        if($trangThai==0){
-            $sql = "UPDATE TaiKhoan set BiXoa = 1 where MaTaiKhoan= $maTK";
 
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+        $taiKhoanBUS = new TaiKhoanBUS();
+        if($trangThai==0){
+            if($taiKhoanBUS->SetDelete($maTK)){
                 echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
+                echo "<a href='admin.php?a=5'>Quay lại</a> <br/>";
+                echo "Đánh dấu xoá không thành công";
             }  
         }
         else if ($trangThai==1){
-            $sql = "UPDATE TaiKhoan set BiXoa = 0 where MaTaiKhoan= $maTK";
-
-            $result = $data->ExecuteQuery($sql);
-            if($result == false){
-                //do some thing
+            if($taiKhoanBUS->UnSetDelete($maTK)){
                 echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
             }
             else{
-                echo "<script type='text/javascript'>location='admin.php?a=5';</script>";
+                echo "<a href='admin.php?a=5'>Quay lại</a> <br/>";
+                echo "Huỷ đánh dấu xoá không thành công";
             }  
         }
     }
