@@ -28,4 +28,15 @@ class DonDatHangBUS
         return $this->DonDatHangDAO->CreatID();
     }
 
+    public function EditByIDandStatus($id, $status){
+        return $this->DonDatHangDAO->EditByIDandStatus($id, $status);
+    }
+
+    public function GetByID($id){
+        return $this->DonDatHangDAO->GetByID($id);
+    }
+    public function GetAllByKeyWord($key){
+        return $this->DonDatHangDAO->GetAllByKeyWord($key);
+    }
+
 }

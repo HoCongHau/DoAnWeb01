@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:4000
--- Generation Time: Dec 18, 2018 at 02:20 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2018 at 04:19 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -396,13 +396,6 @@ CREATE TABLE `tinhtrang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tinhtrang`
---
-
-INSERT INTO `tinhtrang` (`MaTinhTrang`, `TenTinhTrang`) VALUES
-(1, 'Đã Đặt Hàng');
-
---
 -- Indexes for dumped tables
 --
 
@@ -524,7 +517,7 @@ ALTER TABLE `tinhthanh`
 -- AUTO_INCREMENT for table `tinhtrang`
 --
 ALTER TABLE `tinhtrang`
-  MODIFY `MaTinhTrang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MaTinhTrang` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

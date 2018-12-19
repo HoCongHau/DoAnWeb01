@@ -21,4 +21,12 @@ class ChiTietDonDatHangBUS
     {
         return $this->ChiTietDonDatHangDAO->Insert($ChiTiet);
     }
+
+    public function GetByMaDonHang($maDonDatHang){
+        return $this->ChiTietDonDatHangDAO->GetByMaDonHang($maDonDatHang);
+    }
+
+    public function GetAll(){
+        return $this->ChiTietDonDatHangDAO->GetAll();
+    }
 }

@@ -102,6 +102,7 @@ tr i.fa-ban:hover {
 /* --------------------------------------vung content ---------------------------------*/
 #main #content{
     padding: 10px;
+    min-height: 700px;
 }
 #main #content .Title{
     font-size: 20px;
@@ -175,10 +176,8 @@ tr i.fa-ban:hover {
     background: red;
 }
 #content .dangGiao{
-    background: green;
 }
 #content .daGiao{
-    background: yellow;
 }
 #content .daHuy{
     background: #777;
@@ -252,6 +251,51 @@ form.frmThemSP textarea{
 
 .row.phanTrang span {
     background: #339af0;
+}
+.blockGhiChuTT{
+    width: 40px;
+    height: 15px;
+    background: #4CAF50;
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+
+span.dangChoXuLy, .blockGhiChuTT1 {
+    background: #FFEB3B;
+}
+
+span.dangDongGoi, .blockGhiChuTT2 {
+    background: #8BC34A;
+}
+
+span.dangGiao, .blockGhiChuTT3 {
+    background: #0cc2b1;
+}
+
+span.daGiao, .blockGhiChuTT4 {
+    background: #9C27B0;
+}
+span.daHuy, .blockGhiChuTT5 {
+    background: rgb(138, 138, 138);
+}
+#content .barGhiChu{
+    padding: 10px;
+}
+input.capNhatTinhTrang {
+    padding: 20px 0;
+    width: 100%;
+    height: 30px;
+}
+.pInPhieu{
+    margin: 0;
+}    
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
 }
 /* ------------------------------------------- footer -------------------------------------*/
 #footer{

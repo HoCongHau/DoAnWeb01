@@ -30,7 +30,7 @@
         foreach ($lstSach as $sachDTO){
             echo "<tr class='trangThaiXoa$sachDTO->BiXoa'>";
             echo "<td class='maSach'>$sachDTO->MaSach</td>";
-            echo "<td class='tenSach'>";
+            echo "<td class='tenSach'>";    
             echo _substr($sachDTO->TenSach,20);
             echo "</td>";
             echo "<td class='hinhAnh'><img src='./../../../../DoAnWeb01/GUI/images/$sachDTO->HinhURL' alt=''></td>";

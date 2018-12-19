@@ -31,6 +31,9 @@ include_once("./DAO/DB.php");
     include "./DTO/DonDatHangDTO.php";
     include "./DAO/DonDatHangDAO.php";
     include "./BUS/DonDatHangBUS.php";
+    include "./DTO/ChiTietDonDatHangDTO.php";
+    include "./DAO/ChiTietDonDatHangDAO.php";
+    include "./BUS/ChiTietDonDatHangBUS.php";
     include("./DAO/TinhThanhDAO.php");
     include("./BUS/TinhThanhBUS.php");
     include("./GUI/modules/fCatChuoi.php");
@@ -55,7 +58,7 @@ if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
                 include ("./GUI/admin/pages/TaiKhoan/pTaiKhoan.php");
                 break;
             case 6:
-                include ("./GUI/admin/pages/pDonHang.php");
+                include ("./GUI/admin/pages/DonHang/pDonHang.php");
                 break;
             case 7:
                 include ("./GUI/admin/pages/Sach/pThemSanPham.php");
@@ -83,6 +86,12 @@ if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
                 break;
             case 15:
                 include("./GUI/admin/pages/TaiKhoan/pSuaTaiKhoan.php");
+                break;
+            case 16:
+                include("./GUI/admin/pages/DonHang/pSuaDonHang.php");
+                break;
+            case 17:
+                include("./GUI/admin/pages/DonHang/pInHoaDon.php");
                 break;
 
             /* ------------------ MODULES LOẠI SÁCH -------------------------- */
@@ -144,6 +153,11 @@ if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
                 break;
             case 114:
                 include("./GUI/admin/modules/Sach/exThemSanPham.php");
+                break;
+
+            /* ------------------ MODULES ĐƠN HÀNG -------------------------- */
+            case 118:
+                include("./GUI/admin/modules/DonHang/exEditTinhTrangDonHang.php");
                 break;
         }
     }

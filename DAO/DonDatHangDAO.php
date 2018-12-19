@@ -54,4 +54,48 @@ class DonDatHangDAO extends DB
         $ma=(int)$ma+1;
         return "DH".$ma;
     }
+
+    // edit by Id and Status
+    public function EditByIDandStatus($id, $status){
+        $sql = "update DonDatHang set MaTinhTrang = '$status' where MaDonDatHang = '$id'";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // Get by id
+    public function GetByID($id){
+        $sql="SELECT MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang 
+                FROM DONDATHANG where MaDonDatHang = '$id'";
+        $resutl=$this->ExecuteQuery($sql);
+        $lstDonDatHang=array();
+        $row=mysqli_fetch_array($resutl);
+
+        $donHang=new DonDatHangDTO();
+        $donHang->MaDonDatHang=$row['MaDonDatHang'];
+        $donHang->NgayLap=$row['NgayLap'];
+        $donHang->TongThanhTien=$row['TongThanhTien'];
+        $donHang->MaTaiKhoan=$row['MaTaiKhoan'];
+        $donHang->MaTinhTrang=$row['MaTinhTrang'];
+
+        return $donHang;
+    }
+
+    // get all chi danh cho admin theo keyword
+    public function GetAllByKeyWord($key){
+    $sql = "Select MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang 
+    FROM DONDATHANG where MaDonDatHang LIKE '%$key%'";
+    $result = $this->ExecuteQuery($sql);
+    $lstNXB = array();
+    while($row = mysqli_fetch_array($result)){
+        $donHang=new DonDatHangDTO();
+        $donHang->MaDonDatHang=$row['MaDonDatHang'];
+        $donHang->NgayLap=$row['NgayLap'];
+        $donHang->TongThanhTien=$row['TongThanhTien'];
+        $donHang->MaTaiKhoan=$row['MaTaiKhoan'];
+        $donHang->MaTinhTrang=$row['MaTinhTrang'];
+
+        $lstDonDatHang[]=$donHang;
+    }
+    return $lstDonDatHang;
+    }
+
 }
