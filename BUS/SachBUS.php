@@ -102,4 +102,9 @@ class SachBUS{
     public function Insert($tenSach, $hinhURL, $giaBan, $ngaynhap, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa){
         return $this->sachDAO->Insert($tenSach, $hinhURL, $giaBan, $ngaynhap, $soLuongTon, $xuatXu, $maLoaiSach, $maNXB, $moTa);
     }
+
+    public function TangLuotXem($maSach){
+        $this->sachDAO->TangLuotXem($maSach);
+    }
+
 }

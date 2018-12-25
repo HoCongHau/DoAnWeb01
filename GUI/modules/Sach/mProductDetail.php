@@ -18,6 +18,9 @@
             $te=$tacGDTO->TenGacGia;
         }
 
+        // cập nhật lược xem
+        $luotXem = $sachBUS->TangLuotXem($id);
+
 
         echo "<div class='row'>";
         echo "<div class='col-xs-12 col-md-5 img-book'>";

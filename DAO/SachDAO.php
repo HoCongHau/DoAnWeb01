@@ -395,4 +395,11 @@ class SachDAO extends DB{
                 VALUES ('$tenSach', '$hinhURL','$giaBan','$ngaynhap','$soLuongTon','$xuatXu', '$maLoaiSach', '$maNXB', '$moTa',0,0)";
         return $this->ExecuteQuery($sql);
     }
+
+    // hàm tự động tăng lượt xem
+    public function TangLuotXem($maSach){
+        $sql = "Update Sach set SoLuocXem = SoLuocXem + 1 where MaSach = '$maSach'";
+        $this->ExecuteQuery($sql);
+    }
+
 }

@@ -2,8 +2,8 @@
 	include(__DIR__."./../modules/mMainHeader.php");
 	include(__DIR__."./../modules/mMenu.php");
 	include(__DIR__."./../modules/mSlidebar.php");
-	include(__DIR__."./../modules/mNewBook.php");
-	include(__DIR__."./../modules/mBestSellerBook.php");
+	include(__DIR__."./../modules/Sach/mNewBook.php");
+	include(__DIR__."./../modules/Sach/mBestSellerBook.php");
 	?>
 	<div class="container-fluid wrapper-content-sidebar">
 		<div class="row">
