@@ -100,7 +100,7 @@
             </tr>
             <tr>
                 <td class="align-right"><label>Mã kiểm tra</label></td>
-                <td><img src="../../images/capcha.png" alt=""></td>
+                <td><img src="../../../../DoAnWeb01/GUI/images/capcha.png" alt=""></td>
             </tr>
             <tr>
                 <td class="align-right"><label for="txtMaKiemTra">Nhập mã kiểm tra <b>*</b></label></td>

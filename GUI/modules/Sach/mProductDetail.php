@@ -10,13 +10,13 @@
         //lấy tên tac gia:
 
         $tacGiaBUS=new TacGiaBUS();
-        $tenTG=$tacGiaBUS->GetNameForm($id);
-        $te="đang cập nhật";
-        if(!empty($tenTG))
+        $tacgia=$tacGiaBUS->GetNameForm($id);
+        /* $te="đang cập nhật"; */
+        if(!empty($tacgia->TenTacGia))
         {
-            $tacGDTO=$TenTG[0];
-            $te=$tacGDTO->TenGacGia;
+            $te=$tacgia->TenTacGia;
         }
+        else $te= "đang cập nhật";
 
         // cập nhật lược xem
         $luotXem = $sachBUS->TangLuotXem($id);

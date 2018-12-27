@@ -59,22 +59,17 @@ class TacGiaDAO extends DB{
 
 
     public function GetNameForm($idS){
-        $sql = "SELECT MaTacGia,TenTacGia,NgaySinh,
-              TieuSu,BiXoa FROM tacgia tg, tacgia_has_sach tgh 
-            WHERE tg.MaTacGia=tgh.TacGia_MaTacGia
-              AND tgh.Sach_MaSach='$idS'";
+        $sql = "SELECT MaTacGia,TenTacGia,NgaySinh, TieuSu,BiXoa FROM tacgia tg, tacgia_has_sach tgh 
+            WHERE tg.MaTacGia=tgh.TacGia_MaTacGia  AND tgh.Sach_MaSach='$idS'";
 
         $result=$this->ExecuteQuery($sql);
-        $lstTacGia = array();
-        while($row = mysqli_fetch_array($result)){
-            $tacGia = new TacGiaDTO();
-            $tacGia->MaTacGia = $row["MaTacGia"];
-            $tacGia->TenTacGia = $row["TenTacGia"];
-            $tacGia->NgaySinh = $row["NgaySinh"];
-            $tacGia->TieuSu = $row["TieuSu"];
-            $tacGia->BiXoa=$row["BiXoa"];
-            $lstTacGia[]=$tacGia;
-        }
-        return $lstTacGia;
+        $row = mysqli_fetch_array($result);
+        $tacGia = new TacGiaDTO();
+        $tacGia->MaTacGia = $row["MaTacGia"];
+        $tacGia->TenTacGia = $row["TenTacGia"];
+        $tacGia->NgaySinh = $row["NgaySinh"];
+        $tacGia->TieuSu = $row["TieuSu"];
+        $tacGia->BiXoa=$row["BiXoa"];
+        return $tacGia;
     }
 }
