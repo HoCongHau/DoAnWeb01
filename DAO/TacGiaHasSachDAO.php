@@ -13,7 +13,7 @@ class TacGiaHasSachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach=array();
         while ($row=mysqli_fetch_array($result)){
-            $TGS=new TacGiaHasSachDAO();
+            $TGS=new TacGiaHasSachDTO();
             $TGS->MaTacGia=$row["TacGia_MaTacGia"];
             $TGS->MaSach=$row["Sach_MaSach"];
             $lstSach[]=$TGS;

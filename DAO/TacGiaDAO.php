@@ -14,7 +14,7 @@ class TacGiaDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstTacGia = array();
         while($row = mysqli_fetch_array($result)){
-            $tacGia = new TacGiaDAO();
+            $tacGia = new TacGiaDTO();
             $tacGia->MaTacGia = $row["MaTacGia"];
             $tacGia->TenTacGia = $row["TenTacGia"];
             $tacGia->NgaySinh = $row["NgaySinh"];
@@ -31,7 +31,7 @@ class TacGiaDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstTacGia = array();
         while($row = mysqli_fetch_array($result)){
-            $tacGia = new TacGiaDAO();
+            $tacGia = new TacGiaDTO();
             $tacGia->MaTacGia = $row["MaTacGia"];
             $tacGia->TenTacGia = $row["TenTacGia"];
             $tacGia->NgaySinh = $row["NgaySinh"];
@@ -46,7 +46,7 @@ class TacGiaDAO extends DB{
         $sql = "Select MaTacGia, TenTacGia, NgaySinh, TieuSu, BiXoa from tacgia where MaTacGia='$id'";
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
-            $tacGia = new TacGiaDAO();
+            $tacGia = new TacGiaDTO();
             $tacGia->MaTacGia = $row["MaTacGia"];
             $tacGia->TenTacGia = $row["TenTacGia"];
             $tacGia->NgaySinh = $row["NgaySinh"];
@@ -67,7 +67,7 @@ class TacGiaDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstTacGia = array();
         while($row = mysqli_fetch_array($result)){
-            $tacGia = new TacGiaDAO();
+            $tacGia = new TacGiaDTO();
             $tacGia->MaTacGia = $row["MaTacGia"];
             $tacGia->TenTacGia = $row["TenTacGia"];
             $tacGia->NgaySinh = $row["NgaySinh"];

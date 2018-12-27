@@ -38,7 +38,7 @@ class ChiTietDonDatHangDAO extends DB
         $lstCTDH = array();
         while($row = mysqli_fetch_array($result)){
 
-        $chiTiet = new ChiTietDonDatHangDAO();
+        $chiTiet = new ChiTietDonDatHangDTO();
         $chiTiet->MaChiTietDonDatHang = $row["MaChiTietDonDatHang"];
         $chiTiet->SoLuong = $row["SoLuong"];
         $chiTiet->GiaBan = $row["GiaBan"];
@@ -56,7 +56,7 @@ class ChiTietDonDatHangDAO extends DB
         $result = $this->ExecuteQuery($sql);
         $lstCTDH = array();
         while($row = mysqli_fetch_array($result)){
-            $chiTiet = new ChiTietDonDatHangDAO();
+            $chiTiet = new ChiTietDonDatHangDTO();
             $chiTiet->MaChiTietDonDatHang = $row["MaChiTietDonDatHang"];
             $chiTiet->SoLuong = $row["SoLuong"];
             $chiTiet->GiaBan = $row["GiaBan"];

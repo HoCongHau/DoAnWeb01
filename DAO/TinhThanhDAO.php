@@ -14,7 +14,7 @@ class TinhThanhDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstTinhThanh = array();
         while($row = mysqli_fetch_array($result)){
-            $tinhThanh = new TinhThanhDAO();
+            $tinhThanh = new TinhThanhDTO();
             $tinhThanh->MaTinh = $row["MaTinh"];
             $tinhThanh->TenTinh = $row["TenTinh"];
             $lstTinhThanh[]=$tinhThanh;

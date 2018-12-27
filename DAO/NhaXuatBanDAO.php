@@ -14,7 +14,7 @@ class NhaXuatBanDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstNXB = array();
         while($row = mysqli_fetch_array($result)){
-            $nhaxuatban = new NhaXuatBanDAO();
+            $nhaxuatban = new NhaXuatBanDTO();
             $nhaxuatban->MaNhaXuatBan = $row["MaNhaXuatBan"];
             $nhaxuatban->TenNhaXuatBan = $row["TenNhaXuatBan"];
             $nhaxuatban->LogoURL = $row["LogoURL"];
@@ -30,7 +30,7 @@ class NhaXuatBanDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstNXB = array();
         while($row = mysqli_fetch_array($result)){
-            $nhaxuatban = new NhaXuatBanDAO();
+            $nhaxuatban = new NhaXuatBanDTO();
             $nhaxuatban->MaNhaXuatBan = $row["MaNhaXuatBan"];
             $nhaxuatban->TenNhaXuatBan = $row["TenNhaXuatBan"];
             $nhaxuatban->LogoURL = $row["LogoURL"];
@@ -54,7 +54,7 @@ class NhaXuatBanDAO extends DB{
         $sql = "Select TenNhaXuatBan ,LogoURL from nhaxuatban where MaNhaXuatBan='$id'";
         $result=$this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
-        $nxb =  new NhaXuatBanDAO();
+        $nxb =  new NhaXuatBanDTO();
         $nxb->TenNhaXuatBan = $row["TenNhaXuatBan"];
         $nxb->LogoURL = $row["LogoURL"];
         return $nxb;
@@ -66,7 +66,7 @@ class NhaXuatBanDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstNXB = array();
         while($row = mysqli_fetch_array($result)){
-            $nhaxuatban = new NhaXuatBanDAO();
+            $nhaxuatban = new NhaXuatBanDTO();
             $nhaxuatban->MaNhaXuatBan = $row["MaNhaXuatBan"];
             $nhaxuatban->TenNhaXuatBan = $row["TenNhaXuatBan"];
             $nhaxuatban->LogoURL = $row["LogoURL"];

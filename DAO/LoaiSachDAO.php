@@ -14,7 +14,7 @@ class LoaiSachDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstLoaiSach = array();
         while($row = mysqli_fetch_array($result)){
-            $loaiSach = new LoaiSachDAO();
+            $loaiSach = new LoaiSachDTO();
             $loaiSach->MaLoaiSach = $row["MaLoaiSach"];
             $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
             $loaiSach->BiXoa=$row["BiXoa"];
@@ -29,7 +29,7 @@ class LoaiSachDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstLoaiSach = array();
         while($row = mysqli_fetch_array($result)){
-            $loaiSach = new LoaiSachDAO();
+            $loaiSach = new LoaiSachDTO();
             $loaiSach->MaLoaiSach = $row["MaLoaiSach"];
             $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
             $loaiSach->BiXoa=$row["BiXoa"];
@@ -43,7 +43,7 @@ class LoaiSachDAO extends DB{
         $sql = "Select TenLoaiSach from loaisach where MaLoaiSach = $maLoaiSanPham";
         $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
-        $loaiSach = new LoaiSachDAO();
+        $loaiSach = new LoaiSachDTO();
         $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
         return $loaiSach;
     } 
@@ -54,7 +54,7 @@ class LoaiSachDAO extends DB{
         $result = $this->ExecuteQuery($sql);
         $lstLoaiSach = array();
         while($row = mysqli_fetch_array($result)){
-            $loaiSach = new LoaiSachDAO();
+            $loaiSach = new LoaiSachDTO();
             $loaiSach->MaLoaiSach = $row["MaLoaiSach"];
             $loaiSach->TenLoaiSach = $row["TenLoaiSach"];
             $loaiSach->BiXoa=$row["BiXoa"];

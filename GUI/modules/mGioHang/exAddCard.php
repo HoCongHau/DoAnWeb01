@@ -5,6 +5,7 @@
  * Date: 10-12-2018
  * Time: 8:38 PM
  */
+if(isset($_SESSION['uid'])!=null)
     if(isset($_GET['id'])){
         $id=$_GET['id'];
         //lấy sản phẩm
@@ -56,6 +57,13 @@
         //quay lại trang chủ
         echo "<script type='text/javascript'>location='index.php';</script>";
     }
+else{
+    //quay lại trang chủ
+    echo "<script> window.history.back();</script>";
+}
+
+
+
 //echo "<script type='text/javascript'>location='index.php';</script>";
 //quay lại trang hiện tại sau khi add sp
 echo "<script> window.history.back();</script>";
