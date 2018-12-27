@@ -9,7 +9,7 @@
 class DonDatHangDAO extends DB
 {
     public function GetAll(){
-        $sql="SELECT MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang FROM DONDATHANG";
+        $sql="SELECT MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang, BiXoa FROM DONDATHANG";
         $resutl=$this->ExecuteQuery($sql);
         $lstDonDatHang=array();
         while ($row=mysqli_fetch_array($resutl))
@@ -20,6 +20,7 @@ class DonDatHangDAO extends DB
             $donHang->TongThanhTien=$row['TongThanhTien'];
             $donHang->MaTaiKhoan=$row['MaTaiKhoan'];
             $donHang->MaTinhTrang=$row['MaTinhTrang'];
+            $donHang->BiXoa=$row['BiXoa'];
 
             $lstDonDatHang[]=$donHang;
         }
@@ -63,7 +64,7 @@ class DonDatHangDAO extends DB
 
     // Get by id
     public function GetByID($id){
-        $sql="SELECT MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang 
+        $sql="SELECT MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang, BiXoa 
                 FROM DONDATHANG where MaDonDatHang = '$id'";
         $resutl=$this->ExecuteQuery($sql);
         $lstDonDatHang=array();
@@ -75,13 +76,14 @@ class DonDatHangDAO extends DB
         $donHang->TongThanhTien=$row['TongThanhTien'];
         $donHang->MaTaiKhoan=$row['MaTaiKhoan'];
         $donHang->MaTinhTrang=$row['MaTinhTrang'];
+        $donHang->BiXoa=$row['BiXoa'];
 
         return $donHang;
     }
 
     // get all chi danh cho admin theo keyword
     public function GetAllByKeyWord($key){
-    $sql = "Select MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang 
+    $sql = "Select MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang, BiXoa 
     FROM DONDATHANG where MaDonDatHang LIKE '%$key%'";
     $result = $this->ExecuteQuery($sql);
     $lstNXB = array();
@@ -92,10 +94,28 @@ class DonDatHangDAO extends DB
         $donHang->TongThanhTien=$row['TongThanhTien'];
         $donHang->MaTaiKhoan=$row['MaTaiKhoan'];
         $donHang->MaTinhTrang=$row['MaTinhTrang'];
-
+        $donHang->BiXoa=$row['BiXoa'];
         $lstDonDatHang[]=$donHang;
     }
     return $lstDonDatHang;
+    }
+
+    // xoá đơn đặt hàng
+    public function DeleteById($id){
+        $sql = "DELETE from DonDatHang where MaDonDatHang= '$id'";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // đánh dấu xoá đơn đặt hàng
+    public function SetDelete($id){
+        $sql = "UPDATE DonDatHang set BiXoa = 1 where MaDonDatHang= '$id'";
+        return $this->ExecuteQuery($sql);
+    }
+
+    // huỷ đánh dấu xoá đơn đặt hàng
+    public function UnSetDelete($id){
+        $sql = "UPDATE DonDatHang set BiXoa = 0 where MaDonDatHang= '$id'";
+        return $this->ExecuteQuery($sql);
     }
 
 }

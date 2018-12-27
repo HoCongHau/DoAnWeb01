@@ -40,4 +40,19 @@ class DonDatHangBUS
         return $this->DonDatHangDAO->GetAllByKeyWord($key);
     }
 
+    // xoá đơn đặt hàng
+    public function DeleteById($id){
+        return $this->DonDatHangDAO->DeleteById($id);
+    }
+
+    // đánh dấu xoá đơn đặt hàng
+    public function SetDelete($id){
+        return $this->DonDatHangDAO->SetDelete($id); 
+    }
+
+    // huỷ đánh dấu xoá đơn đặt hàng
+    public function UnSetDelete($id){
+        return $this->DonDatHangDAO->UnSetDelete($id);
+    }
+
 }

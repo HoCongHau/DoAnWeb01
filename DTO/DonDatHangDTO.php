@@ -11,6 +11,7 @@ class DonDatHangDTO{
     var $TongThanhTien;
     var $MaTaiKhoan;
     var $MaTinhTrang;
+    var $BiXoa;
 
     public function __construct()
     {
@@ -19,5 +20,6 @@ class DonDatHangDTO{
         $this->TongThanhTien=0;
         $this->MaTaiKhoan=0;
         $this->MaTinhTrang=0;
+        $this->BiXoa=0;
     }
 }

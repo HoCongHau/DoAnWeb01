@@ -17,24 +17,24 @@ include_once("./DAO/DB.php");
 
 <?php
     include "./DTO/TaiKhoanDTO.php";
-    include "./DAO/TaiKhoanDAO.php";
+    /* include "./DAO/TaiKhoanDAO.php"; */
     include "./BUS/TaiKhoanBUS.php";
     include "./DTO/SachDTO.php";
-    include "./DAO/SachDAO.php";
+    /* include "./DAO/SachDAO.php"; */
     include "./BUS/SachBUS.php";
     include "./DTO/LoaiSachDTO.php";
-    include "./DAO/LoaiSachDAO.php";
+    /* include "./DAO/LoaiSachDAO.php"; */
     include "./BUS/LoaiSachBUS.php";
     include "./DTO/NhaXuatBanDTO.php";
-    include "./DAO/NhaXuatBanDAO.php";
+    /* include "./DAO/NhaXuatBanDAO.php"; */
     include "./BUS/NhaXuatBanBUS.php";
     include "./DTO/DonDatHangDTO.php";
-    include "./DAO/DonDatHangDAO.php";
+    /* include "./DAO/DonDatHangDAO.php"; */
     include "./BUS/DonDatHangBUS.php";
     include "./DTO/ChiTietDonDatHangDTO.php";
-    include "./DAO/ChiTietDonDatHangDAO.php";
+    /* include "./DAO/ChiTietDonDatHangDAO.php"; */
     include "./BUS/ChiTietDonDatHangBUS.php";
-    include("./DAO/TinhThanhDAO.php");
+    /* include("./DAO/TinhThanhDAO.php"); */
     include("./BUS/TinhThanhBUS.php");
     include("./GUI/modules/fCatChuoi.php");
     include("./GUI/admin/modules/uploadFile.php");
@@ -158,6 +158,12 @@ if(isset($_SESSION['tuid'])==true &&$_SESSION['tuid']==111){
             /* ------------------ MODULES ĐƠN HÀNG -------------------------- */
             case 118:
                 include("./GUI/admin/modules/DonHang/exEditTinhTrangDonHang.php");
+                break;
+            case 119:
+                include("./GUI/admin/modules/DonHang/exSetDeleteUnsetDeleteDDH.php");
+                break;
+            case 120:
+                include("./GUI/admin/modules/DonHang/exDeleteDDH.php");
                 break;
         }
     }

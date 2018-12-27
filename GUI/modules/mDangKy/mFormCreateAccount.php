@@ -81,11 +81,15 @@
             </tr>
             <tr>
                 <td class="align-right">  <label for="txtPassWord">Mật khẩu <b>*</b></label></td>
-                <td><input type="password" name="txtPassWord" required></td>
+                <td><input type="password" name="txtPassWord" id="password" onkeyup='check();' required></td>
             </tr>
             <tr>
                 <td class="align-right"><label for="txtRePassWord">Xác nhận mật khẩu <b>*</b></label></td>
-                <td><input type="password" name="txtRePassWord" required></td>
+                <td><input type="password" name="txtRePassWord" id="confirm_password" onkeyup='check();' required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><span id='message'></span></td>       
             </tr>
             <tr>
                 <td class="align-right">
@@ -106,3 +110,14 @@
         <input type="submit" value="Đăng Ký Tài Khoản" name="dangky">  
     </form>
 </div>
+<script>
+var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Khớp';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Không khớp';
+  }
+}</script>

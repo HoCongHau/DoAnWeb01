@@ -17,7 +17,7 @@
                 <!-- vung content -->
                 <div id="content" class="col-xs-12 col-md-10">
                     <p class="Title"> -- Sửa tình trạng đơn hàng -- </p>
-                    <form action="admin.php?a=118&&id=<?php echo $MaDonDatHang; ?>" method="POST" class="frmCapNhatTinhTrang">
+                    <form action="admin.php?a=118&id=<?php echo $MaDonDatHang; ?>" method="POST" class="frmCapNhatTinhTrang">
                         <div class="row text-center">
                             <div class="col-xs-hidden col-sm-1"></div>
                             <div class="col-xs-6 col-sm-2">
