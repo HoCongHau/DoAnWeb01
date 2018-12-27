@@ -5,7 +5,7 @@
  * Date: 7-12-2018
  * Time: 5:11 AM
  */
-
+include(__DIR__."./../DAO/LoaiSachDAO.php");
 class LoaiSachBUS{
     
     var $loaiSachDAO;

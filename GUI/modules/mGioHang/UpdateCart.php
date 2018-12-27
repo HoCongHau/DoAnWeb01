@@ -55,6 +55,15 @@ if(isset($_POST["thanhToan"])){
                     $ChiTietDTO->MaSach=$cart["key"];
 
                     $result=$ChiTietBUS->Insert($ChiTietDTO);
+                    //sau khi insert vào ChiTietDonHang tiến hành update lại so luong san pham
+                        //lấy ra san pham
+                        $maS=$cart["key"];
+                        $slMua=$cart["sl"];
+                        $sachOLDBUS=new SachBUS();
+                        $sachOLD=$sachOLDBUS->GetByID($maS);
+                        $slTon=$sachOLD->SoLuongTon;
+                        $slCon=$slTon-$slMua;
+                        $sachOLDBUS->UpDateSoLuong($maS,$slCon);
                 }
 
                 unset($_SESSION["cart"]);

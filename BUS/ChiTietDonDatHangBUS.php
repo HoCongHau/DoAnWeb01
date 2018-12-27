@@ -5,6 +5,7 @@
  * Date: 17-12-2018
  * Time: 4:48 PM
  */
+include(__DIR__."./../DAO/ChiTietDonDatHangDAO.php");
 class ChiTietDonDatHangBUS
 {
     var $ChiTietDonDatHangDAO;

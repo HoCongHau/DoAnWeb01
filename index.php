@@ -23,20 +23,30 @@
         //include mLogin
         include("./GUI/modules/mLogin/mLogin.php");
         //các lớp tương ứng
+        //
+        include("./DTO/LoaiSachDTO.php");
         include("./BUS/LoaiSachBUS.php");
-        include("./DAO/LoaiSachDAO.php");
+        //include("./DAO/LoaiSachDAO.php");
+        //
+        include("./DTO/NhaXuatBanDTO.php");
         include("./BUS/NhaXuatBanBUS.php");
-        include("./DAO/NhaXuatBanDAO.php");
-        include("./DAO/SachDAO.php");
+        //include("./DAO/NhaXuatBanDAO.php");
+        //
+        include("./DTO/SachDTO.php");
+        //include("./DAO/SachDAO.php");
         include("./BUS/SachBUS.php");
-        include("./DAO/TacGiaDAO.php");
+        //
+        include("./DTO/TacGiaDTO.php");
+        //include("./DAO/TacGiaDAO.php");
         include("./BUS/TacGiaBUS.php");
-        include("./DAO/TinhThanhDAO.php");
+        //
+        include("./DTO/TinhThanhDTO.php");
+        //include("./DAO/TinhThanhDAO.php");
         include("./BUS/TinhThanhBUS.php");
         //đơn hàng
-        include("./DAO/DonDatHangDAO.php");
+        //include("./DAO/DonDatHangDAO.php");
         include("./BUS/DonDatHangBUS.php");
-        include("./DAO/ChiTietDonDatHangDAO.php");
+        //include("./DAO/ChiTietDonDatHangDAO.php");
         include("./BUS/ChiTietDonDatHangBUS.php");
         include("./DTO/DonDatHangDTO.php");
         include("./DTO/ChiTietDonDatHangDTO.php");

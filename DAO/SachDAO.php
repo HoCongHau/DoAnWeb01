@@ -14,7 +14,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -40,7 +40,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -66,7 +66,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -94,7 +94,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -122,7 +122,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -164,7 +164,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -192,7 +192,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -217,7 +217,7 @@ class SachDAO extends DB{
         from sach where MaSach='$id'";
         $result=$this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
-        $sach =  new SachDAO();
+        $sach =  new SachDTO();
         $sach->MaSach = $row["MaSach"];
         $sach->TenSach = $row["TenSach"];
         $sach->HinhURL = $row["HinhURL"];
@@ -241,7 +241,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -267,7 +267,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -293,7 +293,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -319,7 +319,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -345,7 +345,7 @@ class SachDAO extends DB{
         $result=$this->ExecuteQuery($sql);
         $lstSach = array();
         while($row = mysqli_fetch_array($result)){
-            $sach =  new SachDAO();
+            $sach =  new SachDTO();
             $sach->MaSach = $row["MaSach"];
             $sach->TenSach = $row["TenSach"];
             $sach->HinhURL = $row["HinhURL"];
@@ -400,6 +400,11 @@ class SachDAO extends DB{
     public function TangLuotXem($maSach){
         $sql = "Update Sach set SoLuocXem = SoLuocXem + 1 where MaSach = '$maSach'";
         $this->ExecuteQuery($sql);
+    }
+
+    public function UpDateSoLuong($maSach,$soLuongTon){
+        $sql = "UPDATE sach SET  SoLuongTon = '$soLuongTon' WHERE MaSach='$maSach'";
+        return $this->ExecuteQuery($sql);
     }
 
 }

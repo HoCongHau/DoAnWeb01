@@ -5,7 +5,7 @@
  * Date: 8-12-2018
  * Time: 7:37 AM
  */
-
+include(__DIR__."./../DAO/SachDAO.php");
 class SachBUS{
     
     var $sachDAO;
@@ -105,6 +105,10 @@ class SachBUS{
 
     public function TangLuotXem($maSach){
         $this->sachDAO->TangLuotXem($maSach);
+    }
+    //update so luong
+    public function UpDateSoLuong($maSach,$soLuong){
+        $this->sachDAO->UpDateSoLuong($maSach,$soLuong);
     }
 
 }

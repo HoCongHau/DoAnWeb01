@@ -5,6 +5,7 @@
  * Date: 11-12-2018
  * Time: 2:14 AM
  */
+include(__DIR__."./../DAO/TacGiaHasSachDAO.php");
 class TacGiaHasSachBUS{
     var $tacGiaHasSachDAO;
 

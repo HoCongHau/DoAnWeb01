@@ -5,7 +5,7 @@
  * Date: 9-12-2018
  * Time: 1:58 PM
  */
-
+include(__DIR__."./../DAO/TinhThanhDAO.php");
 class TinhThanhBUS{
     
     var $tinhThanhDAO;
